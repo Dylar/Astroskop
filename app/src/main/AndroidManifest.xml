@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="de.bornholdtlee.snh">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <application
+        android:name="de.bornholdtlee.snh.SNHApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon">
+        <activity
+            android:name="de.bornholdtlee.snh.ui.IntroActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="de.bornholdtlee.snh.ui.PrivacyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="de.bornholdtlee.snh.ui.menu.MenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="de.bornholdtlee.snh.ui.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="de.bornholdtlee.snh.ui.report.ReportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="de.bornholdtlee.snh.ui.report.form.search.ReportFormSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="de.bornholdtlee.snh.ui.main.analysis.data.AnalysisFilterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="de.bornholdtlee.snh.ui.main.analysis.data.AnalysisInfoActivity"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

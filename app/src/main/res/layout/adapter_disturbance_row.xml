@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/two_grid_unit">
+
+    <TextView
+        android:id="@+id/adapter_disturbance_row_title"
+        style="@style/AppTheme.MediumFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_top_red"
+        android:gravity="center_vertical"
+        android:padding="@dimen/two_grid_unit"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/text_size_small"
+        tools:text="@string/fragment_menu_button_job_offer_text" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/adapter_disturbance_row_title"
+        android:background="@drawable/rounded_frame_bottom_gray">
+
+
+        <TextView
+            android:id="@+id/adapter_disturbance_row_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:gravity="center_vertical"
+            android:padding="@dimen/two_grid_unit"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_size_xsmall"
+            tools:text="@string/fragment_menu_button_job_offer_text" />
+
+        <TextView
+            android:id="@+id/adapter_disturbance_row_date_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:padding="@dimen/two_grid_unit"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_size_xsmall"
+            tools:text="@string/fragment_menu_button_job_offer_text" />
+
+        <View
+            android:id="@+id/adapter_disturbance_row_underline"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_below="@+id/adapter_disturbance_row_date_start"
+            android:background="@drawable/underline_dotted_gray"
+            android:layerType="software" />
+
+        <TextView
+            android:id="@+id/adapter_disturbance_row_date_end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/adapter_disturbance_row_underline"
+            android:gravity="center_vertical"
+            android:padding="@dimen/two_grid_unit"
+            android:text="@string/fragment_disturbance_date_end"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_size_xsmall" />
+    </RelativeLayout>
+</RelativeLayout>

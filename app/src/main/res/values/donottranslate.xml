@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" translatable="false">Stromnetz Hamburg Service-App</string>
+    <string name="url_job_offer" translatable="false">https://www.stromnetz.hamburg/app-karriere/</string>
+
+    <string name="tracker_splash" translatable="false">Splashscreen</string>
+    <string name="tracker_home" translatable="false">Home</string>
+    <string name="tracker_menu" translatable="false">Menü</string>
+    <string name="tracker_privacy" translatable="false">Datenschutz</string>
+    <string name="tracker_imprint" translatable="false">Impressum</string>
+
+    <string name="tracker_analysis_data" translatable="false">Hamburgs Stromverbrauch Daten</string>
+    <string name="tracker_analysis_data_filter" translatable="false">Hamburgs Stromverbrauch Daten Filter</string>
+    <string name="tracker_analysis_data_info" translatable="false">Hamburgs Stromverbrauch Daten Info</string>
+    <string name="tracker_analysis_map" translatable="false">Hamburgs Stromverbrauch Karte</string>
+
+    <string name="tracker_constructions" translatable="false">Unsere Baustellen</string>
+    <string name="tracker_constructions_district" translatable="false">Unsere Baustellen Ortsteil</string>
+
+    <string name="tracker_disturbance" translatable="false">Aktuelle Störungen</string>
+    <string name="tracker_report_disturbance" translatable="false">Störung melden</string>
+    <string name="tracker_report_disturbance_others" translatable="false">Störung melden Telefonnummern</string>
+    <string name="tracker_report_disturbance_search" translatable="false">Störung melden Straßensuche</string>
+    <string name="tracker_report_disturbance_tab1" translatable="false">Störung melden Tab 1</string>
+    <string name="tracker_report_disturbance_tab2" translatable="false">Störung melden Tab 2</string>
+    <string name="tracker_report_disturbance_tab3" translatable="false">Störung melden Tab 3</string>
+    <string name="tracker_report_disturbance_tab4" translatable="false">Störung melden Tab 4</string>
+
+</resources>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray_darker"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/fragment_home_button_analysis_container"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_waves_2" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/two_grid_unit"
+            android:layout_marginTop="@dimen/four_grid_unit"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_logo" />
+
+    </RelativeLayout>
+
+    <View style="@style/AppTheme.Underline" />
+
+    <View
+        style="@style/AppTheme.Underline"
+        android:layout_marginTop="@dimen/three_grid_unit" />
+
+    <RelativeLayout
+        android:id="@+id/fragment_menu_button_job_offer_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_gray"
+        android:padding="@dimen/one_grid_unit">
+
+        <TextView
+            style="@style/AppTheme.MenuButton"
+            android:text="@string/fragment_menu_button_job_offer_text" />
+
+        <ImageView style="@style/AppTheme.MenuButtonArrow" />
+
+    </RelativeLayout>
+
+    <View style="@style/AppTheme.Underline" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/three_grid_unit"
+        android:background="@color/underline" />
+
+    <RelativeLayout
+        android:id="@+id/fragment_menu_button_rank_app_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_gray"
+        android:padding="@dimen/one_grid_unit">
+
+        <TextView
+            style="@style/AppTheme.MenuButton"
+            android:text="@string/fragment_menu_button_rank_app_text" />
+
+        <ImageView style="@style/AppTheme.MenuButtonArrow" />
+
+    </RelativeLayout>
+
+    <View style="@style/AppTheme.Underline" />
+
+    <View
+        style="@style/AppTheme.Underline"
+        android:layout_marginTop="@dimen/three_grid_unit" />
+
+    <RelativeLayout
+        android:id="@+id/fragment_menu_button_imprint_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_gray"
+        android:padding="@dimen/one_grid_unit">
+
+        <TextView
+            style="@style/AppTheme.MenuButton"
+            android:text="@string/fragment_menu_button_imprint_text" />
+
+        <ImageView style="@style/AppTheme.MenuButtonArrow" />
+
+    </RelativeLayout>
+
+    <View style="@style/AppTheme.Underline" />
+
+    <RelativeLayout
+        android:id="@+id/fragment_menu_button_privacy_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_gray"
+        android:padding="@dimen/one_grid_unit">
+
+        <TextView
+            style="@style/AppTheme.MenuButton"
+            android:text="@string/fragment_menu_button_privacy_text" />
+
+        <ImageView style="@style/AppTheme.MenuButtonArrow" />
+
+    </RelativeLayout>
+
+    <View style="@style/AppTheme.Underline" />
+
+    <TextView
+        android:id="@+id/fragment_menu_buildversion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        tools:text="Versionsnumber" />
+</LinearLayout>

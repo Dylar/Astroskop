@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Android Application Rules"
+    xmlns="http://pmd.sf.net/ruleset/1.0.0"
+    xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd"
+    xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd">
+
+    <description>Custom ruleset for Android application</description>
+
+    <exclude-pattern>.*/R.java</exclude-pattern>
+    <exclude-pattern>.*/gen/.*</exclude-pattern>
+    <exclude-pattern>.*/RetrofitCallback.java</exclude-pattern>
+    <exclude-pattern>.*/Abstract*.*</exclude-pattern>
+
+    <rule ref="rulesets/java/controversial.xml">
+        <exclude name="OnlyOneReturn" />
+        <exclude name="AtLeastOneConstructor" />
+        <exclude name="DontImportSun" />
+        <exclude name="DefaultPackage" />
+        <exclude name="AvoidFinalLocalVariable" />
+        <exclude name="DataflowAnomalyAnalysis" />
+        <exclude name="NullAssignment" />
+    </rule>
+
+    <rule ref="rulesets/java/design.xml">
+        <exclude name="SwitchStmtsShouldHaveDefault" />
+        <exclude name="MissingBreakInSwitch" />
+        <exclude name="TooFewBranchesForASwitchStatement" />
+        <exclude name="SingularField" />
+        <exclude name="ImmutableField" />
+        <exclude name="GodClass" />
+        <exclude name="UseVarargs" />
+        <exclude name="UseUtilityClass" />
+        <exclude name="EmptyMethodInAbstractClassShouldBeAbstract" />
+        <exclude name="AccessorMethodGeneration" />
+        <exclude name="UseLocaleWithCaseConversions" />
+    </rule>
+
+    <rule ref="rulesets/java/design.xml/AvoidDeeplyNestedIfStmts">
+        <properties>
+            <property name="problemDepth" value="5" />
+        </properties>
+    </rule>
+
+    <rule ref="rulesets/java/imports.xml">
+        <!-- Espresso is designed this way !-->
+        <exclude name="TooManyStaticImports" />
+    </rule>
+
+    <rule ref="rulesets/java/codesize.xml">
+        <exclude name="TooManyMethods" />
+        <exclude name="TooManyFields" />
+        <exclude name="NPathComplexity" />
+    </rule>
+
+    <rule ref="rulesets/java/codesize.xml/CyclomaticComplexity">
+        <properties>
+            <property name="reportLevel" value="35" />
+        </properties>
+    </rule>
+
+    <rule ref="rulesets/java/codesize.xml/ModifiedCyclomaticComplexity">
+        <properties>
+            <property name="reportLevel" value="35" />
+        </properties>
+    </rule>
+
+    <rule ref="rulesets/java/codesize.xml/StdCyclomaticComplexity">
+        <properties>
+            <property name="reportLevel" value="35" />
+        </properties>
+    </rule>
+
+    <rule ref="rulesets/java/codesize.xml/ExcessiveMethodLength">
+        <properties>
+            <property name="minimum" value="75" />
+        </properties>
+    </rule>
+
+    <rule ref="rulesets/java/codesize.xml/ExcessiveParameterList">
+        <properties>
+            <property name="minimum" value="7.0" />
+        </properties>
+    </rule>
+
+    <rule ref="rulesets/java/codesize.xml/ExcessiveClassLength">
+        <properties>
+            <property name="minimum" value="750.0" />
+        </properties>
+    </rule>
+
+    <rule ref="rulesets/java/naming.xml">
+        <exclude name="AbstractNaming" />
+        <exclude name="LongVariable" />
+        <exclude name="ShortVariable" />
+        <exclude name="ShortClassName" />
+    </rule>
+
+    <rule ref="rulesets/java/optimizations.xml">
+        <exclude name="MethodArgumentCouldBeFinal" />
+        <exclude name="LocalVariableCouldBeFinal" />
+        <exclude name="UseStringBufferForStringAppends" />
+        <exclude name="AvoidInstantiatingObjectsInLoops" />
+    </rule>
+
+    <rule ref="rulesets/java/clone.xml" />
+    <rule ref="rulesets/java/empty.xml" />
+    <rule ref="rulesets/java/logging-java.xml" />
+    <rule ref="rulesets/java/unnecessary.xml" />
+    <rule ref="rulesets/java/unusedcode.xml" />
+    <rule ref="rulesets/java/braces.xml" />
+    <rule ref="rulesets/java/android.xml" />
+    <rule ref="rulesets/java/strings.xml" />
+    <rule ref="rulesets/java/basic.xml" />
+
+    <rule ref="rulesets/java/strings.xml/AvoidDuplicateLiterals">
+        <properties>
+            <property name="maxDuplicateLiterals" value="2" />
+        </properties>
+    </rule>
+</ruleset>

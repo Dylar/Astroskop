@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/fragment_constructions_search_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:padding="@dimen/one_grid_unit">
+
+        <EditText
+            android:id="@+id/fragment_constructions_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="start"
+            android:layout_margin="@dimen/half_grid_unit"
+            android:layout_toStartOf="@+id/fragment_constructons_search_cancel"
+            android:background="@drawable/rounded_corner_gray"
+            android:drawablePadding="@dimen/one_grid_unit"
+            android:drawableStart="@drawable/ic_search"
+            android:gravity="start"
+            android:hint="@string/fragment_constructions_search_hint"
+            android:padding="@dimen/half_grid_unit" />
+
+        <TextView
+            android:id="@+id/fragment_constructons_search_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/half_grid_unit"
+            android:text="@string/cancel"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/text_size_small" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/fragment_constructions_search_underline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/fragment_constructions_search_container"
+        android:background="@color/underline" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/fragment_constructions_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_constructions_search_underline" />
+
+    <TextView
+        android:id="@+id/fragment_constructions_list_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_constructions_search_underline"
+        android:gravity="center_vertical"
+        android:padding="@dimen/two_grid_unit"
+        android:text="@string/fragment_constructions_empty_list_text"
+        android:textSize="@dimen/text_size_xsmall"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/fragment_constructions_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_white"
+        android:orientation="vertical"
+        android:padding="@dimen/two_grid_unit"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/three_grid_unit"
+            android:layout_marginTop="@dimen/one_grid_unit"
+            android:text="@string/data_not_uptodate"
+            android:textColor="@color/text_red"
+            android:textSize="@dimen/text_size_big" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3dp"
+            android:text="@string/fragment_constructions_no_network_text"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_size_small" />
+    </LinearLayout>
+
+</RelativeLayout>

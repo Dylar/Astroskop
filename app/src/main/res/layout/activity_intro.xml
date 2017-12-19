@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_waves_1">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/two_grid_unit"
+        android:layout_marginTop="@dimen/four_grid_unit"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_logo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/four_grid_unit"
+        android:text="Die Stromnetz\nHamburg App"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/text_size_large" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/activity_intro_claim"
+        android:layout_marginBottom="@dimen/eight_grid_unit"
+        android:layout_marginEnd="@dimen/four_grid_unit"
+        android:layout_marginStart="@dimen/four_grid_unit"
+        android:layout_marginTop="@dimen/four_grid_unit"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/two_grid_unit"
+            android:layout_marginTop="@dimen/two_grid_unit"
+            android:text="Alles im Blick – von aktuellen Störungen bis Hamburgs Stromverbrauch"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_size_xsmall" />
+
+        <RelativeLayout
+            android:id="@+id/activity_intro_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_white"
+            android:padding="@dimen/two_grid_unit">
+
+            <TextView
+                android:id="@+id/activity_intro_button_text"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/four_grid_unit"
+                android:gravity="center"
+                android:text="Los geht’s"
+                android:textColor="@color/text_blue" />
+
+            <ImageView
+                android:layout_width="@dimen/two_grid_unit"
+                android:layout_height="@dimen/two_grid_unit"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/one_grid_unit"
+                android:layout_toEndOf="@+id/activity_intro_button_text"
+                android:background="@drawable/ic_arrow_right_blue" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/activity_intro_claim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_gray"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/activity_intro_splashscreen">
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="5"
+            android:background="@drawable/claim_redline" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="70"
+            android:background="@drawable/claim" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="25"
+            android:background="@drawable/claim_redline" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/activity_intro_splashscreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_gray"
+        android:padding="@dimen/two_grid_unit"
+        tools:visibility="gone">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_logo" />
+    </FrameLayout>
+
+</RelativeLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/fragment_disturbance_button_report_disturbance_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/two_grid_unit"
+        android:background="@drawable/rounded_corner_dotted_red"
+        android:padding="@dimen/two_and_a_half_grid_unit">
+
+        <ImageView
+            android:id="@+id/fragment_disturbance_button_report_disturbance_icon"
+            android:layout_width="@dimen/five_grid_unit"
+            android:layout_height="@dimen/five_grid_unit"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_tab_disturbance"
+            android:backgroundTint="@color/icon_red" />
+
+        <TextView
+            android:id="@+id/fragment_disturbance_button_report_disturbance_text"
+            style="@style/AppTheme.MediumFont"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/four_grid_unit"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/one_grid_unit"
+            android:layout_toEndOf="@+id/fragment_disturbance_button_report_disturbance_icon"
+            android:gravity="center"
+            android:text="@string/report_disturbance"
+            android:textColor="@color/text_red"
+            android:textSize="@dimen/text_size_small" />
+
+        <ImageView
+            android:layout_width="@dimen/two_grid_unit"
+            android:layout_height="@dimen/two_grid_unit"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/one_grid_unit"
+            android:layout_toEndOf="@+id/fragment_disturbance_button_report_disturbance_text"
+            android:background="@drawable/ic_arrow_right_blue"
+            android:backgroundTint="@color/icon_red" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/fragment_disturbance_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_disturbance_button_report_disturbance_container"
+        android:layout_marginLeft="@dimen/two_grid_unit"
+        android:layout_marginRight="@dimen/two_grid_unit" />
+
+    <TextView
+        android:id="@+id/fragment_disturbance_list_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_disturbance_button_report_disturbance_container"
+        android:gravity="center_vertical"
+        android:padding="@dimen/two_grid_unit"
+        android:text="@string/fragment_disturbance_empty_list_text"
+        android:textSize="@dimen/text_size_big"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/fragment_disturbance_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fragment_disturbance_button_report_disturbance_container"
+        android:background="@color/background_white"
+        android:orientation="vertical"
+        android:padding="@dimen/two_grid_unit"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/three_grid_unit"
+            android:layout_marginTop="@dimen/one_grid_unit"
+            android:text="@string/data_not_uptodate"
+            android:textColor="@color/text_red"
+            android:textSize="@dimen/text_size_big" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3dp"
+            android:text="@string/fragment_disturbance_no_network_text"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_size_small" />
+    </LinearLayout>
+</RelativeLayout>

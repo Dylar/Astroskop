@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/AppTheme.MediumFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="@dimen/two_grid_unit"
+        android:text="@string/fragment_report_form_4_header_summary"
+        android:textColor="@color/text_gray_darker"
+        android:textSize="@dimen/text_size_normal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="@dimen/two_grid_unit"
+        android:text="@string/fragment_report_form_4_subheader"
+        android:textSize="@dimen/text_size_xsmall" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/two_grid_unit"
+        android:layout_marginTop="@dimen/two_grid_unit"
+        android:background="@color/background_gray"
+        android:paddingBottom="@dimen/half_grid_unit"
+        android:paddingRight="@dimen/two_grid_unit"
+        android:paddingStart="@dimen/two_grid_unit"
+        android:paddingTop="@dimen/half_grid_unit">
+
+        <TextView
+            style="@style/AppTheme.MediumFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/fragment_report_form_4_header_tab1"
+            android:textColor="@color/text_gray_darker"
+            android:textSize="@dimen/text_size_xsmall" />
+
+        <TextView
+            android:id="@+id/fragment_report_form_4_change_1"
+            style="@style/AppTheme.MediumFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:text="@string/fragment_report_form_4_change"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/text_size_xsmall" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        style="@style/AppTheme.MediumFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/two_grid_unit"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/one_grid_unit"
+        android:paddingStart="@dimen/two_grid_unit"
+        android:text="@string/fragment_report_form_4_location"
+        android:textColor="@color/text_gray_darker"
+        android:textSize="@dimen/text_size_xsmall" />
+
+    <TextView
+        android:id="@+id/fragment_report_form_4_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/one_grid_unit"
+        android:paddingStart="@dimen/two_grid_unit"
+        android:textSize="@dimen/text_size_xsmall"
+        tools:text="Sonstiger Ort" />
+
+    <TextView
+        style="@style/AppTheme.MediumFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/two_grid_unit"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/one_grid_unit"
+        android:paddingStart="@dimen/two_grid_unit"
+        android:text="@string/fragment_report_form_4_location_details"
+        android:textColor="@color/text_gray_darker"
+        android:textSize="@dimen/text_size_xsmall" />
+
+    <TextView
+        android:id="@+id/fragment_report_form_4_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/one_grid_unit"
+        android:paddingStart="@dimen/two_grid_unit"
+        android:textSize="@dimen/text_size_xsmall"
+        tools:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/AppTheme.MediumFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/two_grid_unit"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/one_grid_unit"
+        android:paddingStart="@dimen/two_grid_unit"
+        android:text="@string/fragment_report_form_4_location_more_details"
+        android:textColor="@color/text_gray_darker"
+        android:textSize="@dimen/text_size_xsmall" />
+
+    <TextView
+        android:id="@+id/fragment_report_form_4_more_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/one_grid_unit"
+        android:paddingStart="@dimen/two_grid_unit"
+        android:textSize="@dimen/text_size_xsmall"
+        tools:text="-" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/two_grid_unit"
+        android:layout_marginTop="@dimen/two_grid_unit"
+        android:background="@color/background_gray"
+        android:paddingBottom="@dimen/half_grid_unit"
+        android:paddingRight="@dimen/two_grid_unit"
+        android:paddingStart="@dimen/two_grid_unit"
+        android:paddingTop="@dimen/half_grid_unit">
+
+        <TextView
+            style="@style/AppTheme.MediumFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/fragment_report_form_4_header_tab2"
+            android:textColor="@color/text_gray_darker"
+            android:textSize="@dimen/text_size_xsmall" />
+
+        <TextView
+            android:id="@+id/fragment_report_form_4_change_2"
+            style="@style/AppTheme.MediumFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:text="@string/fragment_report_form_4_change"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/text_size_xsmall" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/two_grid_unit"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:text="@string/fragment_report_form_4_street"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="@dimen/text_size_xsmall" />
+
+            <TextView
+                android:id="@+id/fragment_report_form_4_street"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:textSize="@dimen/text_size_xsmall"
+                tools:text="Musterstraße" />
+
+            <TextView
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/two_grid_unit"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:text="@string/fragment_report_form_4_plz"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="@dimen/text_size_xsmall" />
+
+            <TextView
+                android:id="@+id/fragment_report_form_4_plz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:textSize="@dimen/text_size_xsmall"
+                tools:text="Hamburg" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:text="@string/fragment_report_form_4_number"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="@dimen/text_size_xsmall" />
+
+            <TextView
+                android:id="@+id/fragment_report_form_4_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:textSize="@dimen/text_size_xsmall"
+                tools:text="42" />
+
+            <TextView
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/two_grid_unit"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:text="@string/fragment_report_form_4_city"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="@dimen/text_size_xsmall" />
+
+            <TextView
+                android:id="@+id/fragment_report_form_4_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:textSize="@dimen/text_size_xsmall"
+                tools:text="Hamburg" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/two_grid_unit"
+        android:layout_marginTop="@dimen/two_grid_unit"
+        android:background="@color/background_gray"
+        android:paddingBottom="@dimen/half_grid_unit"
+        android:paddingRight="@dimen/two_grid_unit"
+        android:paddingStart="@dimen/two_grid_unit"
+        android:paddingTop="@dimen/half_grid_unit">
+
+        <TextView
+            style="@style/AppTheme.MediumFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="Ihre Kontaktdaten"
+            android:textColor="@color/text_gray_darker"
+            android:textSize="@dimen/text_size_xsmall" />
+
+        <TextView
+            android:id="@+id/fragment_report_form_4_change_3"
+            style="@style/AppTheme.MediumFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:text="@string/fragment_report_form_4_change"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/text_size_xsmall" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/two_grid_unit"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:text="Anrede"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="@dimen/text_size_xsmall" />
+
+            <TextView
+                android:id="@+id/fragment_report_form_4_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:textSize="@dimen/text_size_xsmall"
+                tools:text="42" />
+
+            <TextView
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/two_grid_unit"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:text="Vorname"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="@dimen/text_size_xsmall" />
+
+            <TextView
+                android:id="@+id/fragment_report_form_4_costumer_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:textSize="@dimen/text_size_xsmall"
+                tools:text="Musterstraße" />
+
+            <TextView
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/two_grid_unit"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:text="Rückrufnummer"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="@dimen/text_size_xsmall" />
+
+            <TextView
+                android:id="@+id/fragment_report_form_4_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:textSize="@dimen/text_size_xsmall"
+                tools:text="Hamburg" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/fragment_report_form_4_company_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/AppTheme.MediumFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/one_grid_unit"
+                    android:paddingStart="@dimen/two_grid_unit"
+                    android:text="Firma"
+                    android:textColor="@color/text_gray_darker"
+                    android:textSize="@dimen/text_size_xsmall" />
+
+                <TextView
+                    android:id="@+id/fragment_report_form_4_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/one_grid_unit"
+                    android:paddingStart="@dimen/two_grid_unit"
+                    android:textSize="@dimen/text_size_xsmall"
+                    tools:text="42" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/two_grid_unit"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:text="Nachname"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="@dimen/text_size_xsmall" />
+
+            <TextView
+                android:id="@+id/fragment_report_form_4_costumer_familyname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:textSize="@dimen/text_size_xsmall"
+                tools:text="42" />
+
+            <TextView
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/two_grid_unit"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:text="E-Mail"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="@dimen/text_size_xsmall" />
+
+            <TextView
+                android:id="@+id/fragment_report_form_4_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/one_grid_unit"
+                android:paddingStart="@dimen/two_grid_unit"
+                android:textSize="@dimen/text_size_xsmall"
+                tools:text="Hamburg" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_report_button_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="@dimen/two_grid_unit"
+        android:background="@drawable/rounded_corner_solid_blue"
+        android:padding="@dimen/one_grid_unit">
+
+        <TextView
+            android:id="@+id/fragment_report_button_finish_text"
+            style="@style/AppTheme.MediumFont"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/four_grid_unit"
+            android:layout_marginStart="@dimen/one_grid_unit"
+            android:gravity="center"
+            android:text="@string/fragment_report_form_4_send_report"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_size_xsmall" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="@dimen/two_grid_unit"
+            android:layout_height="@dimen/two_grid_unit"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/one_grid_unit"
+            android:layout_toEndOf="@+id/fragment_report_button_finish_text"
+            android:src="@drawable/ic_arrow_right_blue"
+            android:tint="@color/text_white" />
+
+    </RelativeLayout>
+</LinearLayout>

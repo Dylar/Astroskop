@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/two_grid_unit"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/six_grid_unit">
+
+        <RelativeLayout
+            android:id="@+id/fragment_home_button_analysis_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_blue"
+            android:padding="@dimen/two_grid_unit">
+
+            <ImageView
+                android:id="@+id/fragment_home_button_analysis_icon"
+                android:layout_width="@dimen/four_grid_unit"
+                android:layout_height="@dimen/four_grid_unit"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_tab_analysis"
+                android:backgroundTint="@color/icon_blue" />
+
+            <TextView
+                android:id="@+id/fragment_home_button_analysis_text"
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/four_grid_unit"
+                android:layout_marginStart="@dimen/one_grid_unit"
+                android:layout_toEndOf="@+id/fragment_home_button_analysis_icon"
+                android:gravity="center"
+                android:text="@string/fragment_home_button_analysis_text"
+                android:textColor="@color/text_blue"
+                android:textSize="@dimen/text_size_xsmall" />
+
+            <ImageView
+                android:layout_width="@dimen/two_grid_unit"
+                android:layout_height="@dimen/two_grid_unit"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/one_grid_unit"
+                android:layout_toEndOf="@+id/fragment_home_button_analysis_text"
+                android:background="@drawable/ic_arrow_right_blue" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fragment_home_button_constructions_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/two_grid_unit"
+            android:background="@drawable/rounded_corner_blue"
+            android:padding="@dimen/two_grid_unit">
+
+            <ImageView
+                android:id="@+id/fragment_home_button_constructions_icon"
+                android:layout_width="@dimen/four_grid_unit"
+                android:layout_height="@dimen/four_grid_unit"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_tab_constructions"
+                android:backgroundTint="@color/icon_blue" />
+
+            <TextView
+                android:id="@+id/fragment_home_button_constructions_text"
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/four_grid_unit"
+                android:layout_marginStart="@dimen/one_grid_unit"
+                android:layout_toEndOf="@+id/fragment_home_button_constructions_icon"
+                android:gravity="center"
+                android:text="@string/fragment_home_button_constructions_text"
+                android:textColor="@color/text_blue"
+                android:textSize="@dimen/text_size_xsmall" />
+
+            <ImageView
+                android:layout_width="@dimen/two_grid_unit"
+                android:layout_height="@dimen/two_grid_unit"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/one_grid_unit"
+                android:layout_toEndOf="@+id/fragment_home_button_constructions_text"
+                android:background="@drawable/ic_arrow_right_blue" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fragment_home_button_disturbance_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/two_grid_unit"
+            android:background="@drawable/rounded_corner_blue"
+            android:padding="@dimen/two_grid_unit">
+
+            <ImageView
+                android:id="@+id/fragment_home_button_disturbance_icon"
+                android:layout_width="@dimen/four_grid_unit"
+                android:layout_height="@dimen/four_grid_unit"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_tab_disturbance"
+                android:backgroundTint="@color/icon_blue" />
+
+            <TextView
+                android:id="@+id/fragment_home_button_disturbance_text"
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/four_grid_unit"
+                android:layout_marginStart="@dimen/one_grid_unit"
+                android:layout_toEndOf="@+id/fragment_home_button_disturbance_icon"
+                android:gravity="center"
+                android:text="@string/fragment_home_button_disturbance_text"
+                android:textColor="@color/text_blue"
+                android:textSize="@dimen/text_size_xsmall" />
+
+            <ImageView
+                android:layout_width="@dimen/two_grid_unit"
+                android:layout_height="@dimen/two_grid_unit"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/one_grid_unit"
+                android:layout_toEndOf="@+id/fragment_home_button_disturbance_text"
+                android:background="@drawable/ic_arrow_right_blue" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fragment_home_button_report_disturbance_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/two_grid_unit"
+            android:background="@drawable/rounded_corner_dotted_red"
+            android:padding="@dimen/two_grid_unit">
+
+            <ImageView
+                android:id="@+id/fragment_home_button_report_disturbance_icon"
+                android:layout_width="@dimen/four_grid_unit"
+                android:layout_height="@dimen/four_grid_unit"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_tab_disturbance"
+                android:backgroundTint="@color/icon_red" />
+
+            <TextView
+                android:id="@+id/fragment_home_button_report_disturbance_text"
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/four_grid_unit"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/one_grid_unit"
+                android:layout_toEndOf="@+id/fragment_home_button_report_disturbance_icon"
+                android:gravity="center"
+                android:text="@string/report_disturbance"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/text_size_xsmall" />
+
+            <ImageView
+                android:layout_width="@dimen/two_grid_unit"
+                android:layout_height="@dimen/two_grid_unit"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/one_grid_unit"
+                android:layout_toEndOf="@+id/fragment_home_button_report_disturbance_text"
+                android:background="@drawable/ic_arrow_right_blue"
+                android:backgroundTint="@color/icon_red" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fragment_home_button_job_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/two_grid_unit"
+            android:background="@drawable/rounded_corner_solid_blue"
+            android:padding="@dimen/two_grid_unit">
+
+            <TextView
+                android:id="@+id/fragment_home_button_job_title"
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="@string/fragment_home_button_job_offer_title"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/fragment_home_button_job_title"
+                android:layout_marginTop="@dimen/half_grid_unit"
+                android:layout_toStartOf="@+id/fragment_home_button_job_arrow"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="6dp"
+                android:text="@string/fragment_home_button_job_offer_text"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_size_xsmall" />
+
+            <FrameLayout
+                android:id="@+id/fragment_home_button_job_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/rounded_corner_white">
+
+                <View
+                    android:layout_width="@dimen/two_grid_unit"
+                    android:layout_height="@dimen/two_grid_unit"
+                    android:layout_margin="@dimen/quarter_grid_unit"
+                    android:background="@drawable/ic_arrow_right_blue" />
+            </FrameLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

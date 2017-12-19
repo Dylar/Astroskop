@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/AppTheme.MediumFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="@dimen/two_grid_unit"
+        android:text="@string/fragment_report_form_2_header"
+        android:textColor="@color/text_gray_darker"
+        android:textSize="@dimen/text_size_normal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="@dimen/two_grid_unit"
+        android:textColor="@color/text_gray"
+        android:text="@string/fragment_report_form_2_header_text"
+        android:textSize="@dimen/text_size_xsmall" />
+
+    <TextView
+        style="@style/AppTheme.MediumFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/two_grid_unit"
+        android:paddingRight="@dimen/two_grid_unit"
+        android:text="@string/fragment_report_form_2_search_street_header"
+        android:textColor="@color/text_gray_darker"
+        android:textSize="@dimen/text_size_xsmall" />
+
+    <TextView
+        android:id="@+id/fragment_report_form_2_search_street"
+        style="@style/AppTheme.MediumFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/two_grid_unit"
+        android:layout_marginStart="@dimen/two_grid_unit"
+        android:layout_marginTop="@dimen/one_grid_unit"
+        android:background="@drawable/rounded_frame_gray"
+        android:gravity="center_vertical"
+        android:padding="@dimen/two_grid_unit"
+        android:textColor="@color/text_gray_darker"
+        android:textSize="@dimen/text_size_xsmall" />
+
+    <RelativeLayout
+        android:id="@+id/fragment_report_form_2_street_error_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/two_grid_unit"
+        android:layout_marginRight="@dimen/two_grid_unit"
+        android:layout_marginTop="@dimen/minus_three_grid_unit"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment_report_form_2_street_error_arrow"
+            android:background="@drawable/rounded_corner_solid_red"
+            android:padding="@dimen/two_grid_unit"
+            android:text="@string/fragment_report_form_1_location_details_error"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_size_xsmall" />
+
+        <View
+            android:id="@+id/fragment_report_form_2_street_error_arrow"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="@dimen/one_grid_unit"
+            android:background="@drawable/triangle_red" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_report_form_2_search_number_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/two_grid_unit">
+
+        <TextView
+            android:id="@+id/fragment_report_form_2_search_number_header"
+            style="@style/AppTheme.MediumFont"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/two_grid_unit"
+            android:paddingRight="@dimen/two_grid_unit"
+            android:text="@string/fragment_report_form_2_search_number_header"
+            android:textColor="@color/text_gray_darker"
+            android:textSize="@dimen/text_size_xsmall" />
+
+        <AutoCompleteTextView
+            android:id="@+id/fragment_report_form_2_search_number"
+            style="@style/AppTheme.MediumFont"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment_report_form_2_search_number_header"
+            android:layout_marginEnd="@dimen/two_grid_unit"
+            android:layout_marginStart="@dimen/two_grid_unit"
+            android:layout_marginTop="@dimen/one_grid_unit"
+            android:background="@drawable/rounded_frame_gray"
+            android:gravity="center_vertical"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="@dimen/two_grid_unit"
+            android:textColor="@color/text_gray_darker"
+            android:textSize="@dimen/text_size_xsmall" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_report_form_2_number_error_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/two_grid_unit"
+        android:layout_marginRight="@dimen/two_grid_unit"
+        android:layout_marginTop="@dimen/minus_three_grid_unit"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment_report_form_2_number_error_arrow"
+            android:background="@drawable/rounded_corner_solid_red"
+            android:padding="@dimen/two_grid_unit"
+            android:text="@string/fragment_report_form_1_location_details_error"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_size_xsmall" />
+
+        <View
+            android:id="@+id/fragment_report_form_2_number_error_arrow"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="@dimen/one_grid_unit"
+            android:background="@drawable/triangle_red" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_report_form_2_search_plz_city_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/two_grid_unit"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/two_grid_unit"
+            android:layout_weight="40">
+
+            <TextView
+                android:id="@+id/fragment_report_form_2_search_plz_header"
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/two_grid_unit"
+                android:paddingRight="@dimen/two_grid_unit"
+                android:text="@string/fragment_report_form_2_search_plz_header"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="@dimen/text_size_xsmall" />
+
+            <EditText
+                android:id="@+id/fragment_report_form_2_search_plz"
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fragment_report_form_2_search_plz_header"
+                android:layout_marginEnd="@dimen/two_grid_unit"
+                android:layout_marginStart="@dimen/two_grid_unit"
+                android:layout_marginTop="@dimen/one_grid_unit"
+                android:background="@drawable/rounded_frame_gray"
+                android:gravity="center_vertical"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLines="1"
+                android:padding="@dimen/two_grid_unit"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="@dimen/text_size_xsmall" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/two_grid_unit"
+            android:layout_weight="60">
+
+            <TextView
+                android:id="@+id/fragment_report_form_2_search_city_header"
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/two_grid_unit"
+                android:paddingRight="@dimen/two_grid_unit"
+                android:text="@string/fragment_report_form_2_search_city_header"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="@dimen/text_size_xsmall" />
+
+            <EditText
+                android:id="@+id/fragment_report_form_2_search_city"
+                style="@style/AppTheme.MediumFont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fragment_report_form_2_search_city_header"
+                android:layout_marginEnd="@dimen/two_grid_unit"
+                android:layout_marginStart="@dimen/two_grid_unit"
+                android:layout_marginTop="@dimen/one_grid_unit"
+                android:background="@drawable/rounded_frame_gray"
+                android:gravity="center_vertical"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLines="1"
+                android:padding="@dimen/two_grid_unit"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="@dimen/text_size_xsmall" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_report_form_2_plz_error_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/two_grid_unit"
+        android:layout_marginRight="@dimen/two_grid_unit"
+        android:layout_marginTop="@dimen/minus_three_grid_unit"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment_report_form_2_plz_error_arrow"
+            android:background="@drawable/rounded_corner_solid_red"
+            android:padding="@dimen/two_grid_unit"
+            android:text="@string/fragment_report_form_1_location_details_error"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_size_xsmall" />
+
+        <View
+            android:id="@+id/fragment_report_form_2_plz_error_arrow"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="@dimen/one_grid_unit"
+            android:background="@drawable/triangle_red" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_report_form_2_city_error_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/two_grid_unit"
+        android:layout_marginRight="@dimen/two_grid_unit"
+        android:layout_marginTop="@dimen/minus_three_grid_unit"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment_report_form_2_city_error_arrow"
+            android:background="@drawable/rounded_corner_solid_red"
+            android:padding="@dimen/two_grid_unit"
+            android:text="@string/fragment_report_form_1_location_details_error"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_size_xsmall" />
+
+        <View
+            android:id="@+id/fragment_report_form_2_city_error_arrow"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/one_grid_unit"
+            android:background="@drawable/triangle_red" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_report_button_to_tab3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginBottom="@dimen/four_grid_unit"
+        android:layout_marginEnd="@dimen/two_grid_unit"
+        android:layout_marginTop="@dimen/four_grid_unit"
+        android:background="@drawable/rounded_corner_solid_blue"
+        android:padding="@dimen/one_grid_unit">
+
+        <TextView
+            android:id="@+id/fragment_report_button_to_tab3_text"
+            style="@style/AppTheme.MediumFont"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/four_grid_unit"
+            android:layout_marginStart="@dimen/one_grid_unit"
+            android:gravity="center"
+            android:text="@string/fragment_report_button_to_tab3_text"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_size_xsmall" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="@dimen/two_grid_unit"
+            android:layout_height="@dimen/two_grid_unit"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/one_grid_unit"
+            android:layout_toEndOf="@+id/fragment_report_button_to_tab3_text"
+            android:src="@drawable/ic_arrow_right_blue"
+            android:tint="@color/text_white" />
+
+    </RelativeLayout>
+</LinearLayout>

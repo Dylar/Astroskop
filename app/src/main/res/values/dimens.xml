@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="minus_three_grid_unit">-20dp</dimen>
+
+    <dimen name="quarter_grid_unit">2dp</dimen>
+    <dimen name="half_grid_unit">4dp</dimen>
+    <dimen name="half_and_quarter_grid_unit">6dp</dimen>
+    <dimen name="one_grid_unit">8dp</dimen>
+    <dimen name="one_and_a_half_grid_unit">12dp</dimen>
+    <dimen name="two_grid_unit">16dp</dimen>
+    <dimen name="two_and_a_half_grid_unit">20dp</dimen>
+    <dimen name="three_grid_unit">24dp</dimen>
+    <dimen name="four_grid_unit">32dp</dimen>
+    <dimen name="five_grid_unit">40dp</dimen>
+    <dimen name="six_grid_unit">48dp</dimen>
+    <dimen name="eight_grid_unit">64dp</dimen>
+    <dimen name="ten_grid_unit">80dp</dimen>
+    <dimen name="eleven_grid_unit">88dp</dimen>
+    <dimen name="twelve_grid_unit">96dp</dimen>
+    <dimen name="thirteen_grid_unit">104dp</dimen>
+    <dimen name="fourteen_grid_unit">112dp</dimen>
+    <dimen name="fifteen_grid_unit">120dp</dimen>
+    <dimen name="sixteen_grid_unit">128dp</dimen>
+    <dimen name="eighteen_grid_unit">144dp</dimen>
+    <dimen name="twenty_grid_unit">160dp</dimen>
+    <dimen name="twentytwo_grid_unit">176dp</dimen>
+    <dimen name="twentyfour_grid_unit">192dp</dimen>
+    <!--<dimen name="twelve_grid_unit"dp</dimen>-->
+
+    <dimen name="text_size_xlarge">34sp</dimen>
+    <dimen name="text_size_large">32sp</dimen>
+    <dimen name="text_size_big">28sp</dimen>
+    <dimen name="text_size_normal">22sp</dimen>
+    <dimen name="text_size_small">18sp</dimen>
+    <dimen name="text_size_xsmall">16sp</dimen>
+    <dimen name="text_size_xxsmall">14sp</dimen>
+    <dimen name="text_size_xxxsmall">12sp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+</resources>

@@ -1,0 +1,68 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@color/background_white</item>
+
+        <item name="displayOptions">showHome|useLogo</item>
+        <item name="homeAsUpIndicator">@null</item>
+        <item name="android:homeAsUpIndicator">@null</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.Toast">
+        <item name="android:background">@color/blue</item>
+        <item name="android:layout_marginBottom">@dimen/two_grid_unit</item>
+        <item name="android:paddingBottom">@dimen/one_grid_unit</item>
+        <item name="android:paddingLeft">@dimen/one_grid_unit</item>
+        <item name="android:paddingRight">@dimen/one_grid_unit</item>
+        <item name="android:paddingTop">@dimen/one_grid_unit</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="dialogStyle" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:background">@color/background_gray</item>
+        <item name="android:textColor">@color/text_blue</item>
+        <item name="android:textColorPrimary">@color/text_gray_darker</item>
+    </style>
+
+    <style name="AppTheme.MenuButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/four_grid_unit</item>
+        <item name="android:layout_marginStart">@dimen/one_grid_unit</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/text_gray_darker</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="AppTheme.MenuButtonArrow">
+        <item name="android:layout_width">@dimen/two_grid_unit</item>
+        <item name="android:layout_height">@dimen/two_grid_unit</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginStart">@dimen/one_grid_unit</item>
+        <item name="android:background">@drawable/ic_arrow_right_blue</item>
+    </style>
+
+    <style name="AppTheme.Underline">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/underline</item>
+    </style>
+
+    <style name="AppTheme.MediumFont">
+        <item name="fontPath">fonts/NeoTechStd-Medium.otf</item>
+    </style>
+</resources>

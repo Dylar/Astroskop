@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/two_grid_unit">
+
+    <TextView
+        style="@style/AppTheme.MediumFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/fragment_report_sent_header"
+        android:textColor="@color/text_gray_darker"
+        android:textSize="@dimen/text_size_big" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/four_grid_unit"
+        android:text="@string/fragment_report_sent_text"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/text_size_small" />
+
+
+    <RelativeLayout
+        android:id="@+id/fragment_report_sent_text_button_back_to_summary_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginBottom="@dimen/four_grid_unit"
+        android:layout_marginEnd="@dimen/two_grid_unit"
+        android:layout_marginTop="@dimen/four_grid_unit"
+        android:background="@drawable/rounded_corner_solid_blue"
+        android:padding="@dimen/one_grid_unit">
+
+        <TextView
+            android:id="@+id/fragment_report_sent_text_button_back_to_summary_text"
+            style="@style/AppTheme.MediumFont"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/four_grid_unit"
+            android:layout_marginStart="@dimen/one_grid_unit"
+            android:gravity="center"
+            android:text="@string/fragment_report_sent_button"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_size_xsmall" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="@dimen/two_grid_unit"
+            android:layout_height="@dimen/two_grid_unit"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/one_grid_unit"
+            android:layout_toEndOf="@+id/fragment_report_sent_text_button_back_to_summary_text"
+            android:src="@drawable/ic_arrow_right_blue"
+            android:tint="@color/text_white" />
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,135 @@
+apply plugin: 'com.android.application'
+apply plugin: 'de.felixschulze.gradle.hockeyapp'
+apply from: '../quality/quality.gradle'
+apply plugin: 'io.objectbox'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "26.0.3"
+    defaultConfig {
+        multiDexEnabled true
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode System.getenv("CI_PIPELINE_ID") as Integer ?: 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('keystore/keystore.jks')
+            storePassword System.getenv("STORE_PASSWORD")
+            keyAlias System.getenv("KEY_ALIAS")
+            keyPassword System.getenv("KEY_PASSWORD")
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            android.applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    outputFileName = "${variant.name}-${variant.versionName}.apk"
+                }
+            }
+
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    flavorDimensions("app")
+    productFlavors {
+        dev {
+            dimension = "app"
+            applicationId "dev.de.bitb.astroskop"
+//            buildConfigField 'String', 'HOCKEY_APP_ID', '"c3dc6ce29eef41b08ec2f618567d2a49"'
+            buildConfigField 'Boolean', 'SHOW_VERSION', 'true'
+        }
+
+        prod {
+            dimension = "app"
+            applicationId "de.bitb.astroskop"
+//            buildConfigField 'String', 'HOCKEY_APP_ID', '"32eb1fd5df4245af879c44038b630931"'
+            buildConfigField 'Boolean', 'SHOW_VERSION', 'false'
+        }
+    }
+}
+//hockeyapp {
+//    apiToken = "not_required"
+//    releaseType = 0 // alpha
+//    notify = 0
+//    status = 2
+//    teams = 9235
+//    notesType = 1
+//}
+//
+//task setHockeyappMessage << {
+//    def gitLastCommitMessage = 'git --no-pager log -1 --pretty=%B'.execute([], project.rootDir).text
+//    hockeyapp.notes = "${gitLastCommitMessage}"
+//}
+//
+//task setDevReleaseApiToken << {
+//    hockeyapp.apiToken = "0bdfe99bee9f4750bd9b61b48622c57e"
+//}
+//
+//task setProdReleaseApiToken << {
+//    hockeyapp.apiToken = "5b59c54a43804c65bd39d8744119badd"
+//}
+//
+//tasks.whenTaskAdded { task ->
+//    task.dependsOn 'setHockeyappMessage'
+//
+//   if (task.name == 'uploadDevReleaseToHockeyApp') {
+//        task.dependsOn 'setDevReleaseApiToken'
+//    } else if (task.name == 'uploadProdReleaseToHockeyApp') {
+//        task.dependsOn 'setProdReleaseApiToken'
+//    }
+//}
+
+dependencies {
+
+    compile "io.objectbox:objectbox-android:$objectboxVersion"
+    annotationProcessor "io.objectbox:objectbox-processor:$objectboxVersion"
+//    debugCompile "io.objectbox:objectbox-android-objectbrowser:$objectboxVersion"
+//    releaseCompile "io.objectbox:objectbox-android:$objectboxVersion"
+
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+
+    compile 'io.reactivex.rxjava2:rxjava:2.1.6'
+    compile group: 'joda-time', name: 'joda-time', version: '2.9.9'
+
+    compile 'com.google.dagger:dagger:2.11'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    provided 'org.projectlombok:lombok:1.16.18'
+    annotationProcessor "org.projectlombok:lombok:1.16.18"
+
+    compile 'uk.co.chrisjenx:calligraphy:2.3.0'
+    compile 'com.aurelhubert:ahbottomnavigation:2.1.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.android.support:design:27.0.2'
+    compile 'com.android.support:cardview-v7:27.0.2'
+    compile 'com.android.support:recyclerview-v7:27.0.2'
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+
+    compile 'net.hockeyapp.android:HockeySDK:4.1.5'
+    compile 'com.facebook.stetho:stetho:1.5.0'
+    compile 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+    compile(name:'etracker-app-control', ext:'aar')
+}
