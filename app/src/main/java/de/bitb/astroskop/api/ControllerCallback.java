@@ -1,4 +1,4 @@
-package de.bornholdtlee.astroskop.api;
+package de.bitb.astroskop.api;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package de.bornholdtlee.astroskop.ui.report.form;
+package de.bitb.astroskop.ui.report.form;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,13 +14,13 @@ import android.widget.RadioGroup;
 import butterknife.BindView;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
-import de.bornholdtlee.astroskop.enums.ReportDetails;
-import de.bornholdtlee.astroskop.enums.ReportLocation;
-import de.bornholdtlee.astroskop.ui.report.ReportTabBaseFragment;
+import de.bitb.astroskop.enums.ReportDetails;
+import de.bitb.astroskop.enums.ReportLocation;
+import de.bitb.astroskop.ui.report.ReportTabBaseFragment;
 import de.bornholdtlee.snh.R;
-import de.bornholdtlee.astroskop.model.Report;
+import de.bitb.astroskop.model.Report;
 
-import static de.bornholdtlee.astroskop.ui.report.ReportPresenter.TAB_ID_1;
+import static de.bitb.astroskop.ui.report.ReportPresenter.TAB_ID_1;
 
 public class ReportFormOneFragment extends ReportTabBaseFragment {
 

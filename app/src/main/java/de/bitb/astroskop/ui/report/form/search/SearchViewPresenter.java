@@ -1,4 +1,4 @@
-package de.bornholdtlee.astroskop.ui.report.form.search;
+package de.bitb.astroskop.ui.report.form.search;
 
 
 import java.util.ArrayList;
@@ -6,15 +6,15 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import de.bornholdtlee.astroskop.controller.ConstructionsController;
-import de.bornholdtlee.astroskop.controller.DisturbanceController;
-import de.bornholdtlee.astroskop.injection.IInjection;
-import de.bornholdtlee.astroskop.injection.components.AppComponent;
-import de.bornholdtlee.astroskop.model.StreetSearchResult;
-import de.bornholdtlee.astroskop.utils.NetworkUtils;
+import de.bitb.astroskop.controller.ConstructionsController;
+import de.bitb.astroskop.controller.DisturbanceController;
+import de.bitb.astroskop.injection.IInjection;
+import de.bitb.astroskop.injection.components.AppComponent;
+import de.bitb.astroskop.model.StreetSearchResult;
+import de.bitb.astroskop.utils.NetworkUtils;
 import de.bornholdtlee.snh.R;
-import de.bornholdtlee.astroskop.SNHApplication;
-import de.bornholdtlee.astroskop.ui.base.BasePresenter;
+import de.bitb.astroskop.SNHApplication;
+import de.bitb.astroskop.ui.base.BasePresenter;
 
 public class SearchViewPresenter extends BasePresenter<ISearchView> implements IInjection {
 

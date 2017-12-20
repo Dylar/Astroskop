@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="de.bornholdtlee.snh">
+    package="de.bitb.astroskop">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <application
-        android:name="de.bornholdtlee.snh.SNHApplication"
+        android:name="de.bitb.astroskop.SNHApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
         <activity
-            android:name="de.bornholdtlee.snh.ui.IntroActivity"
+            android:name="de.bitb.astroskop.ui.IntroActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,25 +22,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="de.bornholdtlee.snh.ui.PrivacyActivity"
+            android:name="de.bitb.astroskop.ui.PrivacyActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="de.bornholdtlee.snh.ui.menu.MenuActivity"
+            android:name="de.bitb.astroskop.ui.menu.MenuActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="de.bornholdtlee.snh.ui.main.MainActivity"
+            android:name="de.bitb.astroskop.ui.main.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="de.bornholdtlee.snh.ui.report.ReportActivity"
+            android:name="de.bitb.astroskop.ui.report.ReportActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="de.bornholdtlee.snh.ui.report.form.search.ReportFormSearchActivity"
+            android:name="de.bitb.astroskop.ui.report.form.search.ReportFormSearchActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="de.bornholdtlee.snh.ui.main.analysis.data.AnalysisFilterActivity"
+            android:name="de.bitb.astroskop.ui.main.analysis.data.AnalysisFilterActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="de.bornholdtlee.snh.ui.main.analysis.data.AnalysisInfoActivity"
+            android:name="de.bitb.astroskop.ui.main.analysis.data.AnalysisInfoActivity"
             android:screenOrientation="portrait" />
 
     </application>

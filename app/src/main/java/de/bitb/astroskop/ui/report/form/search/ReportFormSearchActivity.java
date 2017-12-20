@@ -1,4 +1,4 @@
-package de.bornholdtlee.astroskop.ui.report.form.search;
+package de.bitb.astroskop.ui.report.form.search;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,14 +14,14 @@ import android.widget.EditText;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import de.bornholdtlee.astroskop.injection.IBind;
-import de.bornholdtlee.astroskop.injection.IInjection;
-import de.bornholdtlee.astroskop.injection.components.AppComponent;
-import de.bornholdtlee.astroskop.ui.base.BaseActivity;
+import de.bitb.astroskop.injection.IBind;
+import de.bitb.astroskop.injection.IInjection;
+import de.bitb.astroskop.injection.components.AppComponent;
+import de.bitb.astroskop.ui.base.BaseActivity;
 import de.bornholdtlee.snh.R;
-import de.bornholdtlee.astroskop.SNHApplication;
-import de.bornholdtlee.astroskop.enums.AnimationType;
-import de.bornholdtlee.astroskop.ui.base.SimpleBaseActivity;
+import de.bitb.astroskop.SNHApplication;
+import de.bitb.astroskop.enums.AnimationType;
+import de.bitb.astroskop.ui.base.SimpleBaseActivity;
 
 public class ReportFormSearchActivity extends SimpleBaseActivity implements ISearchView, TextWatcher, IInjection, IBind {
 

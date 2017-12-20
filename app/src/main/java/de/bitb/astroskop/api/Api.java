@@ -1,14 +1,14 @@
-package de.bornholdtlee.astroskop.api;
+package de.bitb.astroskop.api;
 
 import java.util.List;
 
-import de.bornholdtlee.astroskop.api.dto.DisturbanceDTOList;
-import de.bornholdtlee.astroskop.api.dto.SearchNumberDTO;
-import de.bornholdtlee.astroskop.model.Construction;
-import de.bornholdtlee.astroskop.model.DistrictPower;
-import de.bornholdtlee.astroskop.model.PowerGraph;
-import de.bornholdtlee.astroskop.model.Report;
-import de.bornholdtlee.astroskop.model.StreetSearchResult;
+import de.bitb.astroskop.api.dto.DisturbanceDTOList;
+import de.bitb.astroskop.api.dto.SearchNumberDTO;
+import de.bitb.astroskop.model.Construction;
+import de.bitb.astroskop.model.DistrictPower;
+import de.bitb.astroskop.model.PowerGraph;
+import de.bitb.astroskop.model.Report;
+import de.bitb.astroskop.model.StreetSearchResult;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;

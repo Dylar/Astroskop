@@ -1,7 +1,7 @@
-package de.bornholdtlee.astroskop.ui.report;
+package de.bitb.astroskop.ui.report;
 
 
-import de.bornholdtlee.astroskop.ui.base.IBaseView;
+import de.bitb.astroskop.ui.base.IBaseView;
 
 public interface IReportView extends IBaseView {
 

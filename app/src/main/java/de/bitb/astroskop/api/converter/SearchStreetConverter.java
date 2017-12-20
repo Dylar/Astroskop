@@ -1,4 +1,4 @@
-package de.bornholdtlee.astroskop.api.converter;
+package de.bitb.astroskop.api.converter;
 
 
 import com.google.gson.Gson;
@@ -15,9 +15,9 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.bornholdtlee.astroskop.api.dto.SearchStreetDTO;
-import de.bornholdtlee.astroskop.model.StreetSearchResult;
-import de.bornholdtlee.astroskop.helper.Logger;
+import de.bitb.astroskop.api.dto.SearchStreetDTO;
+import de.bitb.astroskop.model.StreetSearchResult;
+import de.bitb.astroskop.helper.Logger;
 
 public class SearchStreetConverter implements JsonDeserializer<SearchStreetDTO> {
 

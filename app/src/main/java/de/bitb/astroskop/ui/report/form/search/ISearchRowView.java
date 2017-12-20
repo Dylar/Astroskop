@@ -1,7 +1,7 @@
-package de.bornholdtlee.astroskop.ui.report.form.search;
+package de.bitb.astroskop.ui.report.form.search;
 
 
-import de.bornholdtlee.astroskop.model.StreetSearchResult;
+import de.bitb.astroskop.model.StreetSearchResult;
 
 public interface ISearchRowView {
 

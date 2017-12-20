@@ -1,4 +1,4 @@
-package de.bornholdtlee.astroskop.ui.report;
+package de.bitb.astroskop.ui.report;
 
 
 import android.content.Context;
@@ -15,18 +15,18 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import de.bornholdtlee.astroskop.injection.IInjection;
-import de.bornholdtlee.astroskop.injection.components.AppComponent;
-import de.bornholdtlee.astroskop.ui.report.form.IReportTabView;
-import de.bornholdtlee.astroskop.utils.CommonUtils;
+import de.bitb.astroskop.injection.IInjection;
+import de.bitb.astroskop.injection.components.AppComponent;
+import de.bitb.astroskop.ui.report.form.IReportTabView;
+import de.bitb.astroskop.utils.CommonUtils;
 import de.bornholdtlee.snh.R;
-import de.bornholdtlee.astroskop.model.Report;
+import de.bitb.astroskop.model.Report;
 import lombok.Getter;
 
-import static de.bornholdtlee.astroskop.ui.report.ReportPresenter.TAB_ID_1;
-import static de.bornholdtlee.astroskop.ui.report.ReportPresenter.TAB_ID_2;
-import static de.bornholdtlee.astroskop.ui.report.ReportPresenter.TAB_ID_3;
-import static de.bornholdtlee.astroskop.ui.report.ReportPresenter.TAB_ID_4;
+import static de.bitb.astroskop.ui.report.ReportPresenter.TAB_ID_1;
+import static de.bitb.astroskop.ui.report.ReportPresenter.TAB_ID_2;
+import static de.bitb.astroskop.ui.report.ReportPresenter.TAB_ID_3;
+import static de.bitb.astroskop.ui.report.ReportPresenter.TAB_ID_4;
 
 public abstract class ReportTabBaseFragment extends ReportBaseFragment implements IReportTabView, IInjection {
 

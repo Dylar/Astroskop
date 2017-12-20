@@ -1,4 +1,4 @@
-package de.bornholdtlee.astroskop.ui.report.form;
+package de.bitb.astroskop.ui.report.form;
 
 import android.text.TextUtils;
 import android.view.View;
@@ -6,15 +6,15 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import de.bornholdtlee.astroskop.enums.ReportLocation;
-import de.bornholdtlee.astroskop.ui.report.ReportTabBaseFragment;
+import de.bitb.astroskop.enums.ReportLocation;
+import de.bitb.astroskop.ui.report.ReportTabBaseFragment;
 import de.bornholdtlee.snh.R;
-import de.bornholdtlee.astroskop.model.Report;
+import de.bitb.astroskop.model.Report;
 
-import static de.bornholdtlee.astroskop.ui.report.ReportPresenter.TAB_ID_4;
-import static de.bornholdtlee.astroskop.ui.report.form.ReportFormThreeFragment.TITLE_COMPANY;
-import static de.bornholdtlee.astroskop.ui.report.form.ReportFormThreeFragment.TITLE_MAN;
-import static de.bornholdtlee.astroskop.ui.report.form.ReportFormThreeFragment.TITLE_NOMAN;
+import static de.bitb.astroskop.ui.report.ReportPresenter.TAB_ID_4;
+import static de.bitb.astroskop.ui.report.form.ReportFormThreeFragment.TITLE_COMPANY;
+import static de.bitb.astroskop.ui.report.form.ReportFormThreeFragment.TITLE_MAN;
+import static de.bitb.astroskop.ui.report.form.ReportFormThreeFragment.TITLE_NOMAN;
 
 public class ReportFormFourFragment extends ReportTabBaseFragment {
 

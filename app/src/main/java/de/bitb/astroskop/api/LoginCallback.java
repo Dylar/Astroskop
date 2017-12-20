@@ -1,4 +1,4 @@
-package de.bornholdtlee.astroskop.api;
+package de.bitb.astroskop.api;
 
 
 public interface LoginCallback {

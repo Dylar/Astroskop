@@ -1,9 +1,9 @@
-package de.bornholdtlee.astroskop.ui.report.form;
+package de.bitb.astroskop.ui.report.form;
 
 import butterknife.OnClick;
-import de.bornholdtlee.astroskop.injection.IBind;
+import de.bitb.astroskop.injection.IBind;
 import de.bornholdtlee.snh.R;
-import de.bornholdtlee.astroskop.ui.report.ReportBaseFragment;
+import de.bitb.astroskop.ui.report.ReportBaseFragment;
 
 public class ReportFormSentFragment extends ReportBaseFragment implements IBind {
 

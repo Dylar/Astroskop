@@ -1,6 +1,6 @@
-package de.bornholdtlee.astroskop.ui.report.form.search;
+package de.bitb.astroskop.ui.report.form.search;
 
-import de.bornholdtlee.astroskop.ui.base.IBaseView;
+import de.bitb.astroskop.ui.base.IBaseView;
 
 public interface ISearchView extends IBaseView {
 
