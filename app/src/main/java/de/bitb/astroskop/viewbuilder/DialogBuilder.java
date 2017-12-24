@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 
-import de.bornholdtlee.snh.R;
+import de.bitb.astroskop.R;
 import lombok.Getter;
 import lombok.Setter;
 

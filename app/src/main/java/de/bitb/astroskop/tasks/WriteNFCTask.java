@@ -1,25 +1,24 @@
-package de.bornholdtlee.dbsystel.tasks;
+package de.bitb.astroskop.tasks;
 
 
 import android.content.Intent;
-import android.nfc.FormatException;
 import android.os.AsyncTask;
 
 import java.io.IOException;
 
-import de.bornholdtlee.dbsystel.exceptions.NFCNotEnoughSpaceException;
-import de.bornholdtlee.dbsystel.exceptions.NFCReadOnlyException;
-import de.bornholdtlee.dbsystel.exceptions.NFCTagIncompatibleException;
-import de.bornholdtlee.dbsystel.ui.device.write.nfc.WriteNFCViewPresenter;
-import de.bornholdtlee.dbsystel.utils.NFCUtils;
+import de.bitb.astroskop.exceptions.NFCNotEnoughSpaceException;
+import de.bitb.astroskop.exceptions.NFCReadOnlyException;
+import de.bitb.astroskop.exceptions.NFCTagIncompatibleException;
+import de.bitb.astroskop.utils.NFCUtils;
+
 
 public class WriteNFCTask extends AsyncTask<Void, Integer, Throwable> {
 
-    private final WriteNFCViewPresenter presenter;
     private final Intent intent;
     private final NFCUtils nfcUtils;
+    private final TaskCallback presenter;
 
-    public WriteNFCTask(WriteNFCViewPresenter presenter, NFCUtils nfcUtils, Intent intent) {
+    public WriteNFCTask(TaskCallback presenter, NFCUtils nfcUtils, Intent intent) {
         super();
         this.presenter = presenter;
         this.intent = intent;
@@ -40,17 +39,17 @@ public class WriteNFCTask extends AsyncTask<Void, Integer, Throwable> {
     protected void onPostExecute(Throwable exception) {
         super.onPostExecute(exception);
         boolean success = false;
-        if (exception instanceof NFCNotEnoughSpaceException) {
-            presenter.getView().showNFCNotEnoughSpaceError();
-        } else if (exception instanceof NFCTagIncompatibleException) {
-            presenter.getView().showNFCTagIncompatibleError();
-        } else if (exception instanceof NFCReadOnlyException) {
-            presenter.getView().showNFCReadOnlyError();
-        } else if (exception instanceof FormatException || exception instanceof IOException) {
-            presenter.getView().showNFCIOError();
-        } else {
-            success = true;
-        }
+//        if (exception instanceof NFCNotEnoughSpaceException) {
+//            presenter.getView().showNFCNotEnoughSpaceError();
+//        } else if (exception instanceof NFCTagIncompatibleException) {
+//            presenter.getView().showNFCTagIncompatibleError();
+//        } else if (exception instanceof NFCReadOnlyException) {
+//            presenter.getView().showNFCReadOnlyError();
+//        } else if (exception instanceof FormatException || exception instanceof IOException) {
+//            presenter.getView().showNFCIOError();
+//        } else {
+//            success = true;
+//        }
         presenter.onTaskCompleted(success);
     }
 

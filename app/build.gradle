@@ -131,5 +131,9 @@ dependencies {
     compile 'net.hockeyapp.android:HockeySDK:4.1.5'
     compile 'com.facebook.stetho:stetho:1.5.0'
     compile 'com.facebook.stetho:stetho-okhttp3:1.5.0'
-    compile(name:'etracker-app-control', ext:'aar')
+
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+//    compile 'com.frosquivel:magicalcamera:5.0.3'
 }

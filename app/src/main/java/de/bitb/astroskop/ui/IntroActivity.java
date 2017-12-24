@@ -9,27 +9,17 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import java.util.List;
-
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import de.bitb.astroskop.controller.ConstructionsController;
-import de.bitb.astroskop.controller.DisturbanceController;
-import de.bitb.astroskop.controller.PowerController;
+import de.bitb.astroskop.R;
+import de.bitb.astroskop.injection.IBind;
 import de.bitb.astroskop.injection.IInjection;
 import de.bitb.astroskop.injection.components.AppComponent;
-import de.bitb.astroskop.model.DistrictPower;
-import de.bitb.astroskop.model.Disturbance;
-import de.bitb.astroskop.model.StreetSearchResult;
 import de.bitb.astroskop.ui.base.BaseActivity;
-import de.bitb.astroskop.utils.SharedPreferencesUtils;
-import de.bornholdtlee.snh.R;
-import de.bitb.astroskop.api.ControllerCallback;
-import de.bitb.astroskop.injection.IBind;
-import de.bitb.astroskop.model.Construction;
 import de.bitb.astroskop.ui.main.MainActivity;
+import de.bitb.astroskop.utils.SharedPreferencesUtils;
 import de.bitb.astroskop.viewbuilder.DialogBuilder;
 
 public class IntroActivity extends BaseActivity implements IInjection, IBind {
@@ -48,21 +38,6 @@ public class IntroActivity extends BaseActivity implements IInjection, IBind {
     @Inject
     SharedPreferencesUtils sharedPreferencesUtils;
 
-    @Inject
-    ConstructionsController constructionsController;
-
-    @Inject
-    DisturbanceController disturbanceController;
-
-    @Inject
-    PowerController powerController;
-
-    private boolean constructionsLoaded;
-    private boolean disturbancesLoaded;
-    private boolean graphLoaded;
-    private boolean powerRangerSummoned;
-    private boolean streetsLoaded;
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,138 +45,23 @@ public class IntroActivity extends BaseActivity implements IInjection, IBind {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(getContext(), R.color.background_gray));
 
-        getTracker().trackScreenView(getString(R.string.tracker_splash));
         long updateStarted = System.currentTimeMillis();
-        loadConstructions(updateStarted);
-        loadDisturbance(updateStarted);
-        loadStreets(updateStarted);
-        loadGraph(updateStarted);
-        summonPowerRanger(updateStarted);
-    }
-
-    private void loadStreets(long updateStarted) {
-        disturbanceController.loadAllStreetSearchResults(new ControllerCallback<StreetSearchResult>() {
-            @Override
-            public void onSuccess(List<StreetSearchResult> response) {
-                loadMore();
-            }
-
-            @Override
-            public void onSuccess(StreetSearchResult response) {
-                loadMore();
-            }
-
-            @Override
-            public void onFailure() {
-                loadMore();
-            }
-
-            private void loadMore() {
-                streetsLoaded = true;
-                startRemainingTimer(updateStarted);
-            }
-        });
-    }
-
-    private void summonPowerRanger(long updateStarted) {
-        powerController.loadDistrictPower(new ControllerCallback<DistrictPower>() {
-            @Override
-            public void onSuccess(List<DistrictPower> response) {
-                onSuccess(response.get(0));
-            }
-
-            @Override
-            public void onSuccess(DistrictPower response) {
-                powerRangerSummoned = true;
-                startRemainingTimer(updateStarted);
-            }
-
-            @Override
-            public void onFailure() {
-                powerRangerSummoned = true;
-                startRemainingTimer(updateStarted);
-            }
-        });
-    }
-
-    private void loadGraph(long updateStarted) {
-        powerController.loadGraph(new ControllerCallback<Integer>() {
-            @Override
-            public void onSuccess(List<Integer> response) {
-                onSuccess(response.get(0));
-            }
-
-            @Override
-            public void onSuccess(Integer response) {
-                graphLoaded = true;
-                startRemainingTimer(updateStarted);
-            }
-
-            @Override
-            public void onFailure() {
-                graphLoaded = true;
-                startRemainingTimer(updateStarted);
-            }
-        });
-    }
-
-    private void loadConstructions(long updateStarted) {
-        constructionsController.loadAllConstructions(new ControllerCallback<Construction>() {
-            @Override
-            public void onSuccess(List<Construction> response) {
-                constructionsLoaded = true;
-                startRemainingTimer(updateStarted);
-            }
-
-            @Override
-            public void onSuccess(Construction response) {
-                //nothing
-            }
-
-            @Override
-            public void onFailure() {
-                constructionsLoaded = true;
-                startRemainingTimer(updateStarted);
-            }
-        });
-    }
-
-    private void loadDisturbance(long updateStarted) {
-        disturbanceController.loadAllDisturbance(new ControllerCallback<Disturbance>() {
-            @Override
-            public void onSuccess(List<Disturbance> response) {
-                disturbancesLoaded = true;
-                startRemainingTimer(updateStarted);
-            }
-
-            @Override
-            public void onSuccess(Disturbance response) {
-                //nothing
-            }
-
-            @Override
-            public void onFailure() {
-                disturbancesLoaded = true;
-                startRemainingTimer(updateStarted);
-            }
-        });
+        startRemainingTimer(updateStarted);
     }
 
     private void startRemainingTimer(long updateStarted) {
-        if (constructionsLoaded && disturbancesLoaded && graphLoaded && powerRangerSummoned && streetsLoaded) {
-            long usedTime = System.currentTimeMillis() - updateStarted;
-            int remainingDelay = (int) (SPLASHSCREEN_MIN_DELAY - (usedTime / 1000));
-            new Handler().postDelayed(() -> {
-                if (isFirstStarted()) {
-                    Window window = getWindow();
-                    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                    window.setStatusBarColor(ContextCompat.getColor(getContext(), R.color.colorPrimaryDark));
-                    splashScreen.setVisibility(View.GONE);
-                } else {
-                    navigateToMainScreen();
-                }
-            }, remainingDelay < 0 ? 1 : remainingDelay);
-        }
+        long usedTime = System.currentTimeMillis() - updateStarted;
+        int remainingDelay = (int) (SPLASHSCREEN_MIN_DELAY - (usedTime / 1000));
+        new Handler().postDelayed(() -> {
+            if (isFirstStarted()) {
+                Window window = getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.setStatusBarColor(ContextCompat.getColor(getContext(), R.color.colorPrimaryDark));
+                splashScreen.setVisibility(View.GONE);
+            } else {
+                navigateToMainScreen();
+            }
+        }, remainingDelay < 0 ? 1 : remainingDelay);
     }
 
     @Override
@@ -228,7 +88,6 @@ public class IntroActivity extends BaseActivity implements IInjection, IBind {
     }
 
     private void openPrivacy() {
-        PrivacyActivity.startActivity(this);
     }
 
     private boolean hasReadPrivacy() {

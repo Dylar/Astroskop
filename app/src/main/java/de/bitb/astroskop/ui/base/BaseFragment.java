@@ -10,23 +10,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.etracker.tracking.Tracker;
-
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
+import de.bitb.astroskop.R;
+import de.bitb.astroskop.enums.AnimationType;
 import de.bitb.astroskop.injection.IBind;
 import de.bitb.astroskop.injection.IInjection;
-import de.bornholdtlee.snh.R;
-import de.bitb.astroskop.enums.AnimationType;
 import de.bitb.astroskop.viewbuilder.ToastBuilder;
-import lombok.Getter;
 
 public abstract class BaseFragment extends Fragment implements IBaseView {
-
-    @Getter
-    @Inject
-    protected Tracker tracker;
 
     @Inject
     protected ToastBuilder toastUtils;

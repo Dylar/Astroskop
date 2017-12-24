@@ -1,4 +1,4 @@
-package de.bornholdtlee.dbsystel.utils;
+package de.bitb.astroskop.utils;
 
 
 import java.io.File;
@@ -9,9 +9,10 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
 
-import de.bornholdtlee.dbsystel.helper.Logger;
+import de.bitb.astroskop.helper.Logger;
 
-import static de.bornholdtlee.dbsystel.Constants.FILE_PATH_JSONS;
+import static de.bitb.astroskop.Constants.FILE_PATH_JSONS;
+
 
 public class FileUtils {
 

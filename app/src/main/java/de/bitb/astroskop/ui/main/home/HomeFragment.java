@@ -8,12 +8,12 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import de.bitb.astroskop.AstroApplication;
+import de.bitb.astroskop.R;
+import de.bitb.astroskop.injection.IBind;
 import de.bitb.astroskop.ui.base.NavigationBaseFragment;
 import de.bitb.astroskop.ui.main.IMainView;
 import de.bitb.astroskop.ui.main.MainActivity;
-import de.bornholdtlee.snh.R;
-import de.bitb.astroskop.SNHApplication;
-import de.bitb.astroskop.injection.IBind;
 
 public class HomeFragment extends NavigationBaseFragment implements IHomeView, IBind {
 
@@ -36,7 +36,7 @@ public class HomeFragment extends NavigationBaseFragment implements IHomeView, I
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        presenter = new HomeViewPresenter((SNHApplication) getActivity().getApplication(), this);
+        presenter = new HomeViewPresenter((AstroApplication) getActivity().getApplication(), this);
     }
 
     @Override
@@ -82,7 +82,6 @@ public class HomeFragment extends NavigationBaseFragment implements IHomeView, I
 
     @OnClick(R.id.fragment_home_button_report_disturbance_container)
     public void onReportDisturbanceClick() {
-        mainView.navigateToReportDisturbanceScreen();
     }
 
     @OnClick(R.id.fragment_home_button_job_container)

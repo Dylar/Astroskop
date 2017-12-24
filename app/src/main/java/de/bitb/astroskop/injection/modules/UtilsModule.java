@@ -8,7 +8,7 @@ import de.bitb.astroskop.utils.DateUtils;
 import de.bitb.astroskop.utils.NetworkUtils;
 import de.bitb.astroskop.utils.SharedPreferencesUtils;
 import de.bitb.astroskop.utils.UiUtils;
-import de.bitb.astroskop.SNHApplication;
+import de.bitb.astroskop.AstroApplication;
 import de.bitb.astroskop.viewbuilder.DialogBuilder;
 import de.bitb.astroskop.viewbuilder.ToastBuilder;
 
@@ -17,13 +17,13 @@ public class UtilsModule {
 
     @Provides
     @ApplicationScope
-    NetworkUtils provideNetworkUtils(SNHApplication context) {
+    NetworkUtils provideNetworkUtils(AstroApplication context) {
         return new NetworkUtils(context);
     }
 
     @Provides
     @ApplicationScope
-    SharedPreferencesUtils provideSharedPreferencesUtils(SNHApplication context) {
+    SharedPreferencesUtils provideSharedPreferencesUtils(AstroApplication context) {
         return new SharedPreferencesUtils(context);
     }
 

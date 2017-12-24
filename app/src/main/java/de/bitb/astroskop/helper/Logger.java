@@ -2,7 +2,7 @@ package de.bitb.astroskop.helper;
 
 import android.util.Log;
 
-import de.bornholdtlee.snh.BuildConfig;
+import de.bitb.astroskop.BuildConfig;
 
 public final class Logger {
 

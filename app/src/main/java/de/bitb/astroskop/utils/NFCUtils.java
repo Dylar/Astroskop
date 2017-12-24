@@ -1,4 +1,4 @@
-package de.bornholdtlee.dbsystel.utils;
+package de.bitb.astroskop.utils;
 
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -24,17 +24,15 @@ import android.text.TextUtils;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
-import de.bornholdtlee.dbsystel.enums.GCPTag;
-import de.bornholdtlee.dbsystel.enums.MountingLocation;
-import de.bornholdtlee.dbsystel.enums.NFCChipType;
-import de.bornholdtlee.dbsystel.exceptions.NFCNotEnoughSpaceException;
-import de.bornholdtlee.dbsystel.exceptions.NFCReadOnlyException;
-import de.bornholdtlee.dbsystel.exceptions.NFCTagIncompatibleException;
-import de.bornholdtlee.dbsystel.exceptions.TechnologyDisabledException;
-import de.bornholdtlee.dbsystel.exceptions.TechnologyNotExistingException;
-import de.bornholdtlee.dbsystel.helper.Logger;
-import de.bornholdtlee.dbsystel.model.ScanResult;
-import de.bornholdtlee.dbsystel.tasks.WriteNFCTask;
+import de.bitb.astroskop.enums.NFCChipType;
+import de.bitb.astroskop.exceptions.NFCNotEnoughSpaceException;
+import de.bitb.astroskop.exceptions.NFCReadOnlyException;
+import de.bitb.astroskop.exceptions.NFCTagIncompatibleException;
+import de.bitb.astroskop.exceptions.TechnologyDisabledException;
+import de.bitb.astroskop.exceptions.TechnologyNotExistingException;
+import de.bitb.astroskop.helper.Logger;
+import de.bitb.astroskop.model.ScanResult;
+import de.bitb.astroskop.tasks.WriteNFCTask;
 
 public class NFCUtils {
 
@@ -58,7 +56,7 @@ public class NFCUtils {
     private static final int PROGRESS_POST_DELAY = 10;
     private static final int PROGRESS_VALUE = 10;
 
-    private static final String KEY_VENDOR_GCP = "vendorGCP";
+    private static final String KEY_NFC_STRING = "vendorGCP";
     private static final String KEY_THING_ID = "thingId";
     private static final String KEY_THING_LOCATION_ID = "thingLocationId";
 
@@ -131,13 +129,11 @@ public class NFCUtils {
         return null;
     }
 
-    public void setupForegroundWriteDispatch(Activity activity, GCPTag gcp, String thingId, MountingLocation side) {
+    public void setupForegroundWriteDispatch(Activity activity, String string) {
         NfcAdapter adapter = NfcAdapter.getDefaultAdapter(activity);
         if (adapter != null) {
             Intent nfcIntent = new Intent(activity, activity.getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            nfcIntent.putExtra(KEY_VENDOR_GCP, String.valueOf(gcp.getGcpId()));
-            nfcIntent.putExtra(KEY_THING_ID, thingId);
-            nfcIntent.putExtra(KEY_THING_LOCATION_ID, side.getLocationId());
+            nfcIntent.putExtra(KEY_NFC_STRING, string);
             PendingIntent pendingIntent = PendingIntent.getActivity(activity, 0, nfcIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
 
@@ -152,7 +148,7 @@ public class NFCUtils {
             NFCTagIncompatibleException,
             IOException,
             InterruptedException {
-        String gcp = intent.getStringExtra(KEY_VENDOR_GCP);
+        String gcp = intent.getStringExtra(KEY_NFC_STRING);
         String thingId = intent.getStringExtra(KEY_THING_ID);
         String thingSide = intent.getStringExtra(KEY_THING_LOCATION_ID);
 

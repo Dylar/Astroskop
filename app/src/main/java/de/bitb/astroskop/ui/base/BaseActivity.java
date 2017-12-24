@@ -17,13 +17,11 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.etracker.tracking.Tracker;
-
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
-import de.bornholdtlee.snh.R;
-import de.bitb.astroskop.SNHApplication;
+import de.bitb.astroskop.AstroApplication;
+import de.bitb.astroskop.R;
 import de.bitb.astroskop.enums.AnimationType;
 import de.bitb.astroskop.injection.IBind;
 import de.bitb.astroskop.injection.IInjection;
@@ -47,9 +45,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Getter
     protected CommonUtils commonUtils;
 
-    @Inject
-    @Getter
-    protected Tracker tracker;
 
     @Getter
     private View baseView;
@@ -96,7 +91,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public AppComponent getAppComponent() {
-        return ((SNHApplication) getApplication()).getAppComponent();
+        return ((AstroApplication) getApplication()).getAppComponent();
     }
 
     public Context getContext() {

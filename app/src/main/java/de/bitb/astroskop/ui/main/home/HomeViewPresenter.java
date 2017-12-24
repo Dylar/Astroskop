@@ -3,19 +3,18 @@ package de.bitb.astroskop.ui.main.home;
 
 import javax.inject.Inject;
 
+import de.bitb.astroskop.AstroApplication;
 import de.bitb.astroskop.injection.IInjection;
 import de.bitb.astroskop.injection.components.AppComponent;
-import de.bitb.astroskop.utils.CommonUtils;
-import de.bornholdtlee.snh.R;
-import de.bitb.astroskop.SNHApplication;
 import de.bitb.astroskop.ui.base.BasePresenter;
+import de.bitb.astroskop.utils.CommonUtils;
 
 public class HomeViewPresenter extends BasePresenter<IHomeView> implements IInjection {
 
     @Inject
     protected CommonUtils commonUtils;
 
-    public HomeViewPresenter(SNHApplication application, IHomeView view) {
+    public HomeViewPresenter(AstroApplication application, IHomeView view) {
         super(application, view);
     }
 
@@ -25,7 +24,6 @@ public class HomeViewPresenter extends BasePresenter<IHomeView> implements IInje
     }
 
     public void jobOfferClicked() {
-        commonUtils.openExternUrl(getContext(), getContext().getString(R.string.url_job_offer));
     }
 
 }

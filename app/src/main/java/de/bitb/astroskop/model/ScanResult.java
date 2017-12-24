@@ -1,8 +1,7 @@
-package de.bornholdtlee.dbsystel.model;
+package de.bitb.astroskop.model;
 
 import java.io.Serializable;
 
-import de.bornholdtlee.dbsystel.enums.DeviceType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,10 +14,8 @@ public class ScanResult implements Serializable {
 
     private String gcp;
     private String deviceId;
-    private DeviceType type;
 
     public ScanResult(String deviceInfo, String deviceType) {
-        type = DeviceType.getByScanType(deviceType);
         setIdAndVendorByDeviceInfo(deviceInfo);
     }
 

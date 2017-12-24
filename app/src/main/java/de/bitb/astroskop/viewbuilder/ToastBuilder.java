@@ -8,9 +8,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import de.bitb.astroskop.R;
 import de.bitb.astroskop.ui.base.BaseActivity;
-import de.bornholdtlee.snh.R;
-
 public final class ToastBuilder {
 
     private void showToast(Context context, String message, int duration) {

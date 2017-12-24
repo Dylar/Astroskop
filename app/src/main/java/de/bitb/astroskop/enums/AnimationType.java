@@ -1,7 +1,7 @@
 package de.bitb.astroskop.enums;
 
 
-import de.bornholdtlee.snh.R;
+import de.bitb.astroskop.R;
 import lombok.Getter;
 
 @Getter

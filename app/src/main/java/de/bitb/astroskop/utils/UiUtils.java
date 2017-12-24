@@ -8,9 +8,9 @@ import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 
-import de.bitb.astroskop.ui.base.BaseActivity;
-import de.bornholdtlee.snh.R;
+import de.bitb.astroskop.R;
 import de.bitb.astroskop.enums.AnimationType;
+import de.bitb.astroskop.ui.base.BaseActivity;
 import de.bitb.astroskop.ui.base.BaseFragment;
 
 public final class UiUtils {

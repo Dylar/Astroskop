@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-import de.bornholdtlee.snh.R;
+import de.bitb.astroskop.R;
 
 public class CommonUtils {
 

@@ -1,9 +1,11 @@
-package de.bornholdtlee.dbsystel.utils;
+package de.bitb.astroskop.utils;
 
 
 import android.bluetooth.BluetoothAdapter;
-import de.bornholdtlee.dbsystel.exceptions.TechnologyDisabledException;
-import de.bornholdtlee.dbsystel.exceptions.TechnologyNotExistingException;
+
+import de.bitb.astroskop.exceptions.TechnologyDisabledException;
+import de.bitb.astroskop.exceptions.TechnologyNotExistingException;
+
 
 public class BluetoothUtils {
 

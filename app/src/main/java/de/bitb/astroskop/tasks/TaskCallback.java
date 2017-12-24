@@ -1,4 +1,4 @@
-package de.bornholdtlee.dbsystel.tasks;
+package de.bitb.astroskop.tasks;
 
 public interface TaskCallback {
 

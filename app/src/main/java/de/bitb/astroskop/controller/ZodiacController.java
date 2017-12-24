@@ -1,8 +1,9 @@
 package de.bitb.astroskop.controller;
 
-/**
- * Created by Alpha-Tier on 24.12.2017.
- */
+import de.bitb.astroskop.AstroApplication;
 
 public class ZodiacController {
+    public ZodiacController(AstroApplication astroApplication) {
+
+    }
 }

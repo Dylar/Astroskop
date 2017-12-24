@@ -1,8 +1,11 @@
 package de.bitb.astroskop.model;
 
-/**
- * Created by Alpha-Tier on 24.12.2017.
- */
 
+import io.objectbox.annotation.Entity;
+import io.objectbox.annotation.Id;
+
+@Entity
 public class Circumstances {
+    @Id
+    protected long id;
 }

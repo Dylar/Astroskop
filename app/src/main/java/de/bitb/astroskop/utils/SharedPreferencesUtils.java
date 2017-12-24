@@ -8,7 +8,7 @@ import java.util.Set;
 
 import javax.inject.Inject;
 
-import de.bornholdtlee.snh.R;
+import de.bitb.astroskop.R;
 
 public class SharedPreferencesUtils {
 

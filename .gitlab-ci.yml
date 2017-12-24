@@ -28,10 +28,10 @@ build-dev-release:
   tags:
     - android
 
-build-prod-release:
+build-cargo-release:
   stage: build
   script:
-    - ./gradlew assembleProdRelease
+    - ./gradlew assembleCargoRelease
   only:
     - master
   tags:
@@ -55,7 +55,7 @@ unit_tests:
   tags:
     - android
   script:
-    - ./gradlew testProdReleaseUnitTest
+    - ./gradlew testCargoReleaseUnitTest
 
 deploy-dev-release:
   stage: deploy
@@ -67,12 +67,12 @@ deploy-dev-release:
     - android
   when: on_success
 
-deploy-prod-release:
+deploy-cargo-release:
   stage: deploy
   script:
-    - ./gradlew uploadProdReleaseToHockeyApp
+    - ./gradlew uploadCargoReleaseToHockeyApp
   only:
     - master
   tags:
     - android
-  when: on_success
+  when: manual

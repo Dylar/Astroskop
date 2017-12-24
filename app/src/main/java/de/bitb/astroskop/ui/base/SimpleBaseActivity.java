@@ -4,7 +4,7 @@ package de.bitb.astroskop.ui.base;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import de.bornholdtlee.snh.R;
+import de.bitb.astroskop.R;
 import de.bitb.astroskop.enums.AnimationType;
 
 public class SimpleBaseActivity extends BaseActivity implements IToolbarView {

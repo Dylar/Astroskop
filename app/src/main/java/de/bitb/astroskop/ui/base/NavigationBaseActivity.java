@@ -9,7 +9,7 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter;
 
 import butterknife.BindView;
-import de.bornholdtlee.snh.R;
+import de.bitb.astroskop.R;
 import de.bitb.astroskop.injection.IBind;
 
 

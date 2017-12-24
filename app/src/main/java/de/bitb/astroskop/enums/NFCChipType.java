@@ -1,4 +1,4 @@
-package de.bornholdtlee.dbsystel.enums;
+package de.bitb.astroskop.enums;
 
 import lombok.Getter;
 
