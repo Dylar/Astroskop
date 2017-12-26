@@ -1,5 +1,9 @@
 package de.bitb.astroskop.model.enums;
 
+import java.util.Random;
+
+import lombok.Getter;
+
 import static de.bitb.astroskop.model.enums.Zodiac.AQUARIUS;
 import static de.bitb.astroskop.model.enums.Zodiac.ARIES;
 import static de.bitb.astroskop.model.enums.Zodiac.CANCER;
@@ -13,27 +17,32 @@ import static de.bitb.astroskop.model.enums.Zodiac.SCORPIO;
 import static de.bitb.astroskop.model.enums.Zodiac.TAURUS;
 import static de.bitb.astroskop.model.enums.Zodiac.VIRGO;
 
+@Getter
 public enum House {
-    ONE(ARIES),
-    TWO(TAURUS),
-    THREE(GEMINI),
-    FOUR(CANCER),
-    FIVE(LEO),
-    SIX(VIRGO),
-    SEVEN(LIBRA),
-    EIGHT(SCORPIO),
-    NINE(SAGITTARIUS),
-    TEN(CAPRICORN),
-    ELEVEN(AQUARIUS),
-    TWELVE(PISCES);
+    ONE(1, ARIES),
+    TWO(2, TAURUS),
+    THREE(3, GEMINI),
+    FOUR(4, CANCER),
+    FIVE(5, LEO),
+    SIX(6, VIRGO),
+    SEVEN(7, LIBRA),
+    EIGHT(8, SCORPIO),
+    NINE(9, SAGITTARIUS),
+    TEN(10, CAPRICORN),
+    ELEVEN(11, AQUARIUS),
+    TWELVE(12, PISCES);
 
+    private final Integer id;
     private final Zodiac zodiac;
 
-    House(Zodiac zodiac) {
+    House(int id, Zodiac zodiac) {
+        this.id = id;
         this.zodiac = zodiac;
     }
 
     public static House getRandom() {
-        return values()[((int) System.currentTimeMillis()) % 12];
+        int index = new Random().nextInt(values().length-1);
+        return values()[index];
     }
+
 }

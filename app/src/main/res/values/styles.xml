@@ -38,30 +38,4 @@
         <item name="android:textColorPrimary">@color/text_gray_darker</item>
     </style>
 
-    <style name="AppTheme.MenuButton">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">@dimen/four_grid_unit</item>
-        <item name="android:layout_marginStart">@dimen/one_grid_unit</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/text_gray_darker</item>
-        <item name="android:textSize">@dimen/text_size_small</item>
-    </style>
-
-    <style name="AppTheme.MenuButtonArrow">
-        <item name="android:layout_width">@dimen/two_grid_unit</item>
-        <item name="android:layout_height">@dimen/two_grid_unit</item>
-        <item name="android:layout_alignParentEnd">true</item>
-        <item name="android:layout_centerVertical">true</item>
-        <item name="android:layout_marginStart">@dimen/one_grid_unit</item>
-    </style>
-
-    <style name="AppTheme.Underline">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">1dp</item>
-        <item name="android:background">@color/underline</item>
-    </style>
-
-    <style name="AppTheme.MediumFont">
-        <item name="fontPath">fonts/NeoTechStd-Medium.otf</item>
-    </style>
 </resources>

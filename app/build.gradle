@@ -54,49 +54,49 @@ android {
         dev {
             dimension = "app"
             applicationId "dev.de.bitb.astroskop"
-//            buildConfigField 'String', 'HOCKEY_APP_ID', '"c3dc6ce29eef41b08ec2f618567d2a49"'
+            buildConfigField 'String', 'HOCKEY_APP_ID', '"b6588a099bf44b89a25abfa6c1569059"'
             buildConfigField 'Boolean', 'SHOW_VERSION', 'true'
         }
 
         prod {
             dimension = "app"
             applicationId "de.bitb.astroskop"
-//            buildConfigField 'String', 'HOCKEY_APP_ID', '"32eb1fd5df4245af879c44038b630931"'
+            buildConfigField 'String', 'HOCKEY_APP_ID', '"1dc54fecde1f44589dc2025e1825e944"'
             buildConfigField 'Boolean', 'SHOW_VERSION', 'false'
         }
     }
 }
-//hockeyapp {
-//    apiToken = "not_required"
-//    releaseType = 0 // alpha
-//    notify = 0
-//    status = 2
-//    teams = 9235
-//    notesType = 1
-//}
-//
-//task setHockeyappMessage << {
-//    def gitLastCommitMessage = 'git --no-pager log -1 --pretty=%B'.execute([], project.rootDir).text
-//    hockeyapp.notes = "${gitLastCommitMessage}"
-//}
-//
-//task setDevReleaseApiToken << {
-//    hockeyapp.apiToken = "0bdfe99bee9f4750bd9b61b48622c57e"
-//}
-//
-//task setProdReleaseApiToken << {
-//    hockeyapp.apiToken = "5b59c54a43804c65bd39d8744119badd"
-//}
-//
-//tasks.whenTaskAdded { task ->
-//    task.dependsOn 'setHockeyappMessage'
-//
-//   if (task.name == 'uploadDevReleaseToHockeyApp') {
-//        task.dependsOn 'setDevReleaseApiToken'
-//    } else if (task.name == 'uploadProdReleaseToHockeyApp') {
-//        task.dependsOn 'setProdReleaseApiToken'
-//    }
-//}
+hockeyapp {
+    apiToken = "not_required"
+    releaseType = 0 // alpha
+    notify = 0
+    status = 2
+    teams = 9235
+    notesType = 1
+}
+
+task setHockeyappMessage << {
+    def gitLastCommitMessage = 'git --no-pager log -1 --pretty=%B'.execute([], project.rootDir).text
+    hockeyapp.notes = "${gitLastCommitMessage}"
+}
+
+task setDevReleaseApiToken << {
+    hockeyapp.apiToken = "10949c4436e53b248d03159b36282d3a"
+}
+
+task setProdReleaseApiToken << {
+    hockeyapp.apiToken = "4eed16496a125224a6473032746b42ba"
+}
+
+tasks.whenTaskAdded { task ->
+    task.dependsOn 'setHockeyappMessage'
+
+   if (task.name == 'uploadDevReleaseToHockeyApp') {
+        task.dependsOn 'setDevReleaseApiToken'
+    } else if (task.name == 'uploadProdReleaseToHockeyApp') {
+        task.dependsOn 'setProdReleaseApiToken'
+    }
+}
 
 dependencies {
 

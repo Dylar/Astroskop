@@ -108,7 +108,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private void initToolbar(View view) {
         if (this instanceof IToolbarView) {
-            IToolbarView toolbarView = (IToolbarView) this;
             Toolbar toolbar = view.findViewById(R.id.activity_base_toolbar);
             toolbar.setVisibility(View.VISIBLE);
             setSupportActionBar(toolbar);

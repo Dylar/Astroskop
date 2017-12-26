@@ -2,28 +2,36 @@ package de.bitb.astroskop.model.enums;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
+
+import lombok.Getter;
 
 import static de.bitb.astroskop.model.enums.Zodiac.*;
 
+@Getter
 public enum Ruler {
-    SUN(LEO),
-    MERCURY(GEMINI,VIRGO),
-    VENUS(TAURUS,LIBRA),
-    MOON(CANCER),
-    MARS(ARIES),
-    JUPITER(SAGITTARIUS),
-    SATURN(CAPRICORN),
-    URANUS(AQUARIUS),
-    NEPTUN(PISCES),
-    PLUTO(SCORPIO);
+    SUN(1, LEO),
+    MERCURY(2, GEMINI, VIRGO),
+    VENUS(3, TAURUS, LIBRA),
+    MOON(4, CANCER),
+    MARS(5, ARIES),
+    JUPITER(6, SAGITTARIUS),
+    SATURN(7, CAPRICORN),
+    URANUS(8, AQUARIUS),
+    NEPTUN(9, PISCES),
+    PLUTO(10, SCORPIO);
 
+    private final Integer id;
     private final List<Zodiac> zodiacs;
 
-    Ruler(Zodiac... zodiacs) {
+    Ruler(int id, Zodiac... zodiacs) {
+        this.id = id;
         this.zodiacs = Arrays.asList(zodiacs);
     }
 
     public static Ruler getRandom() {
-        return values()[((int) System.currentTimeMillis()) % 10];
+        int index = new Random().nextInt(values().length-1);
+        return values()[index];
     }
+
 }
