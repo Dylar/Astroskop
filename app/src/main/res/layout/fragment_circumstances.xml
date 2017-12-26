@@ -15,7 +15,6 @@
         android:padding="@dimen/two_grid_unit"
         app:layout_constraintBottom_toTopOf="@+id/fragment_circumstances_button_go"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_default="wrap"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
