@@ -54,36 +54,18 @@ public abstract class BaseFragment extends Fragment implements IBaseView {
 
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
-        menu.getItem(0).setVisible(showRefreshActionBarButton());
-        menu.getItem(1).setVisible(showInfoActionBarButton());
-        menu.getItem(2).setVisible(showFinishActionBarButton());
+        menu.getItem(0).setVisible(showSettingsButton());
         super.onPrepareOptionsMenu(menu);
     }
 
-    protected boolean showInfoActionBarButton() {
+    protected boolean showSettingsButton() {
         return true;
-    }
-
-    protected boolean showRefreshActionBarButton() {
-        return true;
-    }
-
-    protected boolean showFinishActionBarButton() {
-        return false;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.actionbar_refresh: {
-                onRefreshClicked();
-                return true;
-            }
-            case R.id.actionbar_info: {
-                onInfoClicked();
-                return true;
-            }
-            case R.id.actionbar_cancel: {
+            case R.id.actionbar_settings: {
                 getActivity().finish();
                 return true;
             }
@@ -132,7 +114,4 @@ public abstract class BaseFragment extends Fragment implements IBaseView {
         return AnimationType.NONE;
     }
 
-    public int getIcon() {
-        return R.drawable.ic_navbar_burger;
-    }
 }

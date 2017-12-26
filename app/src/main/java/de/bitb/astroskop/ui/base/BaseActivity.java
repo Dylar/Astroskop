@@ -110,32 +110,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (this instanceof IToolbarView) {
             IToolbarView toolbarView = (IToolbarView) this;
             Toolbar toolbar = view.findViewById(R.id.activity_base_toolbar);
-
             toolbar.setVisibility(View.VISIBLE);
             setSupportActionBar(toolbar);
             ActionBar actionBar = getSupportActionBar();
-            actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-            actionBar.setCustomView(getLayoutInflater().inflate(R.layout.base_toolbar, null));
-//            actionBar.setCustomView(getLayoutInflater().inflate(R.layout.base_toolbar, null),
-//                    new ActionBar.LayoutParams(
-//                            ActionBar.LayoutParams.MATCH_PARENT,
-//                            ActionBar.LayoutParams.MATCH_PARENT,
-//                            Gravity.CENTER
-//                    )
-//            );
-            actionBar.setDisplayShowTitleEnabled(false);
+            actionBar.setDisplayShowTitleEnabled(true);
             actionBar.setHomeButtonEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(toolbarView.getIcon());
         }
-    }
-
-    protected void setToolbarWidthWorkaround(boolean showHome, int btnCount) {
-        getSupportActionBar().setDisplayHomeAsUpEnabled(showHome);
-        View toolbar = getSupportActionBar().getCustomView();
-//        toolbar.findViewById(R.id.toolbar_placeholder_back).setVisibility(showHome ? View.GONE : View.VISIBLE);
-        toolbar.findViewById(R.id.toolbar_placeholder_button_2).setVisibility(btnCount > 1 ? View.GONE : View.VISIBLE);
-        toolbar.findViewById(R.id.toolbar_placeholder_button_1).setVisibility(btnCount > 0 ? View.GONE : View.VISIBLE);
     }
 
     @Override
@@ -161,7 +142,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         BaseFragment fragment = getCurrentContent();
-
         if ((fragment == null || fragment.allowBackPressed()) && allowBackPressed()) {
             if (fragment instanceof HomeFragment) {
                 finish();
@@ -178,16 +158,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void setToolbarTitle(String title) {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            TextView toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
-            toolbarTitle.setText(title);
-            toolbarTitle.setVisibility(View.VISIBLE);
-        }
-    }
-
-    public void setToolbarIcon(int icon) {
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setHomeAsUpIndicator(icon);
+            actionBar.setTitle(title);
         }
     }
 

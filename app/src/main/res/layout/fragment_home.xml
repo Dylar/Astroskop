@@ -1,215 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <android.support.v7.widget.CardView
+        android:id="@+id/fragment_home_zodiac"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/two_grid_unit"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/six_grid_unit">
+        app:layout_constraintBottom_toTopOf="@+id/fragment_home_house"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
-            android:id="@+id/fragment_home_button_analysis_container"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_corner_blue"
-            android:padding="@dimen/two_grid_unit">
+            android:layout_gravity="center"
+            android:text="Zodiac"
+            android:textColor="@color/black" />
 
-            <ImageView
-                android:id="@+id/fragment_home_button_analysis_icon"
-                android:layout_width="@dimen/four_grid_unit"
-                android:layout_height="@dimen/four_grid_unit"
-                android:layout_centerVertical="true"
-                android:background="@drawable/ic_tab_analysis"
-                android:backgroundTint="@color/icon_blue" />
+    </android.support.v7.widget.CardView>
 
-            <TextView
-                android:id="@+id/fragment_home_button_analysis_text"
-                style="@style/AppTheme.MediumFont"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/four_grid_unit"
-                android:layout_marginStart="@dimen/one_grid_unit"
-                android:layout_toEndOf="@+id/fragment_home_button_analysis_icon"
-                android:gravity="center"
-                android:text="@string/fragment_home_button_analysis_text"
-                android:textColor="@color/text_blue"
-                android:textSize="@dimen/text_size_xsmall" />
+    <android.support.v7.widget.CardView
+        android:id="@+id/fragment_home_house"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/two_grid_unit"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_home_ruler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_home_zodiac">
 
-            <ImageView
-                android:layout_width="@dimen/two_grid_unit"
-                android:layout_height="@dimen/two_grid_unit"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/one_grid_unit"
-                android:layout_toEndOf="@+id/fragment_home_button_analysis_text"
-                android:background="@drawable/ic_arrow_right_blue" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/fragment_home_button_constructions_container"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/two_grid_unit"
-            android:background="@drawable/rounded_corner_blue"
-            android:padding="@dimen/two_grid_unit">
+            android:layout_gravity="center"
+            android:text="House"
+            android:textColor="@color/black" />
 
-            <ImageView
-                android:id="@+id/fragment_home_button_constructions_icon"
-                android:layout_width="@dimen/four_grid_unit"
-                android:layout_height="@dimen/four_grid_unit"
-                android:layout_centerVertical="true"
-                android:background="@drawable/ic_tab_constructions"
-                android:backgroundTint="@color/icon_blue" />
+    </android.support.v7.widget.CardView>
 
-            <TextView
-                android:id="@+id/fragment_home_button_constructions_text"
-                style="@style/AppTheme.MediumFont"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/four_grid_unit"
-                android:layout_marginStart="@dimen/one_grid_unit"
-                android:layout_toEndOf="@+id/fragment_home_button_constructions_icon"
-                android:gravity="center"
-                android:text="@string/fragment_home_button_constructions_text"
-                android:textColor="@color/text_blue"
-                android:textSize="@dimen/text_size_xsmall" />
+    <android.support.v7.widget.CardView
+        android:id="@+id/fragment_home_ruler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/two_grid_unit"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_home_element"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_home_house">
 
-            <ImageView
-                android:layout_width="@dimen/two_grid_unit"
-                android:layout_height="@dimen/two_grid_unit"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/one_grid_unit"
-                android:layout_toEndOf="@+id/fragment_home_button_constructions_text"
-                android:background="@drawable/ic_arrow_right_blue" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/fragment_home_button_disturbance_container"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/two_grid_unit"
-            android:background="@drawable/rounded_corner_blue"
-            android:padding="@dimen/two_grid_unit">
+            android:layout_gravity="center"
+            android:text="Ruler"
+            android:textColor="@color/black" />
 
-            <ImageView
-                android:id="@+id/fragment_home_button_disturbance_icon"
-                android:layout_width="@dimen/four_grid_unit"
-                android:layout_height="@dimen/four_grid_unit"
-                android:layout_centerVertical="true"
-                android:background="@drawable/ic_tab_disturbance"
-                android:backgroundTint="@color/icon_blue" />
+    </android.support.v7.widget.CardView>
 
-            <TextView
-                android:id="@+id/fragment_home_button_disturbance_text"
-                style="@style/AppTheme.MediumFont"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/four_grid_unit"
-                android:layout_marginStart="@dimen/one_grid_unit"
-                android:layout_toEndOf="@+id/fragment_home_button_disturbance_icon"
-                android:gravity="center"
-                android:text="@string/fragment_home_button_disturbance_text"
-                android:textColor="@color/text_blue"
-                android:textSize="@dimen/text_size_xsmall" />
+    <android.support.v7.widget.CardView
+        android:id="@+id/fragment_home_element"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/two_grid_unit"
+        android:padding="@dimen/two_grid_unit"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_home_quality"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_home_ruler">
 
-            <ImageView
-                android:layout_width="@dimen/two_grid_unit"
-                android:layout_height="@dimen/two_grid_unit"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/one_grid_unit"
-                android:layout_toEndOf="@+id/fragment_home_button_disturbance_text"
-                android:background="@drawable/ic_arrow_right_blue" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/fragment_home_button_report_disturbance_container"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/two_grid_unit"
-            android:background="@drawable/rounded_corner_dotted_red"
-            android:padding="@dimen/two_grid_unit">
+            android:layout_gravity="center"
+            android:text="Element"
+            android:textColor="@color/black" />
 
-            <ImageView
-                android:id="@+id/fragment_home_button_report_disturbance_icon"
-                android:layout_width="@dimen/four_grid_unit"
-                android:layout_height="@dimen/four_grid_unit"
-                android:layout_centerVertical="true"
-                android:background="@drawable/ic_tab_disturbance"
-                android:backgroundTint="@color/icon_red" />
+    </android.support.v7.widget.CardView>
 
-            <TextView
-                android:id="@+id/fragment_home_button_report_disturbance_text"
-                style="@style/AppTheme.MediumFont"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/four_grid_unit"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/one_grid_unit"
-                android:layout_toEndOf="@+id/fragment_home_button_report_disturbance_icon"
-                android:gravity="center"
-                android:text="@string/report_disturbance"
-                android:textColor="@color/text_red"
-                android:textSize="@dimen/text_size_xsmall" />
+    <android.support.v7.widget.CardView
+        android:id="@+id/fragment_home_quality"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/two_grid_unit"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_home_gender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_home_element">
 
-            <ImageView
-                android:layout_width="@dimen/two_grid_unit"
-                android:layout_height="@dimen/two_grid_unit"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/one_grid_unit"
-                android:layout_toEndOf="@+id/fragment_home_button_report_disturbance_text"
-                android:background="@drawable/ic_arrow_right_blue"
-                android:backgroundTint="@color/icon_red" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/fragment_home_button_job_container"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/two_grid_unit"
-            android:background="@drawable/rounded_corner_solid_blue"
-            android:padding="@dimen/two_grid_unit">
+            android:layout_gravity="center"
+            android:text="Quality"
+            android:textColor="@color/black" />
 
-            <TextView
-                android:id="@+id/fragment_home_button_job_title"
-                style="@style/AppTheme.MediumFont"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:text="@string/fragment_home_button_job_offer_title"
-                android:textColor="@color/text_white"
-                android:textSize="@dimen/text_size_normal" />
+    </android.support.v7.widget.CardView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_below="@+id/fragment_home_button_job_title"
-                android:layout_marginTop="@dimen/half_grid_unit"
-                android:layout_toStartOf="@+id/fragment_home_button_job_arrow"
-                android:gravity="center_vertical"
-                android:lineSpacingExtra="6dp"
-                android:text="@string/fragment_home_button_job_offer_text"
-                android:textColor="@color/text_white"
-                android:textSize="@dimen/text_size_xsmall" />
+    <android.support.v7.widget.CardView
+        android:id="@+id/fragment_home_gender"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/two_grid_unit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_home_quality">
 
-            <FrameLayout
-                android:id="@+id/fragment_home_button_job_arrow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:background="@drawable/rounded_corner_white">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Gender"
+            android:textColor="@color/black" />
 
-                <View
-                    android:layout_width="@dimen/two_grid_unit"
-                    android:layout_height="@dimen/two_grid_unit"
-                    android:layout_margin="@dimen/quarter_grid_unit"
-                    android:background="@drawable/ic_arrow_right_blue" />
-            </FrameLayout>
+    </android.support.v7.widget.CardView>
 
-
-        </RelativeLayout>
-    </LinearLayout>
-</ScrollView>
+</android.support.constraint.ConstraintLayout>

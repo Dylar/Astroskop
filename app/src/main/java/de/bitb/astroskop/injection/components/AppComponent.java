@@ -12,7 +12,6 @@ import de.bitb.astroskop.injection.modules.UtilsModule;
 import de.bitb.astroskop.ui.IntroActivity;
 import de.bitb.astroskop.ui.base.BaseFragment;
 import de.bitb.astroskop.ui.main.MainActivity;
-import de.bitb.astroskop.ui.main.home.HomeViewPresenter;
 
 @ApplicationScope
 @Component(modules = {ApplicationModule.class, ControllerModule.class, UtilsModule.class, NetworkModule.class, DatabaseModule.class})
@@ -26,6 +25,5 @@ public interface AppComponent {
 
     void inject(BaseFragment baseFragment);
 
-    void inject(HomeViewPresenter homeViewPresenter);
 
 }
