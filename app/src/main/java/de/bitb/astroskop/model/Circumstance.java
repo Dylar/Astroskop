@@ -20,6 +20,9 @@ public class Circumstance {
     @Id
     protected long id;
 
+    private String uuid;
+    private long creationTimestamp;
+
     @Convert(converter = ZodiacConverter.class, dbType = Integer.class)
     private Zodiac zodiac;
     @Convert(converter = HouseConverter.class, dbType = Integer.class)

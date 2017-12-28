@@ -11,7 +11,7 @@ import de.bitb.astroskop.ui.base.adapter.SingleRecyclerAdapter;
 
 public class CircumstanceAdapter extends SingleRecyclerAdapter<Circumstance, CircumstanceViewHolder> {
 
-    public CircumstanceAdapter(Context context, AdapterPresenter presenter) {
+    public CircumstanceAdapter(Context context, AdapterPresenter<Circumstance> presenter) {
         super(context, presenter);
     }
 
@@ -21,7 +21,7 @@ public class CircumstanceAdapter extends SingleRecyclerAdapter<Circumstance, Cir
     }
 
     @Override
-    protected CircumstanceViewHolder newHolder(AdapterPresenter presenter, View view) {
+    protected CircumstanceViewHolder newHolder(AdapterPresenter<Circumstance> presenter, View view) {
         return new CircumstanceViewHolder(presenter, view);
     }
 

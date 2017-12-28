@@ -18,7 +18,7 @@ public enum Zodiac {
     SAGITTARIUS(9, House.NINE, Ruler.JUPITER, Element.FIRE, Quality.MUTABLE, Gender.MALE),
     CAPRICORN(10, House.TEN, Ruler.SATURN, Element.EARTH, Quality.CARDINAL, Gender.FEMALE),
     AQUARIUS(11, House.ELEVEN, Ruler.URANUS, Element.AIR, Quality.FIXED, Gender.MALE),
-    PISCES(12, House.TWELVE, Ruler.NEPTUN, Element.WATER, Quality.MUTABLE, Gender.FEMALE);
+    PISCES(12, House.TWELVE, Ruler.NEPTUNE, Element.WATER, Quality.MUTABLE, Gender.FEMALE);
 
     private final Integer id;
     private final House house;
@@ -39,6 +39,10 @@ public enum Zodiac {
     public static Zodiac getRandom() {
         int index = new Random().nextInt(values().length-1);
         return values()[index];
+    }
+
+    public int getColor() {
+        return getElement().getColor();
     }
 
 }

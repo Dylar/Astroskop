@@ -6,6 +6,7 @@ import de.bitb.astroskop.AstroApplication;
 import de.bitb.astroskop.injection.ApplicationScope;
 import de.bitb.astroskop.model.Circumstance;
 import de.bitb.astroskop.model.MyObjectBox;
+import de.bitb.astroskop.model.Profile;
 import io.objectbox.Box;
 import io.objectbox.BoxStore;
 
@@ -26,6 +27,11 @@ public class DatabaseModule {
     @ApplicationScope
     public Box<Circumstance> providePowerBox(BoxStore store) {
         return store.boxFor(Circumstance.class);
+    }
+    @Provides
+    @ApplicationScope
+    public Box<Profile> provideProfileBox(BoxStore store) {
+        return store.boxFor(Profile.class);
     }
 
 }

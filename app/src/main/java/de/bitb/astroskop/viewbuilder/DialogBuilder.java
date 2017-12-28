@@ -26,15 +26,13 @@ public class DialogBuilder {
         dialog.show();
     }
 
-    public void showPrivacyDialog(Context context, DialogInterface.OnClickListener posListner, DialogInterface.OnClickListener neuListner) {
+    public void showDeleteDialog(Context context, DialogInterface.OnClickListener posListner) {
         Builder builder = new Builder(context);
-        builder.setTitleId(R.string.activity_intro_dialog_privacy_title);
-        builder.setMessageId(R.string.activity_intro_dialog_privacy_message);
-        builder.setPositivBtnId(R.string.accept);
-        builder.setNegativBtnId(R.string.deny);
+        builder.setTitleId(R.string.dialog_delete_title);
+        builder.setMessageId(R.string.dialog_delete_message);
+        builder.setPositivBtnId(R.string.delete);
+        builder.setNegativBtnId(R.string.cancel);
         builder.setPositivListner(posListner);
-        builder.setNeutralBtnId(R.string.activity_intro_dialog_privacy_read);
-        builder.setNeutralListner(neuListner);
         showSimpleDialog(builder);
     }
 

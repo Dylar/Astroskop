@@ -12,7 +12,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 public class AstroApplication extends Application {
 
-    public static final String FONT_PATH = "fonts/NeoTechStd-Regular.otf";
+//    public static final String FONT_PATH = "fonts/NeoTechStd-Regular.otf";
 
     @Getter
     private AppComponent appComponent;
@@ -23,7 +23,7 @@ public class AstroApplication extends Application {
 
         initComponent();
         initStetho();
-        initCalligraphy();
+//        initCalligraphy();
         appComponent.inject(this);
     }
 
@@ -33,13 +33,13 @@ public class AstroApplication extends Application {
                 .build();
     }
 
-    private void initCalligraphy() {
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath(FONT_PATH)
-                .setFontAttrId(R.attr.fontPath)
-                .build()
-        );
-    }
+//    private void initCalligraphy() {
+//        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+//                .setDefaultFontPath(FONT_PATH)
+//                .setFontAttrId(R.attr.fontPath)
+//                .build()
+//        );
+//    }
 
     private void initStetho() {
         if (BuildConfig.DEBUG) {

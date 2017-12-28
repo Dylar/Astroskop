@@ -2,7 +2,7 @@
 <resources>
 
     <string name="language">Deutsch</string>
-    <string name="version">Versionnummer: %1$s\nVersionsname: %2$s</string>
+    <string name="version">Version-Nr: %1$s\nVersion-Name: %2$s</string>
 
     <string name="under_construction">Under construction</string>
     <string name="error_please_try_again">Es ist ein Fehler aufgetreten, bitte versuchen sie es erneut.</string>
@@ -12,138 +12,9 @@
     <string name="cancel">Abbrechen</string>
     <string name="accept">Akzeptieren</string>
     <string name="deny">Ablehnen</string>
+    <string name="delete">Löschen</string>
 
-    <string name="report_disturbance"><b>Störung melden</b></string>
-
-    <string name="activity_intro_dialog_privacy_title">Datenschutz</string>
-    <string name="activity_intro_dialog_privacy_message">Mit einem Klick auf den „Akzeptieren“-Button bestätigen Sie, dass Sie die Bestimmungen zum Datenschutz gelesen haben und diese akzeptieren.</string>
-    <string name="activity_intro_dialog_privacy_read">Lesen</string>
-
-    <string name="fragment_tab_title_data">Daten</string>
-    <string name="fragment_tab_title_map">Karte</string>
-    <string name="fragment_home_button_analysis_text"><b>Hamburgs Stromverbrauch</b></string>
-    <string name="fragment_home_button_constructions_text"><b>Unsere Baustellen</b></string>
-    <string name="fragment_home_button_disturbance_text"><b>Aktuelle Störungen</b></string>
-    <string name="fragment_home_button_job_offer_text">Lernen Sie Stromnetz Hamburg als Arbeitgeber kennen.</string>
-    <string name="fragment_home_button_job_offer_title"><b>Karriere</b></string>
-
-    <string name="fragment_constructions_title">Unsere Baustellen</string>
-
-    <string name="fragment_menu_title">Mehr</string>
-    <string name="fragment_menu_button_job_offer_text">Karriere</string>
-    <string name="fragment_menu_button_rank_app_text">App bewerten</string>
-    <string name="fragment_menu_button_imprint_text">Impressum</string>
-    <string name="fragment_menu_button_privacy_text">Datenschutz</string>
-
-    <string name="fragment_imprint_title">Impressum</string>
-
-    <string name="fragment_privacy_title">Datenschutz</string>
-
-    <string name="data_not_uptodate">Keine aktuellen Daten</string>
-
-    <string name="fragment_disturbance_row_header">Mehrere Gebiete</string>
-    <string name="fragment_disturbance_date_end"><![CDATA[Es liegt eine Versorgungsunterbrechung im Gebiet %1$s vor.<br \/><br \/>Die Störung wird voraussichtlich bis <b>%2$s</b> Uhr behoben sein.]]></string>
-    <string name="fragment_disturbance_date_end_plural"><![CDATA[Es liegt eine Versorgungsunterbrechung in den Gebieten %1$s vor.<br \/><br \/>Die Störung wird voraussichtlich bis <b>%2$s</b> Uhr behoben sein.]]></string>
-    <string name="fragment_disturbance_title">Aktuelle Störungen</string>
-    <string name="fragment_disturbance_date_start"><![CDATA[<b>%1$s Uhr</b>]]></string>
-    <string name="fragment_disturbance_empty_list_text">Zurzeit sind uns keine größeren Störungen im Versorgungsgebiet bekannt.</string>
-    <string name="fragment_disturbance_no_network_text">Leider können Ihnen aktuell keine Störungen angezeigt werden. Entweder besteht derzeit keine Internetverbindung oder die Daten sind aufgrund von anderen technischen Problemen nicht abrufbar.</string>
-
-    <string name="fragment_constructions_empty_list_text">Es wurden keine Ergebnisse gefunden.</string>
-    <string name="fragment_constructions_search_hint">Nach Straße suchen</string>
-    <string name="fragment_constructions_no_network_text">Leider können Ihnen aktuell keine Baustelleninformationen angezeigt werden. Entweder besteht derzeit keine Internetverbindung oder die Daten sind aufgrund von anderen technischen Problemen nicht abrufbar.</string>
-
-    <string name="fragment_report_alt_disturbance">Andere Gefahr oder Beschädigung</string>
-    <string name="fragment_report_disturbance_header">Art der Störung:</string>
-    <string name="fragment_report_blackout_button_text">Stromausfall</string>
-    <string name="fragment_report_alternative_header"><b>Gefahr oder Beschädigung melden</b></string>
-    <string name="fragment_report_alternative_text">Begeben Sie sich nicht in den Gefahrenbereich!\n\nDamit wir die Gefahrensituation schnellstens aufnehmen, bewerten und beheben können, rufen Sie bitte umgehend eine der folgenden Rufnummern an:</string>
-
-    <string name="fragment_report_form_location_singlehouse">Einzelhaus</string>
-    <string name="fragment_report_form_location_multihouse">Mehrfamilienhaus</string>
-    <string name="fragment_report_form_location_rest">Sonstiger Ort</string>
-
-    <string name="fragment_report_form_no_details">Keine weiteren Details bekannt</string>
-    <string name="fragment_report_form_with_power">Das Haus ist teilweise ohne Stromversorgung</string>
-    <string name="fragment_report_form_without_power">Das Haus ist komplett ohne Stromversorgung</string>
-    <string name="fragment_report_form_more_houses">Weitere Häuser in der Straße sind betroffen</string>
-
-    <string name="fragment_report_form_field_error">Dieses Feld wird benötigt</string>
-    <string name="fragment_report_form_email_error">Bitte geben Sie eine gültige E-Mail Adresse ein</string>
-
-    <string name="fragment_report_form_1_header">Wo ist der Stromausfall?</string>
-    <string name="fragment_report_form_1_location_error">Bitte treffen Sie eine Auswahl.</string>
-    <string name="fragment_report_form_1_subheader_details">Details</string>
-    <string name="fragment_report_form_1_radio_no_details">Keine weiteren Details bekannt</string>
-    <string name="fragment_report_form_1_radio_without_power">Das Haus ist komplett ohne Stromversorgung</string>
-    <string name="fragment_report_form_1_radio_with_power">Das Haus ist teilweise ohne Stromversorgung</string>
-    <string name="fragment_report_form_1_radio_more_houses">Weitere Häuser in der Straße sind betroffen</string>
-    <string name="fragment_report_form_1_header_location_details">Bitte beschreiben Sie den Ort des Stromausfalls näher</string>
-    <string name="fragment_report_form_1_location_details">Ihre Beschreibung</string>
-    <string name="fragment_report_form_1_location_details_error">Dieses Feld ist ein Pflichtfeld</string>
-    <string name="fragment_report_form_1_header_more_details">Weitere Details</string>
-    <string name="fragment_report_form_1_header_more_details_optional">(optional)</string>
-    <string name="fragment_report_form_1_more_details">Weitere Details</string>
-    <string name="fragment_report_button_to_tab2_text">Adresse Stromausfall</string>
-
-    <string name="activity_search_title_street">Straße</string>
-    <string name="fragment_report_form_2_search_city_header">Ort</string>
-    <string name="fragment_report_form_2_search_plz_header">PLZ</string>
-    <string name="fragment_report_form_2_search_number_header">Hausnummer</string>
-    <string name="fragment_report_form_2_search_street_header">Straße</string>
-    <string name="fragment_report_form_2_header_text">Bitte geben Sie hier die Adresse der betroffenen Wohnung, des betroffenen Hauses, des betroffenen Mehrfamilienhauses oder des betreffenden Ortes an:</string>
-    <string name="fragment_report_form_2_header">Adresse der Störungsstelle</string>
-    <string name="fragment_report_form_2_street_error">Bitte geben Sie eine Straße ein.</string>
-
-    <string name="fragment_report_form_3_contact_name_header">Vorname</string>
-    <string name="fragment_report_form_3_contact_familyname_header">Nachname</string>
-    <string name="fragment_report_form_3_phone_header">Rückrufnummer</string>
-    <string name="fragment_report_form_3_email_header">E-Mail</string>
-    <string name="fragment_report_form_3_summary">Zusammenfassung</string>
-    <string name="fragment_report_button_to_tab3_text">Ihre Kontaktdaten</string>
-
-    <string name="fragment_report_form_4_header_summary">Zusammenfassung</string>
-    <string name="fragment_report_form_4_subheader">Bitte prüfen Sie Ihre Daten und senden Sie das Formular ab.</string>
-    <string name="fragment_report_form_4_header_tab1">Allgemeine Informationen</string>
-    <string name="fragment_report_form_4_change">ändern</string>
-    <string name="fragment_report_form_4_location">Ort Stromausfall</string>
-    <string name="fragment_report_form_4_location_details">Beschreibung</string>
-    <string name="fragment_report_form_4_location_more_details">Weitere Details</string>
-    <string name="fragment_report_form_4_send_report">Meldung absenden</string>
-    <string name="fragment_report_form_4_header_tab2">Adresse der Störungsstelle</string>
-    <string name="fragment_report_form_4_street">Straße</string>
-    <string name="fragment_report_form_4_plz">Plz</string>
-    <string name="fragment_report_form_4_number">Hausnummer</string>
-    <string name="fragment_report_form_4_city">Ort</string>
-
-    <string name="fragment_report_no_network_text">Leider können Sie aktuell keine Störungen melden. Entweder besteht derzeit keine Internetverbindung oder die Daten können aufgrund von anderen technischen Problemen nicht übertragen werden.</string>
-    <string name="fragment_report_error_button_back_to_summary_text">Zurück zur Zusammenfassung</string>
-    <string name="fragment_report_no_network_header">Ihre Störungsmeldung konnte nicht versendet werden</string>
-    <string name="fragment_report_sent_header">Ihre Störungsmeldung wurde erfolgreich an uns versendet!</string>
-    <string name="fragment_report_sent_text">Unser Störungsmanagement wird sich schnellstmöglich um die Behebung kümmern und sich bei Rückfragen telefonisch mit Ihnen in Verbindung setzen. Ihre Stromnetz Hamburg GmbH</string>
-    <string name="fragment_report_sent_button">Zurück zu den Meldungen</string>
-
-    <string name="fragment_analysis_title">Hamburgs Stromverbrauch</string>
-    <string name="activity_analysis_filter_title">Bezirk</string>
-    <string name="activity_analysis_info_title">Informationen</string>
-    <string name="activity_analysis_info_co2_header">CO2 Emission Strom</string>
-    <string name="activity_analysis_info_co2_text">In diesem Kontext der CO2-Ausstoß durch Stromverbrauch. Die Berechnung basiert auf dem CO2-Monitoring gemäß des Hamburger Klimaschutzkonzeptes mit 0,575 kg CO2/kWh.</string>
-    <string name="activity_analysis_info_power_header">Netzlast</string>
-    <string name="activity_analysis_info_power_text">In diesem Kontext die Leistungsnachfrage nach Strom im Hamburger Verteilungsnetz.</string>
-    <string name="activity_analysis_info_legend_header">Abkürzungen</string>
-    <string name="activity_analysis_info_legend_text">MW: Megawatt (Maßeinheit für Leistung)\nt: Tonne (Maßeinheit für Masse)\nh: Stunde (Maßeinheit für Zeit)</string>
-    <string name="fragment_analysis_no_network_text">Leider können Ihnen aktuell keine Stromverbräuche angezeigt werden. Entweder besteht derzeit keine Internetverbindung oder die Daten sind aufgrund von anderen technischen Problemen nicht abrufbar.</string>
-    <string name="fragment_analysis_no_network_error_text">Leider können Ihnen aktuell keine Stromverbräuche angezeigt werden. Entweder besteht derzeit keine Internetverbindung oder die Daten sind aufgrund von anderen technischen Problemen nicht abrufbar.</string>
-    <string name="fragment_data_last_sync">Letzte Aktualisierung der Daten: %1$s Uhr</string>
-    <string name="fragment_data_power_header">Aktuelle Last</string>
-    <string name="fragment_data_co2_header">CO2-Emissionen</string>
-    <string name="fragment_data_power_unit">MW</string>
-    <string name="fragment_data_co2_unit">t CO2/h</string>
-    <string name="fragment_data_chart_description">Lastverlauf in den letzten 24 Stunden</string>
-    <string name="fragment_data_chart_description_unit">(Uhrzeit/MW)</string>
-    <string name="fragment_report_form_3_title_man">Herr</string>
-    <string name="fragment_report_form_3_title_noman">Frau</string>
-    <string name="fragment_report_form_3_title_company">Firma</string>
-    <string name="fragment_report_form_3_contact_company_header">Firma</string>
+    <string name="dialog_delete_title">Löschen?</string>
+    <string name="dialog_delete_message">Möchten Sie das wirklich löschen?</string>
 
 </resources>

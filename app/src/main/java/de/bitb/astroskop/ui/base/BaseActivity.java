@@ -15,7 +15,6 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.TextView;
 
 import javax.inject.Inject;
 
@@ -64,7 +63,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         baseView = inflater.inflate(R.layout.activity_base, null);
 
-        ViewGroup container = baseView.findViewById(R.id.activity_base_container);
+        ViewGroup container = baseView.findViewById(R.id.activity_base_content);
         container.removeAllViews();
         container.addView(activityView);
 
@@ -72,15 +71,19 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         setContentView(baseView);
 
+        if(!(this instanceof NavigationBaseActivity)){
+            baseView.findViewById(R.id.activity_navigation).setVisibility(View.GONE);
+        }
+
         if (this instanceof IBind) {
             ButterKnife.bind(this);
         }
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
+//    @Override
+//    protected void attachBaseContext(Context newBase) {
+//        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+//    }
 
     public int getLayoutId() {
         return R.layout.activity_container;
@@ -107,14 +110,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     private void initToolbar(View view) {
+        Toolbar toolbar = view.findViewById(R.id.activity_base_toolbar);
         if (this instanceof IToolbarView) {
-            Toolbar toolbar = view.findViewById(R.id.activity_base_toolbar);
-            toolbar.setVisibility(View.VISIBLE);
             setSupportActionBar(toolbar);
             ActionBar actionBar = getSupportActionBar();
             actionBar.setDisplayShowTitleEnabled(true);
             actionBar.setHomeButtonEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
+        } else {
+            toolbar.setVisibility(View.GONE);
         }
     }
 
@@ -178,6 +182,10 @@ public abstract class BaseActivity extends AppCompatActivity {
 //        getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
 //    }
 
+    public void showFragmentClearTop(BaseFragment fragment) {
+        showFragmentClearTop(fragment, getContentContainerId(), false);
+    }
+
     public void showFragmentClearTop(BaseFragment fragment, boolean shouldAddToBackStack) {
         showFragmentClearTop(fragment, getContentContainerId(), shouldAddToBackStack);
     }
@@ -191,6 +199,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (!fragmentPopped) { //fragment not in back stack, create it.
             showFragment(fragment, containerViewResId, shouldAddToBackStack);
         }
+    }
+
+    public void showFragment(BaseFragment fragment) {
+        showFragment(fragment, getContentContainerId(), false);
     }
 
     public void showFragment(BaseFragment fragment, boolean shouldAddToBackStack) {

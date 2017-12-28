@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/fragment_details_zodiac_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Zodiac"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toStartOf="@id/fragment_details_house_header"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_details_house_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="House"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toStartOf="@id/fragment_details_ruler_header"
+        app:layout_constraintStart_toEndOf="@id/fragment_details_zodiac_header" />
+
+    <TextView
+        android:id="@+id/fragment_details_ruler_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Ruler"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fragment_details_house_header" />
+
+    <View
+        android:id="@+id/fragment_details_underline"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/fragment_details_zodiac_header" />
+
+    <include
+        android:id="@+id/fragment_details_info_zodiac"
+        layout="@layout/circumstance_detail_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/fragment_details_zodiac_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_details_underline" />
+
+    <include
+        android:id="@+id/fragment_details_info_house"
+        layout="@layout/circumstance_detail_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/fragment_details_house_header"
+        app:layout_constraintStart_toStartOf="@id/fragment_details_house_header"
+        app:layout_constraintTop_toBottomOf="@id/fragment_details_underline" />
+
+    <include
+        android:id="@+id/fragment_details_info_ruler"
+        layout="@layout/circumstance_detail_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/fragment_details_ruler_header"
+        app:layout_constraintStart_toStartOf="@id/fragment_details_ruler_header"
+        app:layout_constraintTop_toBottomOf="@id/fragment_details_underline" />
+
+</android.support.constraint.ConstraintLayout>

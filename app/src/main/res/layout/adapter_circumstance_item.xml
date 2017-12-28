@@ -1,40 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/one_grid_unit">
 
-    <TextView
-        android:id="@+id/adapter_circumstance_zodiac"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:text="Bla"
-        app:layout_constraintBottom_toTopOf="@+id/adapter_circumstance_house"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/one_grid_unit"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/one_grid_unit">
 
-    <TextView
-        android:id="@+id/adapter_circumstance_house"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:text="Bla"
-        app:layout_constraintBottom_toTopOf="@+id/adapter_circumstance_ruler"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adapter_circumstance_zodiac" />
+        <TextView
+            android:id="@+id/adapter_circumstance_zodiac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/half_grid_unit"
+            android:gravity="center"
+            android:padding="@dimen/half_grid_unit"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/adapter_circumstance_house"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Bla" />
 
-    <TextView
-        android:id="@+id/adapter_circumstance_ruler"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:text="Bla"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adapter_circumstance_house" />
+        <TextView
+            android:id="@+id/adapter_circumstance_house"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/half_grid_unit"
+            android:gravity="center"
+            android:padding="@dimen/half_grid_unit"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/adapter_circumstance_ruler"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adapter_circumstance_zodiac"
+            tools:text="Bla" />
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/adapter_circumstance_ruler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/half_grid_unit"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adapter_circumstance_house"
+            tools:text="Bla" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

@@ -5,20 +5,33 @@
     android:layout_height="match_parent">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/fragment_circumstances_result"
+        android:id="@+id/fragment_profile_list"
         android:layout_width="match_parent"
-        android:layout_margin="@dimen/one_grid_unit"
         android:layout_height="0dp"
+        android:layout_margin="@dimen/one_grid_unit"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/fragment_circumstances_button_go"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_profile_edittext_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </android.support.v7.widget.RecyclerView>
 
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/fragment_profile_edittext_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="Profile name"
+        android:padding="@dimen/two_grid_unit"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintBottom_toTopOf="@id/fragment_profile_button_create"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_profile_list" />
+
     <android.support.v7.widget.AppCompatButton
-        android:id="@+id/fragment_circumstances_button_go"
+        android:id="@+id/fragment_profile_button_create"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"

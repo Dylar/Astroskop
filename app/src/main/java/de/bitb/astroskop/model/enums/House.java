@@ -19,25 +19,23 @@ import static de.bitb.astroskop.model.enums.Zodiac.VIRGO;
 
 @Getter
 public enum House {
-    ONE(1, ARIES),
-    TWO(2, TAURUS),
-    THREE(3, GEMINI),
-    FOUR(4, CANCER),
-    FIVE(5, LEO),
-    SIX(6, VIRGO),
-    SEVEN(7, LIBRA),
-    EIGHT(8, SCORPIO),
-    NINE(9, SAGITTARIUS),
-    TEN(10, CAPRICORN),
-    ELEVEN(11, AQUARIUS),
-    TWELVE(12, PISCES);
+    ONE(1),
+    TWO(2),
+    THREE(3),
+    FOUR(4),
+    FIVE(5),
+    SIX(6),
+    SEVEN(7),
+    EIGHT(8),
+    NINE(9),
+    TEN(10),
+    ELEVEN(11),
+    TWELVE(12);
 
     private final Integer id;
-    private final Zodiac zodiac;
 
-    House(int id, Zodiac zodiac) {
+    House(int id) {
         this.id = id;
-        this.zodiac = zodiac;
     }
 
     public static House getRandom() {
@@ -45,4 +43,38 @@ public enum House {
         return values()[index];
     }
 
+    public int getColor() {
+        Zodiac zodiac = getZodiac();
+        return zodiac.getColor();
+    }
+
+    public Zodiac getZodiac() {
+        switch (this){
+            case ONE:
+                return ARIES;
+            case TWO:
+                return TAURUS;
+            case THREE:
+                return GEMINI;
+            case FOUR:
+                return CANCER;
+            case FIVE:
+                return LEO;
+            case SIX:
+                return VIRGO;
+            case SEVEN:
+                return LIBRA;
+            case EIGHT:
+                return SCORPIO;
+            case NINE:
+                return SAGITTARIUS;
+            case TEN:
+                return CAPRICORN;
+            case ELEVEN:
+                return AQUARIUS;
+            case TWELVE:
+                return PISCES;
+        }
+        return null;
+    }
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import butterknife.OnClick;
 import de.bitb.astroskop.R;
 import de.bitb.astroskop.injection.IBind;
 import de.bitb.astroskop.ui.base.IToolbarView;
@@ -13,11 +14,11 @@ import de.bitb.astroskop.ui.main.circumstances.CircumstanceFragment;
 import de.bitb.astroskop.ui.main.home.HomeFragment;
 import de.bitb.astroskop.utils.HockeyAppUtils;
 
-public class MainActivity extends NavigationBaseActivity implements IMainView, IBind, IToolbarView {
+public class MainActivity extends NavigationBaseActivity implements IBind, IToolbarView {
 
     public static final int TAB_HOME = 0;
     public static final int TAB_CIRCUMSTANCES = 1;
-    public static final int TAB_HOROSCOP = 2;
+    public static final int TAB_PROFILES = 2;
     public static final int TAB_SETTINGS = 3;
 
     public static void startActivity(Context context) {
@@ -41,7 +42,8 @@ public class MainActivity extends NavigationBaseActivity implements IMainView, I
                 case TAB_CIRCUMSTANCES:
                     navigateToCircumstanceScreen();
                     return true;
-                case TAB_HOROSCOP:
+                case TAB_PROFILES:
+                    navigateToProfilesScreen();
                     return true;
                 case TAB_SETTINGS:
                     return true;
@@ -50,20 +52,18 @@ public class MainActivity extends NavigationBaseActivity implements IMainView, I
         return false;
     }
 
-    @Override
-    public void navigateToHomeScreen() {
-        NavigationBaseFragment fragment = HomeFragment.createInstance();
-        showFragmentClearTop(fragment, false);
-    }
-    @Override
-    public void navigateToCircumstanceScreen() {
-        NavigationBaseFragment fragment = CircumstanceFragment.createInstance();
-        showFragment(fragment, true);
+    private void navigateToHomeScreen() {
+        HomeFragment fragment = HomeFragment.createInstance();
+        showFragmentClearTop(fragment);
     }
 
-    @Override
-    public void navigateToScreen(int tabId) {
-        setCurrentTab(tabId);
+    private void navigateToCircumstanceScreen() {
+        CircumstanceFragment fragment = CircumstanceFragment.createInstance();
+        showFragment(fragment);
+    }
+
+    private void navigateToProfilesScreen() {
+
     }
 
     @Override

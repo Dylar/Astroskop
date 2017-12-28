@@ -24,7 +24,7 @@ import de.bitb.astroskop.viewbuilder.DialogBuilder;
 
 public class IntroActivity extends BaseActivity implements IInjection, IBind {
 
-    private static final int SPLASHSCREEN_MIN_DELAY = 5000;
+    private static final int SPLASHSCREEN_MIN_DELAY = 1000;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "13:7677371645979783571",
-      "lastPropertyId": "4:1778192737501832154",
+      "lastPropertyId": "6:9086033015857555888",
       "name": "Circumstance",
       "properties": [
         {
@@ -23,12 +23,40 @@
         {
           "id": "4:1778192737501832154",
           "name": "ruler"
+        },
+        {
+          "id": "5:3113233209582895068",
+          "name": "uuid"
+        },
+        {
+          "id": "6:9086033015857555888",
+          "name": "creationTimestamp"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "14:858564363431630678",
+      "lastPropertyId": "3:6109935992953476290",
+      "name": "Profile",
+      "properties": [
+        {
+          "id": "1:6452199524753993115",
+          "name": "id"
+        },
+        {
+          "id": "2:6899965312008289563",
+          "name": "uuid"
+        },
+        {
+          "id": "3:6109935992953476290",
+          "name": "name"
         }
       ],
       "relations": []
     }
   ],
-  "lastEntityId": "13:7677371645979783571",
+  "lastEntityId": "14:858564363431630678",
   "lastIndexId": "6:3526540842076619780",
   "lastRelationId": "4:5180702849679226948",
   "lastSequenceId": "0:0",

@@ -8,8 +8,6 @@ public interface IBaseView {
 
     Context getContext();
 
-    Bundle getArguments();
-
-    boolean willNotCrash();
+    void refreshView();
 
 }

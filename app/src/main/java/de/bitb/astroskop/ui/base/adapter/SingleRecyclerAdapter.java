@@ -12,10 +12,10 @@ import de.bitb.astroskop.ui.base.adapter.IAdapterView;
 
 public abstract class SingleRecyclerAdapter<M, H extends BaseViewHolder<M>> extends RecyclerView.Adapter<H> {
 
-    private final AdapterPresenter presenter;
+    private final AdapterPresenter<M> presenter;
     private final LayoutInflater inflater;
 
-    public SingleRecyclerAdapter(Context context, AdapterPresenter presenter) {
+    public SingleRecyclerAdapter(Context context, AdapterPresenter<M> presenter) {
         super();
         this.presenter = presenter;
         this.inflater = LayoutInflater.from(context);
@@ -39,5 +39,5 @@ public abstract class SingleRecyclerAdapter<M, H extends BaseViewHolder<M>> exte
 
     protected abstract int getLayoutId();
 
-    protected abstract H newHolder(AdapterPresenter presenter, View view);
+    protected abstract H newHolder(AdapterPresenter<M> presenter, View view);
 }

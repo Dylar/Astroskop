@@ -1,9 +1,12 @@
 package de.bitb.astroskop.ui.base.adapter;
 
-public interface AdapterPresenter {
+public interface AdapterPresenter<M> {
 
     int getAdapterItemCount();
 
-    void onBindAtPosition(IAdapterView holder, int position);
+    void onBindAtPosition(IAdapterView<M> holder, int position);
 
+    void onItemClicked(M model);
+
+    void onItemLongClicked(M model);
 }

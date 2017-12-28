@@ -11,7 +11,7 @@ import lombok.Getter;
 public abstract class BaseViewHolder<M> extends RecyclerView.ViewHolder implements IAdapterView<M>{
 
     @Getter
-    private final AdapterPresenter presenter;
+    private final AdapterPresenter<M> presenter;
 
     public BaseViewHolder(AdapterPresenter presenter, View view) {
         super(view);

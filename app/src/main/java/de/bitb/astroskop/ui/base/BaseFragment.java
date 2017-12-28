@@ -17,12 +17,16 @@ import de.bitb.astroskop.R;
 import de.bitb.astroskop.enums.AnimationType;
 import de.bitb.astroskop.injection.IBind;
 import de.bitb.astroskop.injection.IInjection;
+import de.bitb.astroskop.viewbuilder.DialogBuilder;
 import de.bitb.astroskop.viewbuilder.ToastBuilder;
 
 public abstract class BaseFragment extends Fragment implements IBaseView {
 
     @Inject
     protected ToastBuilder toastUtils;
+
+    @Inject
+    protected DialogBuilder dialogBuilder;
 
     private IToolbarView toolbarView;
 
@@ -79,11 +83,6 @@ public abstract class BaseFragment extends Fragment implements IBaseView {
 
     public void onRefreshClicked() {
         //refresh view
-    }
-
-    @Override
-    public boolean willNotCrash() {
-        return getContext() != null && getActivity() != null;
     }
 
     @Override
