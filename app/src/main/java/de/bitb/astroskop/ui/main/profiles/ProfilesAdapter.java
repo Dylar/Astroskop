@@ -8,9 +8,9 @@ import de.bitb.astroskop.model.Profile;
 import de.bitb.astroskop.ui.base.adapter.AdapterPresenter;
 import de.bitb.astroskop.ui.base.adapter.SingleRecyclerAdapter;
 
-public class ProfilesOverviewAdapter extends SingleRecyclerAdapter<Profile, ProfilesOverviewViewHolder> {
+public class ProfilesAdapter extends SingleRecyclerAdapter<Profile, ProfilesViewHolder> {
 
-    public ProfilesOverviewAdapter(Context context, AdapterPresenter<Profile> presenter) {
+    public ProfilesAdapter(Context context, AdapterPresenter<Profile> presenter) {
         super(context, presenter);
     }
 
@@ -20,8 +20,8 @@ public class ProfilesOverviewAdapter extends SingleRecyclerAdapter<Profile, Prof
     }
 
     @Override
-    protected ProfilesOverviewViewHolder newHolder(AdapterPresenter<Profile> presenter, View view) {
-        return new ProfilesOverviewViewHolder(presenter, view);
+    protected ProfilesViewHolder newHolder(AdapterPresenter<Profile> presenter, View view) {
+        return new ProfilesViewHolder(presenter, view);
     }
 
 }

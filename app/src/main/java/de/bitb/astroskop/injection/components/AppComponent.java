@@ -16,7 +16,8 @@ import de.bitb.astroskop.ui.base.BaseFragment;
 import de.bitb.astroskop.ui.main.MainActivity;
 import de.bitb.astroskop.ui.main.circumstances.CircumstancesPresenter;
 import de.bitb.astroskop.ui.main.circumstances.details.CircumstanceDetailsPresenter;
-import de.bitb.astroskop.ui.main.profiles.ProfilesOverviewPresenter;
+import de.bitb.astroskop.ui.main.profiles.ProfilesPresenter;
+import de.bitb.astroskop.ui.main.profiles.details.ProfileDetailPresenter;
 
 @ApplicationScope
 @Component(modules = {ApplicationModule.class, ControllerModule.class, UtilsModule.class, NetworkModule.class, DatabaseModule.class})
@@ -35,7 +36,7 @@ public interface AppComponent {
 
     void inject(CircumstancesPresenter circumstancesPresenter);
     void inject(CircumstanceDetailsPresenter circumstanceDetailsPresenter);
-    void inject(ProfilesOverviewPresenter profilesOverviewPresenter);
-
+    void inject(ProfilesPresenter profilesOverviewPresenter);
+    void inject(ProfileDetailPresenter profileDetailPresenter);
 
 }

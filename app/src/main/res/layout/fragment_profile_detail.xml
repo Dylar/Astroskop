@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/fragment_profile_detail_aries"
+                style="@style/ProfileDetailZodiacLabelFire"
+                android:layout_width="@dimen/twelve_grid_unit"
+                android:layout_marginTop="@dimen/half_grid_unit"
+                android:text="@string/zodiac_aries"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_profile_detail_taurus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/fragment_profile_detail_aries_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/half_grid_unit"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/fragment_profile_detail_taurus"
+                app:layout_constraintStart_toEndOf="@id/fragment_profile_detail_aries"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fragment_profile_detail_taurus"
+                style="@style/ProfileDetailZodiacLabelEarth"
+                android:text="@string/zodiac_taurus"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_profile_detail_gemini"
+                app:layout_constraintEnd_toEndOf="@id/fragment_profile_detail_aries"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_aries" />
+
+            <LinearLayout
+                android:id="@+id/fragment_profile_detail_taurus_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/half_grid_unit"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/fragment_profile_detail_gemini"
+                app:layout_constraintStart_toEndOf="@id/fragment_profile_detail_taurus"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_aries">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fragment_profile_detail_gemini"
+                style="@style/ProfileDetailZodiacLabelAir"
+                android:background="@color/element_air"
+                android:text="@string/zodiac_gemini"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_profile_detail_cancer"
+                app:layout_constraintEnd_toEndOf="@id/fragment_profile_detail_aries"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_taurus" />
+
+            <LinearLayout
+                android:id="@+id/fragment_profile_detail_gemini_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/half_grid_unit"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/fragment_profile_detail_cancer"
+                app:layout_constraintStart_toEndOf="@id/fragment_profile_detail_gemini"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_taurus">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fragment_profile_detail_cancer"
+                style="@style/ProfileDetailZodiacLabelWater"
+                android:background="@color/element_water"
+                android:text="@string/zodiac_cancer"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_profile_detail_leo"
+                app:layout_constraintEnd_toEndOf="@id/fragment_profile_detail_aries"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_gemini" />
+
+            <LinearLayout
+                android:id="@+id/fragment_profile_detail_cancer_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/half_grid_unit"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/fragment_profile_detail_leo"
+                app:layout_constraintStart_toEndOf="@id/fragment_profile_detail_cancer"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_gemini"
+                />
+
+            <TextView
+                android:id="@+id/fragment_profile_detail_leo"
+                style="@style/ProfileDetailZodiacLabelFire"
+                android:text="@string/zodiac_leo"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_profile_detail_virgo"
+                app:layout_constraintEnd_toEndOf="@id/fragment_profile_detail_aries"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_cancer" />
+
+            <LinearLayout
+                android:id="@+id/fragment_profile_detail_leo_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/half_grid_unit"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/fragment_profile_detail_virgo"
+                app:layout_constraintStart_toEndOf="@id/fragment_profile_detail_leo"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_cancer"/>
+
+            <TextView
+                android:id="@+id/fragment_profile_detail_virgo"
+                style="@style/ProfileDetailZodiacLabelEarth"
+                android:text="@string/zodiac_virgo"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_profile_detail_libra"
+                app:layout_constraintEnd_toEndOf="@id/fragment_profile_detail_aries"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_leo" />
+
+            <LinearLayout
+                android:id="@+id/fragment_profile_detail_virgo_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/half_grid_unit"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/fragment_profile_detail_libra"
+                app:layout_constraintStart_toEndOf="@id/fragment_profile_detail_virgo"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_leo"/>
+
+            <TextView
+                android:id="@+id/fragment_profile_detail_libra"
+                style="@style/ProfileDetailZodiacLabelAir"
+                android:background="@color/element_air"
+                android:text="@string/zodiac_libra"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_profile_detail_scorpio"
+                app:layout_constraintEnd_toEndOf="@id/fragment_profile_detail_aries"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_virgo" />
+
+            <LinearLayout
+                android:id="@+id/fragment_profile_detail_libra_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/half_grid_unit"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/fragment_profile_detail_scorpio"
+                app:layout_constraintStart_toEndOf="@id/fragment_profile_detail_libra"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_virgo"/>
+
+            <TextView
+                android:id="@+id/fragment_profile_detail_scorpio"
+                style="@style/ProfileDetailZodiacLabelWater"
+                android:background="@color/element_water"
+                android:text="@string/zodiac_scorpio"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_profile_detail_sagittarius"
+                app:layout_constraintEnd_toEndOf="@id/fragment_profile_detail_aries"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_libra" />
+
+            <LinearLayout
+                android:id="@+id/fragment_profile_detail_scorpio_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/half_grid_unit"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/fragment_profile_detail_sagittarius"
+                app:layout_constraintStart_toEndOf="@id/fragment_profile_detail_scorpio"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_libra"/>
+
+            <TextView
+                android:id="@+id/fragment_profile_detail_sagittarius"
+                style="@style/ProfileDetailZodiacLabelFire"
+                android:background="@color/element_fire"
+                android:text="@string/zodiac_sagittarius"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_profile_detail_capricorn"
+                app:layout_constraintEnd_toEndOf="@id/fragment_profile_detail_aries"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_scorpio" />
+
+            <LinearLayout
+                android:id="@+id/fragment_profile_detail_sagittarius_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/half_grid_unit"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/fragment_profile_detail_capricorn"
+                app:layout_constraintStart_toEndOf="@id/fragment_profile_detail_sagittarius"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_scorpio"/>
+
+            <TextView
+                android:id="@+id/fragment_profile_detail_capricorn"
+                style="@style/ProfileDetailZodiacLabelEarth"
+                android:background="@color/element_earth"
+                android:text="@string/zodiac_capricorn"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_profile_detail_aquarius"
+                app:layout_constraintEnd_toEndOf="@id/fragment_profile_detail_aries"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_sagittarius" />
+
+            <LinearLayout
+                android:id="@+id/fragment_profile_detail_capricorn_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/half_grid_unit"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/fragment_profile_detail_aquarius"
+                app:layout_constraintStart_toEndOf="@id/fragment_profile_detail_capricorn"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_sagittarius"/>
+
+            <TextView
+                android:id="@+id/fragment_profile_detail_aquarius"
+                style="@style/ProfileDetailZodiacLabelAir"
+                android:text="@string/zodiac_aquarius"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_profile_detail_pisces"
+                app:layout_constraintEnd_toEndOf="@id/fragment_profile_detail_aries"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_capricorn" />
+
+            <LinearLayout
+                android:id="@+id/fragment_profile_detail_aquarius_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/half_grid_unit"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/fragment_profile_detail_pisces"
+                app:layout_constraintStart_toEndOf="@id/fragment_profile_detail_aquarius"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_capricorn"/>
+
+            <TextView
+                android:id="@+id/fragment_profile_detail_pisces"
+                style="@style/ProfileDetailZodiacLabelWater"
+                android:background="@color/element_water"
+                android:text="@string/zodiac_pisces"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/fragment_profile_detail_aries"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_aquarius" />
+
+            <LinearLayout
+                android:id="@+id/fragment_profile_detail_pisces_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/half_grid_unit"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fragment_profile_detail_pisces"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile_detail_aquarius"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </HorizontalScrollView>
+
+</android.support.constraint.ConstraintLayout>

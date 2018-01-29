@@ -8,7 +8,6 @@ import de.bitb.astroskop.injection.components.AppComponent;
 import de.bitb.astroskop.injection.components.DaggerAppComponent;
 import de.bitb.astroskop.injection.modules.ApplicationModule;
 import lombok.Getter;
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 public class AstroApplication extends Application {
 

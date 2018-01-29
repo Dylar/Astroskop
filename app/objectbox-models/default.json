@@ -53,12 +53,41 @@
           "name": "name"
         }
       ],
+      "relations": [
+        {
+          "id": "5:92479876834446594",
+          "name": "constellations"
+        }
+      ]
+    },
+    {
+      "id": "15:929728555980058092",
+      "lastPropertyId": "4:3744266921860457873",
+      "name": "Constellation",
+      "properties": [
+        {
+          "id": "1:2722663076299297044",
+          "name": "id"
+        },
+        {
+          "id": "2:4419708924652029027",
+          "name": "zodiac"
+        },
+        {
+          "id": "3:5451323733150626687",
+          "name": "house"
+        },
+        {
+          "id": "4:3744266921860457873",
+          "name": "ruler"
+        }
+      ],
       "relations": []
     }
   ],
-  "lastEntityId": "14:858564363431630678",
+  "lastEntityId": "15:929728555980058092",
   "lastIndexId": "6:3526540842076619780",
-  "lastRelationId": "4:5180702849679226948",
+  "lastRelationId": "5:92479876834446594",
   "lastSequenceId": "0:0",
   "modelVersion": 4,
   "modelVersionParserMinimum": 4,

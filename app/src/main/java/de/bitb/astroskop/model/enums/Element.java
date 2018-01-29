@@ -5,10 +5,10 @@ import lombok.Getter;
 
 @Getter
 public enum Element {
-    FIRE(R.color.red),
-    AIR(R.color.gray4),
-    WATER(R.color.blue),
-    EARTH(R.color.brown);
+    FIRE(R.color.element_fire),
+    AIR(R.color.element_air),
+    WATER(R.color.element_water),
+    EARTH(R.color.element_earth);
 
     private final int color;
 

@@ -9,12 +9,12 @@ import de.bitb.astroskop.model.Profile;
 import de.bitb.astroskop.ui.base.adapter.AdapterPresenter;
 import de.bitb.astroskop.ui.base.adapter.BaseViewHolder;
 
-class ProfilesOverviewViewHolder extends BaseViewHolder<Profile> {
+class ProfilesViewHolder extends BaseViewHolder<Profile> {
 
     @BindView(R.id.adapter_profile_name)
     protected TextView nameTV;
 
-    public ProfilesOverviewViewHolder(AdapterPresenter<Profile> presenter, View view) {
+    public ProfilesViewHolder(AdapterPresenter<Profile> presenter, View view) {
         super(presenter, view);
     }
 

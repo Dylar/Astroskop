@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:padding="@dimen/half_grid_unit"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/profile_detail_list_item_label"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="50"
+        android:gravity="center"
+        android:text="House:"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/profile_detail_list_item_text"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="50"
+        android:gravity="center"
+        android:text="Drei"
+        android:textColor="@color/colorPrimary" />
+
+</LinearLayout>

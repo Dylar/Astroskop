@@ -13,14 +13,14 @@ import de.bitb.astroskop.ui.base.BasePresenter;
 import de.bitb.astroskop.ui.base.adapter.AdapterPresenter;
 import de.bitb.astroskop.ui.base.adapter.IAdapterView;
 
-public class ProfilesOverviewPresenter extends BasePresenter<IProfilesOverviewView> implements IInjection, AdapterPresenter<Profile> {
+public class ProfilesPresenter extends BasePresenter<IProfilesView> implements IInjection, AdapterPresenter<Profile> {
 
     @Inject
     protected ProfileController profileController;
 
     private List<Profile> profiles;
 
-    public ProfilesOverviewPresenter(AstroApplication application, IProfilesOverviewView view) {
+    public ProfilesPresenter(AstroApplication application, IProfilesView view) {
         super(application, view);
     }
 
@@ -55,7 +55,7 @@ public class ProfilesOverviewPresenter extends BasePresenter<IProfilesOverviewVi
 
     @Override
     public void onItemLongClicked(Profile model) {
-        getView().openProfile(model);
+        getView().openDeleteDialog(model);
     }
 
     public void createProfile(String name) {
@@ -66,5 +66,9 @@ public class ProfilesOverviewPresenter extends BasePresenter<IProfilesOverviewVi
     public void deleteProfile(Profile profile) {
         profileController.delete(profile);
         refreshView();
+    }
+
+    public List<Profile> getProfiles() {
+        return profiles;
     }
 }

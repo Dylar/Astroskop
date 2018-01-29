@@ -4,14 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import butterknife.OnClick;
 import de.bitb.astroskop.R;
 import de.bitb.astroskop.injection.IBind;
 import de.bitb.astroskop.ui.base.IToolbarView;
 import de.bitb.astroskop.ui.base.NavigationBaseActivity;
-import de.bitb.astroskop.ui.base.NavigationBaseFragment;
 import de.bitb.astroskop.ui.main.circumstances.CircumstanceFragment;
 import de.bitb.astroskop.ui.main.home.HomeFragment;
+import de.bitb.astroskop.ui.main.profiles.ProfilesFragment;
 import de.bitb.astroskop.utils.HockeyAppUtils;
 
 public class MainActivity extends NavigationBaseActivity implements IBind, IToolbarView {
@@ -63,7 +62,8 @@ public class MainActivity extends NavigationBaseActivity implements IBind, ITool
     }
 
     private void navigateToProfilesScreen() {
-
+        ProfilesFragment fragment = ProfilesFragment.createInstance();
+        showFragment(fragment);
     }
 
     @Override

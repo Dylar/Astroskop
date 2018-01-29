@@ -30,6 +30,9 @@
         <activity
             android:name=".ui.main.circumstances.details.CircumstanceDetailsActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.profiles.details.ProfileActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 

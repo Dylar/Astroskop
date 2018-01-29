@@ -77,4 +77,13 @@ public enum House {
         }
         return null;
     }
+
+    public static House get(int id) {
+        for (House house : values()) {
+            if(house.getId().equals(id)){
+                return house;
+            }
+        }
+        return null;
+    }
 }
