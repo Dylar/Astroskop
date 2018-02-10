@@ -14,7 +14,7 @@ build-dev-debug:
   only:
     - /^feature.*$/
   except:
-    - development
+    - develop
     - master
   tags:
     - android
@@ -24,14 +24,14 @@ build-dev-release:
   script:
     - ./gradlew assembleDevRelease
   only:
-    - development
+    - develop
   tags:
     - android
 
-build-cargo-release:
+build-prod-release:
   stage: build
   script:
-    - ./gradlew assembleCargoRelease
+    - ./gradlew assembleProdRelease
   only:
     - master
   tags:
@@ -55,22 +55,22 @@ unit_tests:
   tags:
     - android
   script:
-    - ./gradlew testCargoReleaseUnitTest
+    - ./gradlew testProdReleaseUnitTest
 
 deploy-dev-release:
   stage: deploy
   script:
     - ./gradlew uploadDevReleaseToHockeyApp
   only:
-    - development
+    - develop
   tags:
     - android
   when: on_success
 
-deploy-cargo-release:
+deploy-prod-release:
   stage: deploy
   script:
-    - ./gradlew uploadCargoReleaseToHockeyApp
+    - ./gradlew uploadProdReleaseToHockeyApp
   only:
     - master
   tags:

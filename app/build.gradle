@@ -9,15 +9,15 @@ android {
     defaultConfig {
         multiDexEnabled true
         minSdkVersion 21
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode System.getenv("CI_PIPELINE_ID") as Integer ?: 1
-        versionName "1.0"
+        versionName "V0.01"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
         release {
-            storeFile file('keystore/keystore.jks')
+            storeFile file('keystore/astrokey.jks')
             storePassword System.getenv("STORE_PASSWORD")
             keyAlias System.getenv("KEY_ALIAS")
             keyPassword System.getenv("KEY_PASSWORD")
@@ -81,11 +81,11 @@ task setHockeyappMessage << {
 }
 
 task setDevReleaseApiToken << {
-    hockeyapp.apiToken = "10949c4436e53b248d03159b36282d3a"
+    hockeyapp.apiToken = "8745c1b9de0142a7aef845dbe8b2b053"
 }
 
 task setProdReleaseApiToken << {
-    hockeyapp.apiToken = "4eed16496a125224a6473032746b42ba"
+    hockeyapp.apiToken = "8cf528692d224dcb844655997d1c8ec2"
 }
 
 tasks.whenTaskAdded { task ->
