@@ -16,7 +16,7 @@ import de.bitb.astroskop.model.enums.Ruler;
 import de.bitb.astroskop.model.enums.Zodiac;
 import io.objectbox.Box;
 
-public class ProfileController extends BaseController implements IInjection{
+public class ProfileController extends BaseController implements IInjection {
 
     @Inject
     protected Box<Profile> profileBox;
@@ -36,20 +36,27 @@ public class ProfileController extends BaseController implements IInjection{
         Profile profile = new Profile();
         profile.setUuid(UUID.randomUUID().toString());
         profile.setName(name);
-        for (int i = 1; i < 10; i++) {
-            Constellation constellation = new Constellation();
-            constellation.setZodiac(Zodiac.getRandom());
-            constellation.setHouse(House.get(i));
-            profile.getConstellations().add(constellation);
-        }
-        for (int i = 0; i < 10; i++) {
-            Constellation constellation = new Constellation();
-            constellation.setZodiac(Zodiac.getRandom());
-            constellation.setRuler(Ruler.getRandom());
-            profile.getConstellations().add(constellation);
-        }
+//        for (int i = 1; i < 10; i++) {
+//            Constellation constellation = new Constellation();
+//            constellation.setZodiac(Zodiac.getRandom());
+//            constellation.setHouse(House.get(i));
+//            profile.getConstellations().add(constellation);
+//        }
+//        for (int i = 0; i < 10; i++) {
+//            Constellation constellation = new Constellation();
+//            constellation.setZodiac(Zodiac.getRandom());
+//            constellation.setRuler(Ruler.getRandom());
+//            profile.getConstellations().add(constellation);
+//        }
+        upsert(profile);
+    }
 
+    public void upsert(Profile profile) {
         profileBox.put(profile);
+    }
+
+    public void delete(Profile Profile) {
+        profileBox.remove(Profile);
     }
 
     public Profile getByUUID(String uuid) {
@@ -58,10 +65,6 @@ public class ProfileController extends BaseController implements IInjection{
 
     public List<Profile> getAllProfiles() {
         return profileBox.getAll();
-    }
-
-    public void delete(Profile Profile) {
-        profileBox.remove(Profile);
     }
 
 }

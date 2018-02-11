@@ -2,6 +2,7 @@ package de.bitb.astroskop.model.enums;
 
 import java.util.Random;
 
+import de.bitb.astroskop.helper.Logger;
 import lombok.Getter;
 
 @Getter
@@ -37,7 +38,7 @@ public enum Zodiac {
     }
 
     public static Zodiac getRandom() {
-        int index = new Random().nextInt(values().length-1);
+        int index = new Random().nextInt(values().length - 1);
         return values()[index];
     }
 
@@ -46,6 +47,11 @@ public enum Zodiac {
     }
 
     public static Zodiac get(String zodiac) {
-        return valueOf(zodiac);
+        try {
+            return valueOf(zodiac.toUpperCase());
+        }catch (IllegalArgumentException e){
+            Logger.error(e.getMessage());
+        }
+        return null;
     }
 }

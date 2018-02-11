@@ -265,12 +265,9 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        appInForeground = true;
         BaseFragment frag = getCurrentContent();
         frag.onActivityResult(requestCode, resultCode, data);
     }
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
-    }
 }

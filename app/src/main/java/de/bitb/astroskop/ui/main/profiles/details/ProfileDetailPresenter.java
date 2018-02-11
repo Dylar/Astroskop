@@ -6,8 +6,8 @@ import de.bitb.astroskop.AstroApplication;
 import de.bitb.astroskop.controller.ProfileController;
 import de.bitb.astroskop.injection.IInjection;
 import de.bitb.astroskop.injection.components.AppComponent;
+import de.bitb.astroskop.model.Constellation;
 import de.bitb.astroskop.model.Profile;
-import de.bitb.astroskop.model.enums.Zodiac;
 import de.bitb.astroskop.ui.base.BasePresenter;
 
 public class ProfileDetailPresenter extends BasePresenter<IProfileDetailView> implements IInjection {
@@ -37,4 +37,9 @@ public class ProfileDetailPresenter extends BasePresenter<IProfileDetailView> im
         getView().refreshView();
     }
 
+    public void addConstellation(Constellation constellation) {
+        profile.getConstellations().add(constellation);
+        profileController.upsert(profile);
+        getView().initProfile(profile);
+    }
 }

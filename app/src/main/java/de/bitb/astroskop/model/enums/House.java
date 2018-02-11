@@ -2,8 +2,10 @@ package de.bitb.astroskop.model.enums;
 
 import java.util.Random;
 
+import de.bitb.astroskop.helper.Logger;
 import lombok.Getter;
 
+import static de.bitb.astroskop.Constants.NULL_INTEGER;
 import static de.bitb.astroskop.model.enums.Zodiac.AQUARIUS;
 import static de.bitb.astroskop.model.enums.Zodiac.ARIES;
 import static de.bitb.astroskop.model.enums.Zodiac.CANCER;
@@ -19,6 +21,7 @@ import static de.bitb.astroskop.model.enums.Zodiac.VIRGO;
 
 @Getter
 public enum House {
+    NONE(NULL_INTEGER),
     ONE(1),
     TWO(2),
     THREE(3),
@@ -88,6 +91,11 @@ public enum House {
     }
 
     public static House get(String house) {
-        return valueOf(house);
+        try {
+            return valueOf(house.toUpperCase());
+        }catch (IllegalArgumentException e){
+            Logger.error(e.getMessage());
+        }
+        return null;
     }
 }

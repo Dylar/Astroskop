@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import de.bitb.astroskop.helper.Logger;
 import lombok.Getter;
 
+import static de.bitb.astroskop.Constants.NULL_INTEGER;
 import static de.bitb.astroskop.model.enums.Zodiac.*;
 
 @Getter
 public enum Ruler {
+    NONE(NULL_INTEGER),
     SUN(1),
     MERCURY(2),
     VENUS(3),
@@ -72,6 +75,11 @@ public enum Ruler {
     }
 
     public static Ruler get(String ruler) {
-        return valueOf(ruler);
+        try {
+            return valueOf(ruler.toUpperCase());
+        }catch (IllegalArgumentException e){
+            Logger.error(e.getMessage());
+        }
+        return null;
     }
 }

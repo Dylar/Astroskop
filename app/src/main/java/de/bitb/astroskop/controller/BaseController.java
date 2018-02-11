@@ -4,6 +4,7 @@ import javax.inject.Inject;
 
 import de.bitb.astroskop.AstroApplication;
 import de.bitb.astroskop.injection.IInjection;
+import de.bitb.astroskop.model.Profile;
 import de.bitb.astroskop.utils.SharedPreferencesUtils;
 import lombok.Getter;
 
@@ -20,4 +21,4 @@ public class BaseController {
             astroApplication.getAppComponent().inject(this);
         }
     }
-}
+ }

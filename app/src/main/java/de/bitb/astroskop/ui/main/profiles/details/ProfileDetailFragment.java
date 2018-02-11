@@ -14,18 +14,20 @@ import java.util.List;
 import butterknife.BindView;
 import de.bitb.astroskop.AstroApplication;
 import de.bitb.astroskop.R;
+import de.bitb.astroskop.helper.Logger;
 import de.bitb.astroskop.injection.IBind;
 import de.bitb.astroskop.model.Constellation;
 import de.bitb.astroskop.model.Profile;
 import de.bitb.astroskop.ui.base.ActionbarHandler;
 import de.bitb.astroskop.ui.base.BaseFragment;
+import de.bitb.astroskop.ui.base.MVPFragment;
 import de.bitb.astroskop.ui.main.profiles.details.add.CreateConstellationActivity;
 
 import static android.app.Activity.RESULT_OK;
 import static de.bitb.astroskop.ui.main.profiles.details.ProfileActivity.KEY_PROFILE_UUID;
 import static de.bitb.astroskop.ui.main.profiles.details.add.CreateConstellationActivity.REQUEST_CREATE_CONSTELLATION;
 
-public class ProfileDetailFragment extends BaseFragment implements IProfileDetailView, IBind {
+public class ProfileDetailFragment extends MVPFragment<IProfileDetailView, ProfileDetailPresenter> implements IProfileDetailView, IBind {
 
     @BindView(R.id.fragment_profile_detail_aries_list)
     protected ViewGroup ariesList;
@@ -52,8 +54,6 @@ public class ProfileDetailFragment extends BaseFragment implements IProfileDetai
     @BindView(R.id.fragment_profile_detail_pisces_list)
     protected ViewGroup piscesList;
 
-    private ProfileDetailPresenter detailsPresenter;
-
     public static ProfileDetailFragment createInstance(String uuid) {
         ProfileDetailFragment frag = new ProfileDetailFragment();
         Bundle args = new Bundle();
@@ -63,8 +63,19 @@ public class ProfileDetailFragment extends BaseFragment implements IProfileDetai
     }
 
     @Override
+    protected ProfileDetailPresenter createPresenter(AstroApplication application) {
+        return new ProfileDetailPresenter(application, this);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        getPresenter().onCreate(getArguments().getString(KEY_PROFILE_UUID));
+    }
+
+    @Override
     public ActionbarHandler.ActionbarCallback getActionbarCallback() {
-        return new ActionbarHandler.ActionbarCallback(){
+        return new ActionbarHandler.ActionbarCallback() {
             @Override
             public int getActionbarButton1Icon() {
                 return android.R.drawable.ic_menu_add;
@@ -72,22 +83,27 @@ public class ProfileDetailFragment extends BaseFragment implements IProfileDetai
 
             @Override
             public boolean onActionbarButton1Clicked() {
-                CreateConstellationActivity.startActivity(ProfileDetailFragment.this);
-                return true;    
+                CreateConstellationActivity.startActivity(getActivity());
+                return true;
             }
         };
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        detailsPresenter = new ProfileDetailPresenter((AstroApplication) getActivity().getApplication(), this);
-        detailsPresenter.onCreate(getArguments().getString(KEY_PROFILE_UUID));
-    }
-
-    @Override
     public void initProfile(Profile profile) {
         List<Constellation> constellations = profile.getConstellations();
+        ariesList.removeAllViews();
+        taurusList.removeAllViews();
+        geminiList.removeAllViews();
+        cancerList.removeAllViews();
+        leoList.removeAllViews();
+        virgoList.removeAllViews();
+        libraList.removeAllViews();
+        scorpioList.removeAllViews();
+        sagittariusList.removeAllViews();
+        capricornList.removeAllViews();
+        aquariusList.removeAllViews();
+        piscesList.removeAllViews();
         for (Constellation constellation : constellations) {
             ViewGroup viewGroup = null;
             switch (constellation.getZodiac()) {
@@ -151,8 +167,8 @@ public class ProfileDetailFragment extends BaseFragment implements IProfileDetai
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(resultCode == RESULT_OK && requestCode == REQUEST_CREATE_CONSTELLATION){
-            toastUtils.showShortToast(getContext(), "BLUUUUUBB");
+        if (resultCode == RESULT_OK && requestCode == REQUEST_CREATE_CONSTELLATION) {
+            getPresenter().addConstellation((Constellation) data.getSerializableExtra(CreateConstellationActivity.KEY_CONSTELLATION));
         }
     }
 }

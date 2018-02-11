@@ -20,8 +20,8 @@ public class CreateConstellationPresenter extends BasePresenter<ICreateConstella
         appComponent.inject(this);
     }
 
-    public void onSaveClicked(String zodiac, String house, String ruler) {
-        Constellation constellation = Constellation.create(Zodiac.get(zodiac), House.get(house), Ruler.get(ruler));
+    public void onSaveClicked(Zodiac zodiac, House house, Ruler ruler) {
+        Constellation constellation = Constellation.create(zodiac, house, ruler);
         getView().finishConstellation(constellation);
     }
 

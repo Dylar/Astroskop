@@ -30,7 +30,7 @@ public class Constellation implements Serializable{
     private Ruler ruler;
 
     public boolean isHouse(){
-        return ruler == null;
+        return ruler == null || Ruler.NONE.equals(ruler);
     }
 
     public static Constellation create(Zodiac zodiac, House house, Ruler ruler) {

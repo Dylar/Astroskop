@@ -4,31 +4,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <EditText
+    <Spinner
         android:id="@+id/create_constellation_zodiac"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="BLAAA"
+        android:text="CANCER"
         app:layout_constraintBottom_toTopOf="@+id/create_constellation_house"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
+    <Spinner
         android:id="@+id/create_constellation_house"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="BLAAA"
-        app:layout_constraintBottom_toTopOf="@+id/create_constellation_ruler"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="-"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/create_constellation_ruler" />
 
-    <EditText
+    <Spinner
         android:id="@+id/create_constellation_ruler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="BLAAA"
+        android:text="-"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/create_constellation_guideline" />
 
