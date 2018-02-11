@@ -6,6 +6,8 @@ import java.util.UUID;
 import javax.inject.Inject;
 
 import de.bitb.astroskop.AstroApplication;
+import de.bitb.astroskop.injection.IInjection;
+import de.bitb.astroskop.injection.components.AppComponent;
 import de.bitb.astroskop.model.Constellation;
 import de.bitb.astroskop.model.Profile;
 import de.bitb.astroskop.model.Profile_;
@@ -14,13 +16,18 @@ import de.bitb.astroskop.model.enums.Ruler;
 import de.bitb.astroskop.model.enums.Zodiac;
 import io.objectbox.Box;
 
-public class ProfileController {
+public class ProfileController extends BaseController implements IInjection{
 
     @Inject
     protected Box<Profile> profileBox;
 
     public ProfileController(AstroApplication astroApplication) {
-        astroApplication.getAppComponent().inject(this);
+        super(astroApplication);
+    }
+
+    @Override
+    public void inject(AppComponent appComponent) {
+        appComponent.inject(this);
     }
 
     //DATABASE

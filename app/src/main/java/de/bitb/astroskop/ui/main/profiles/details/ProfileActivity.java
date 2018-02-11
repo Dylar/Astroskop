@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
+import de.bitb.astroskop.ui.base.ActionbarHandler;
 import de.bitb.astroskop.ui.base.BaseActivity;
 import de.bitb.astroskop.ui.base.IToolbarView;
 
@@ -23,4 +24,5 @@ public class ProfileActivity extends BaseActivity implements IToolbarView{
         super.onCreate(savedInstanceState);
         showFragment(ProfileDetailFragment.createInstance(getIntent().getStringExtra(KEY_PROFILE_UUID)), false);
     }
+
 }

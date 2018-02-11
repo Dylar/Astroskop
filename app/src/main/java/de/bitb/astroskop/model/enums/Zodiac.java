@@ -45,4 +45,7 @@ public enum Zodiac {
         return getElement().getColor();
     }
 
+    public static Zodiac get(String zodiac) {
+        return valueOf(zodiac);
+    }
 }

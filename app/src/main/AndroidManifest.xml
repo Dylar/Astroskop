@@ -33,6 +33,7 @@
         <activity
             android:name=".ui.main.profiles.details.ProfileActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.main.profiles.details.add.CreateConstellationActivity" />
 
     </application>
 

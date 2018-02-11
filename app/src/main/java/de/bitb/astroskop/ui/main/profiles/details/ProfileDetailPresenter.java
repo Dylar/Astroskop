@@ -7,6 +7,7 @@ import de.bitb.astroskop.controller.ProfileController;
 import de.bitb.astroskop.injection.IInjection;
 import de.bitb.astroskop.injection.components.AppComponent;
 import de.bitb.astroskop.model.Profile;
+import de.bitb.astroskop.model.enums.Zodiac;
 import de.bitb.astroskop.ui.base.BasePresenter;
 
 public class ProfileDetailPresenter extends BasePresenter<IProfileDetailView> implements IInjection {

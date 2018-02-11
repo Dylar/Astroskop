@@ -1,5 +1,6 @@
 package de.bitb.astroskop.ui.main.profiles.details;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,9 +17,13 @@ import de.bitb.astroskop.R;
 import de.bitb.astroskop.injection.IBind;
 import de.bitb.astroskop.model.Constellation;
 import de.bitb.astroskop.model.Profile;
+import de.bitb.astroskop.ui.base.ActionbarHandler;
 import de.bitb.astroskop.ui.base.BaseFragment;
+import de.bitb.astroskop.ui.main.profiles.details.add.CreateConstellationActivity;
 
+import static android.app.Activity.RESULT_OK;
 import static de.bitb.astroskop.ui.main.profiles.details.ProfileActivity.KEY_PROFILE_UUID;
+import static de.bitb.astroskop.ui.main.profiles.details.add.CreateConstellationActivity.REQUEST_CREATE_CONSTELLATION;
 
 public class ProfileDetailFragment extends BaseFragment implements IProfileDetailView, IBind {
 
@@ -58,15 +63,26 @@ public class ProfileDetailFragment extends BaseFragment implements IProfileDetai
     }
 
     @Override
+    public ActionbarHandler.ActionbarCallback getActionbarCallback() {
+        return new ActionbarHandler.ActionbarCallback(){
+            @Override
+            public int getActionbarButton1Icon() {
+                return android.R.drawable.ic_menu_add;
+            }
+
+            @Override
+            public boolean onActionbarButton1Clicked() {
+                CreateConstellationActivity.startActivity(ProfileDetailFragment.this);
+                return true;    
+            }
+        };
+    }
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         detailsPresenter = new ProfileDetailPresenter((AstroApplication) getActivity().getApplication(), this);
         detailsPresenter.onCreate(getArguments().getString(KEY_PROFILE_UUID));
-    }
-
-    @Override
-    public void refreshView() {
-
     }
 
     @Override
@@ -124,7 +140,19 @@ public class ProfileDetailFragment extends BaseFragment implements IProfileDetai
     }
 
     @Override
+    public void refreshView() {
+
+    }
+
+    @Override
     public int getLayoutId() {
         return R.layout.fragment_profile_detail;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode == RESULT_OK && requestCode == REQUEST_CREATE_CONSTELLATION){
+            toastUtils.showShortToast(getContext(), "BLUUUUUBB");
+        }
     }
 }

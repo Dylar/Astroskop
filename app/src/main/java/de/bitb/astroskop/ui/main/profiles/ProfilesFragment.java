@@ -70,7 +70,6 @@ public class ProfilesFragment extends NavigationBaseFragment implements IBind, I
         presenter.createProfile(nameET.getText().toString());
     }
 
-    @Override
     public void refreshView() {
         profileAdapter.notifyDataSetChanged();
     }

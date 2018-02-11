@@ -104,9 +104,4 @@ public class CircumstanceDetailsFragment extends BaseFragment implements IBind, 
         textView = infoView.findViewById(R.id.detail_info_gender);
         textView.setText(genderName);
     }
-
-    @Override
-    public void refreshView() {
-
-    }
 }

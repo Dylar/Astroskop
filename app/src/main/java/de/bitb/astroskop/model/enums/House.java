@@ -86,4 +86,8 @@ public enum House {
         }
         return null;
     }
+
+    public static House get(String house) {
+        return valueOf(house);
+    }
 }

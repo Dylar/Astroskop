@@ -8,4 +8,6 @@ interface IProfileDetailView extends IBaseView {
     void setToolbarTitle(String title);
 
     void initProfile(Profile profile);
+
+    void refreshView();
 }

@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +14,15 @@ import android.view.ViewGroup;
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
+import de.bitb.astroskop.Constants;
 import de.bitb.astroskop.R;
 import de.bitb.astroskop.enums.AnimationType;
 import de.bitb.astroskop.injection.IBind;
 import de.bitb.astroskop.injection.IInjection;
 import de.bitb.astroskop.viewbuilder.DialogBuilder;
 import de.bitb.astroskop.viewbuilder.ToastBuilder;
+
+import static de.bitb.astroskop.Constants.NULL_INTEGER;
 
 public abstract class BaseFragment extends Fragment implements IBaseView {
 
@@ -29,9 +33,11 @@ public abstract class BaseFragment extends Fragment implements IBaseView {
     protected DialogBuilder dialogBuilder;
 
     private IToolbarView toolbarView;
+    private ActionbarHandler actionbarHandler;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+        this.actionbarHandler = new ActionbarHandler(getActionbarCallback());
         if (this instanceof IInjection) {
             ((IInjection) this).inject(((BaseActivity) getActivity()).getAppComponent());
         } else {
@@ -56,33 +62,19 @@ public abstract class BaseFragment extends Fragment implements IBaseView {
 
     public abstract int getLayoutId();
 
-    @Override
-    public void onPrepareOptionsMenu(Menu menu) {
-        menu.getItem(0).setVisible(showSettingsButton());
-        super.onPrepareOptionsMenu(menu);
+    public ActionbarHandler.ActionbarCallback getActionbarCallback() {
+        return new ActionbarHandler.ActionbarCallback();
     }
 
-    protected boolean showSettingsButton() {
-        return true;
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        actionbarHandler.onPrepareOptionsMenu(menu);
+        super.onPrepareOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.actionbar_settings: {
-                getActivity().finish();
-                return true;
-            }
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    public void onInfoClicked() {
-        //show info
-    }
-
-    public void onRefreshClicked() {
-        //refresh view
+        return actionbarHandler.onOptionsItemSelected(item.getItemId()) || super.onOptionsItemSelected(item);
     }
 
     @Override

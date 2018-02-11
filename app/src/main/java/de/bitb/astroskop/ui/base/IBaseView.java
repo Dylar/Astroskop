@@ -8,6 +8,4 @@ public interface IBaseView {
 
     Context getContext();
 
-    void refreshView();
-
 }

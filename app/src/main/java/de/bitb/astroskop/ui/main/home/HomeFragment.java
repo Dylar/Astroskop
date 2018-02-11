@@ -34,8 +34,4 @@ public class HomeFragment extends NavigationBaseFragment implements IBind, IBase
         return MainActivity.TAB_HOME;
     }
 
-    @Override
-    public void refreshView() {
-
-    }
 }

@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -28,8 +29,8 @@ import de.bitb.astroskop.injection.components.AppComponent;
 import de.bitb.astroskop.ui.main.home.HomeFragment;
 import de.bitb.astroskop.utils.CommonUtils;
 import de.bitb.astroskop.utils.UiUtils;
+import de.bitb.astroskop.viewbuilder.ToastBuilder;
 import lombok.Getter;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
@@ -43,14 +44,19 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Inject
     @Getter
     protected CommonUtils commonUtils;
-
+    @Inject
+    @Getter
+    protected ToastBuilder toastUtils;
 
     @Getter
     private View baseView;
 
+    private ActionbarHandler actionbarHandler;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.actionbarHandler = new ActionbarHandler(getActionbarCallback());
 
         if (this instanceof IInjection) {
             ((IInjection) this).inject(getAppComponent());
@@ -71,13 +77,14 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         setContentView(baseView);
 
-        if(!(this instanceof NavigationBaseActivity)){
+        if (!(this instanceof NavigationBaseActivity)) {
             baseView.findViewById(R.id.activity_navigation).setVisibility(View.GONE);
         }
 
         if (this instanceof IBind) {
             ButterKnife.bind(this);
         }
+
     }
 
 //    @Override
@@ -105,10 +112,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         return getIntent().getExtras();
     }
 
-    public boolean willNotCrash() {
-        return !isFinishing();
-    }
-
     private void initToolbar(View view) {
         Toolbar toolbar = view.findViewById(R.id.activity_base_toolbar);
         if (this instanceof IToolbarView) {
@@ -122,11 +125,25 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    public ActionbarHandler.ActionbarCallback getActionbarCallback() {
+        return new ActionbarHandler.ActionbarCallback();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.actionbar_menu, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        return actionbarHandler.onPrepareOptionsMenu(menu) || super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return actionbarHandler.onOptionsItemSelected(item.getItemId()) || super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -250,5 +267,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         BaseFragment frag = getCurrentContent();
         frag.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }

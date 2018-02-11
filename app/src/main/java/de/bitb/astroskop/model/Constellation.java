@@ -1,5 +1,7 @@
 package de.bitb.astroskop.model;
 
+import java.io.Serializable;
+
 import de.bitb.astroskop.model.converter.HouseConverter;
 import de.bitb.astroskop.model.converter.RulerConverter;
 import de.bitb.astroskop.model.converter.ZodiacConverter;
@@ -15,7 +17,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Constellation {
+public class Constellation implements Serializable{
 
     @Id
     protected long id;
@@ -29,5 +31,13 @@ public class Constellation {
 
     public boolean isHouse(){
         return ruler == null;
+    }
+
+    public static Constellation create(Zodiac zodiac, House house, Ruler ruler) {
+        Constellation constellation = new Constellation();
+        constellation.setZodiac(zodiac);
+        constellation.setHouse(house);
+        constellation.setRuler(ruler);
+        return constellation;
     }
 }

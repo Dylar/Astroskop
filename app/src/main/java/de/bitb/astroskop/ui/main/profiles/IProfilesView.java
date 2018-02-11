@@ -7,4 +7,6 @@ interface IProfilesView extends IBaseView{
     void openProfile(Profile profile);
 
     void openDeleteDialog(Profile profile);
+
+    void refreshView();
 }

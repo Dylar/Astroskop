@@ -71,4 +71,7 @@ public enum Ruler {
         return zodiacs;
     }
 
+    public static Ruler get(String ruler) {
+        return valueOf(ruler);
+    }
 }
