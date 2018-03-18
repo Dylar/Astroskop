@@ -56,7 +56,7 @@ public class IntroActivity extends BaseActivity implements IInjection, IBind {
     }
 
     private void navigateToMainScreen() {
-        MainActivity.startActivity(this);
+        MainActivity.Companion.startActivity(this);
         finish();
     }
 

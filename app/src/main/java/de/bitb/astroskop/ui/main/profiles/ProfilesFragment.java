@@ -62,7 +62,7 @@ public class ProfilesFragment extends NavigationBaseFragment implements IBind, I
 
     @Override
     public int getNavigationPosition() {
-        return MainActivity.TAB_PROFILES;
+        return MainActivity.Companion.getTAB_PROFILES();
     }
 
     @OnClick(R.id.fragment_profile_button_create)

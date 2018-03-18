@@ -31,7 +31,7 @@ public class HomeFragment extends NavigationBaseFragment implements IBind, IBase
 
     @Override
     public int getNavigationPosition() {
-        return MainActivity.TAB_HOME;
+        return MainActivity.Companion.getTAB_HOME();
     }
 
 }

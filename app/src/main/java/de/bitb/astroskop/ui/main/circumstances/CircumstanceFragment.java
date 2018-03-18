@@ -59,7 +59,7 @@ public class CircumstanceFragment extends NavigationBaseFragment implements IBin
 
     @Override
     public int getNavigationPosition() {
-        return MainActivity.TAB_CIRCUMSTANCES;
+        return MainActivity.Companion.getTAB_CIRCUMSTANCES();
     }
 
     @OnClick(R.id.fragment_circumstances_button_go)
