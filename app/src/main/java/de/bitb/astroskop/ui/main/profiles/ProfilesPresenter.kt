@@ -22,8 +22,8 @@ class ProfilesPresenter(application: BaseApplication, view: IProfilesView) : Bas
     override val adapterItemCount: Int
         get() = profiles!!.size
 
-    override fun inject(appComponent: AppComponent) {
-        appComponent.inject(this)
+    override fun inject(appComponent: AppComponent?) {
+        appComponent?.inject(this)
     }
 
     fun onCreate() {
@@ -32,7 +32,7 @@ class ProfilesPresenter(application: BaseApplication, view: IProfilesView) : Bas
 
     private fun refreshView() {
         profiles = profileController!!.allProfiles
-        view.refreshView()
+        getView().refreshView()
     }
 
     override fun onBindAtPosition(holder: IAdapterView<Profile>, position: Int) {
@@ -40,11 +40,11 @@ class ProfilesPresenter(application: BaseApplication, view: IProfilesView) : Bas
     }
 
     override fun onItemClicked(model: Profile) {
-        view.openProfile(model)
+        getView().openProfile(model)
     }
 
     override fun onItemLongClicked(model: Profile) {
-        view.openDeleteDialog(model)
+        getView().openDeleteDialog(model)
     }
 
     fun createProfile(name: String) {

@@ -20,8 +20,6 @@ import de.bitb.astroskop.ui.base.ActionbarHandler
 import de.bitb.astroskop.ui.base.IToolbarView
 import de.bitb.astroskop.ui.base.MVPActivity
 
-import de.bitb.astroskop.Constants.NULL_INTEGER
-
 class CreateConstellationActivity : MVPActivity<ICreateConstellationView, CreateConstellationPresenter>(), IToolbarView, ICreateConstellationView, IBind {
 
     @BindView(R.id.create_constellation_zodiac)
@@ -31,11 +29,9 @@ class CreateConstellationActivity : MVPActivity<ICreateConstellationView, Create
     @BindView(R.id.create_constellation_ruler)
     var rulerSpinner: Spinner? = null
 
-    override val layoutId: Int
-        get() = R.layout.activity_create_constellation
+    override var layoutId: Int = R.layout.activity_create_constellation
 
-    override val actionbarCallback: ActionbarHandler.ActionbarCallback
-        get() = object : ActionbarHandler.ActionbarCallback() {
+    override var actionbarCallback: ActionbarHandler.ActionbarCallback = object : ActionbarHandler.ActionbarCallback() {
 
             override val actionbarButton1Icon: Int
                 get() = R.drawable.ic_smile

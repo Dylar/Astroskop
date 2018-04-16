@@ -1,12 +1,9 @@
 package de.bitb.astroskop.ui.base
 
 import android.view.Menu
-import android.view.MenuItem
 import de.bitb.astroskop.Constants.Companion.NULL_INTEGER
 
 import de.bitb.astroskop.R
-
-import de.bitb.astroskop.Constants.NULL_INTEGER
 
 class ActionbarHandler(private val callback: ActionbarCallback) {
 

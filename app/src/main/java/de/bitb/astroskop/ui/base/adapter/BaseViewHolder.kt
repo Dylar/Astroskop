@@ -8,7 +8,7 @@ import butterknife.ButterKnife
 import de.bitb.astroskop.ui.base.adapter.AdapterPresenter
 import lombok.Getter
 
-abstract class BaseViewHolder<M>(presenter: AdapterPresenter<*>, view: View) : RecyclerView.ViewHolder(view), IAdapterView<M> {
+abstract class BaseViewHolder<M>(presenter: AdapterPresenter<M>, view: View) : RecyclerView.ViewHolder(view), IAdapterView<M> {
 
     @Getter
     val presenter: AdapterPresenter<M>

@@ -23,8 +23,8 @@ class CircumstancesPresenter(application: BaseApplication, view: ICircumstancesV
     override val adapterItemCount: Int
         get() = circumstances.size
 
-    override fun inject(appComponent: AppComponent) {
-        appComponent.inject(this)
+    override fun inject(appComponent: AppComponent?) {
+        appComponent?.inject(this)
     }
 
     fun onCreate() {
@@ -38,7 +38,7 @@ class CircumstancesPresenter(application: BaseApplication, view: ICircumstancesV
 
     private fun refreshView() {
         circumstances = circumstanceController!!.allCircumstances
-        view.refreshView()
+        getView().refreshView()
     }
 
     override fun onBindAtPosition(holder: IAdapterView<Circumstance>, position: Int) {
@@ -46,11 +46,11 @@ class CircumstancesPresenter(application: BaseApplication, view: ICircumstancesV
     }
 
     override fun onItemClicked(model: Circumstance) {
-        view.openCircumstanceDetails(model)
+        getView().openCircumstanceDetails(model)
     }
 
     override fun onItemLongClicked(circumstance: Circumstance) {
-        view.openDeleteDialog(circumstance)
+        getView().openDeleteDialog(circumstance)
     }
 
     fun deleteCircumstance(circumstance: Circumstance) {

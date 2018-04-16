@@ -9,8 +9,7 @@ import de.bitb.astroskop.enums.AnimationType
 
 class SimpleBaseActivity : BaseActivity(), IToolbarView {
 
-    override val animationType: AnimationType
-        get() = AnimationType.SLIDE_BOTTOM_POP_BOTTOM
+    override var animationType: AnimationType = AnimationType.SLIDE_BOTTOM_POP_BOTTOM
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
         menu.getItem(0).isVisible = false

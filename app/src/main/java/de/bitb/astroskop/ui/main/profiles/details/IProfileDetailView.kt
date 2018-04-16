@@ -3,7 +3,7 @@ package de.bitb.astroskop.ui.main.profiles.details
 import de.bitb.astroskop.model.Profile
 import de.bitb.astroskop.ui.base.IBaseView
 
-internal interface IProfileDetailView : IBaseView {
+interface IProfileDetailView : IBaseView {
 
     fun setToolbarTitle(title: String)
 

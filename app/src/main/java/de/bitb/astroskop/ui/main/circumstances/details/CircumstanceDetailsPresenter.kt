@@ -16,16 +16,15 @@ class CircumstanceDetailsPresenter(application: BaseApplication, view: ICircumst
 
     private var circumstance: Circumstance? = null
 
-    override fun inject(appComponent: AppComponent) {
-        appComponent.inject(this)
+    override fun inject(appComponent: AppComponent?) {
+        appComponent?.inject(this)
     }
 
     fun onCreate(circumstanceUuid: String) {
         circumstance = circumstanceController!!.getByUUID(circumstanceUuid)
-        view.initZodiacInfo(circumstance!!.zodiac)
-        view.initHouseInfo(circumstance!!.house)
-        view.initRulerInfo(circumstance!!.ruler)
-
+        getView().initZodiacInfo(circumstance!!.zodiac!!)
+        getView().initHouseInfo(circumstance!!.house!!)
+        getView().initRulerInfo(circumstance!!.ruler!!)
     }
 
 }

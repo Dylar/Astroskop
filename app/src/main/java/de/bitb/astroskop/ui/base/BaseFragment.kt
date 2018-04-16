@@ -28,22 +28,17 @@ abstract class BaseFragment : Fragment(), IBaseView {
     protected var dialogBuilder: DialogBuilder? = null
 
     private var toolbarView: IToolbarView? = null
-    private var actionbarHandler: ActionbarHandler? = null
+    public var actionbarHandler: ActionbarHandler? = null
 
     abstract val layoutId: Int
 
-    protected val allowBackpress: Boolean
-        get() = false
+    var allowBackPress: Boolean = false
 
-    protected val actionbarCallback: ActionbarHandler.ActionbarCallback
+    protected open val actionbarCallback: ActionbarHandler.ActionbarCallback
         get() = ActionbarHandler.ActionbarCallback()
 
     protected val animationType: AnimationType
         get() = AnimationType.NONE
-
-    override fun getContext(): Context {
-        return context
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         this.actionbarHandler = ActionbarHandler(actionbarCallback)

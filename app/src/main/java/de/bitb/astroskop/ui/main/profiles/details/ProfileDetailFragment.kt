@@ -18,8 +18,9 @@ import de.bitb.astroskop.ui.base.MVPFragment
 import de.bitb.astroskop.ui.main.profiles.details.add.CreateConstellationActivity
 
 import android.app.Activity.RESULT_OK
-import de.bitb.astroskop.ui.main.profiles.details.ProfileActivity.KEY_PROFILE_UUID
-import de.bitb.astroskop.ui.main.profiles.details.add.CreateConstellationActivity.REQUEST_CREATE_CONSTELLATION
+import de.bitb.astroskop.model.enums.Zodiac
+import de.bitb.astroskop.ui.main.profiles.details.ProfileActivity.Companion.KEY_PROFILE_UUID
+import de.bitb.astroskop.ui.main.profiles.details.add.CreateConstellationActivity.Companion.REQUEST_CREATE_CONSTELLATION
 
 class ProfileDetailFragment : MVPFragment<IProfileDetailView, ProfileDetailPresenter>(), IProfileDetailView, IBind {
 
@@ -48,13 +49,12 @@ class ProfileDetailFragment : MVPFragment<IProfileDetailView, ProfileDetailPrese
     @BindView(R.id.fragment_profile_detail_pisces_list)
     var piscesList: ViewGroup? = null
 
-    override val actionbarCallback: ActionbarHandler.ActionbarCallback
-        get() = object : ActionbarHandler.ActionbarCallback() {
+    override var actionbarCallback: ActionbarHandler.ActionbarCallback = object : ActionbarHandler.ActionbarCallback() {
             override val actionbarButton1Icon: Int
                 get() = android.R.drawable.ic_menu_add
 
             override fun onActionbarButton1Clicked(): Boolean {
-                CreateConstellationActivity.startActivity(activity)
+                CreateConstellationActivity.startActivity(activity!!)
                 return true
             }
         }
@@ -85,7 +85,7 @@ class ProfileDetailFragment : MVPFragment<IProfileDetailView, ProfileDetailPrese
         capricornList!!.removeAllViews()
         aquariusList!!.removeAllViews()
         piscesList!!.removeAllViews()
-        for (constellation in constellations) {
+        for (constellation in constellations!!) {
             var viewGroup: ViewGroup? = null
             when (constellation.zodiac) {
                 Zodiac.ARIES -> viewGroup = ariesList
@@ -106,7 +106,7 @@ class ProfileDetailFragment : MVPFragment<IProfileDetailView, ProfileDetailPrese
             var tv = view.findViewById<TextView>(R.id.profile_detail_list_item_label)
             tv.text = if (isHouse) "House:" else "Ruler: "
             tv = view.findViewById(R.id.profile_detail_list_item_text)
-            tv.text = if (isHouse) constellation.house.name else constellation.ruler.name
+            tv.text = if (isHouse) constellation.house!!.name else constellation.ruler!!.name
 
             viewGroup!!.addView(view)
         }

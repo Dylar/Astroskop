@@ -44,36 +44,32 @@ abstract class BaseActivity : AppCompatActivity() {
     var baseView: View? = null
         private set
 
-    private var actionbarHandler: ActionbarHandler? = null
+    var actionbarHandler: ActionbarHandler? = null
 
     //    @Override
     //    protected void attachBaseContext(Context newBase) {
     //        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     //    }
+    open fun getContext(): Context {
+        return this
+    }
 
-    val layoutId: Int
-        get() = R.layout.activity_container
+    open var layoutId: Int = R.layout.activity_container
 
-    val contentContainerId: Int
-        get() = R.id.activity_container
+    open var contentContainerId: Int = R.id.activity_container
 
     val appComponent: AppComponent?
         get() = (application as BaseApplication).appComponent
 
-    val context: Context
-        get() = this
-
     val arguments: Bundle?
         get() = intent.extras
 
-    val actionbarCallback: ActionbarHandler.ActionbarCallback
-        get() = ActionbarHandler.ActionbarCallback()
+    open val actionbarCallback: ActionbarHandler.ActionbarCallback = ActionbarHandler.ActionbarCallback()
 
     val currentContent: BaseFragment?
         get() = supportFragmentManager.findFragmentById(contentContainerId) as BaseFragment
 
-    val animationType: AnimationType
-        get() = AnimationType.NONE
+    open var animationType: AnimationType = AnimationType.NONE
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -147,9 +143,8 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        val fragment = currentContent
-        if ((fragment == null || fragment.allowBackPressed()) && allowBackPressed()) {
-            if (fragment is HomeFragment) {
+        if (currentContent?.allowBackPress == true && allowBackPressed()) {
+            if (currentContent is HomeFragment) {
                 finish()
             } else {
                 super.onBackPressed()

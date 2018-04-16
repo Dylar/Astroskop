@@ -11,7 +11,7 @@ import lombok.Setter
 class DialogBuilder {
 
     fun showSimpleDialog(builder: Builder) {
-        val dialog = AlertDialog.Builder(builder.getContext(), R.style.dialogStyle)
+        val dialog = AlertDialog.Builder(builder.context, R.style.dialogStyle)
                 .setTitle(builder.titleId)
                 .setMessage(builder.messageId)
                 .setPositiveButton(builder.positivBtnId, builder.positivListner)
@@ -36,7 +36,7 @@ class DialogBuilder {
 
     @Getter
     @Setter
-    private class Builder internal constructor(private val context: Context) {
+    class Builder internal constructor(val context: Context) {
         var titleId: Int = 0
             set(titleId) {
                 field = this.titleId

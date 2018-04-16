@@ -17,24 +17,24 @@ class ProfileDetailPresenter(application: BaseApplication, view: IProfileDetailV
 
     private var profile: Profile? = null
 
-    override fun inject(appComponent: AppComponent) {
-        appComponent.inject(this)
+    override fun inject(appComponent: AppComponent?) {
+        appComponent?.inject(this)
     }
 
     fun onCreate(uuid: String) {
         profile = profileController!!.getByUUID(uuid)
-        view.setToolbarTitle(profile!!.name)
-        view.initProfile(profile)
+        getView().setToolbarTitle(profile!!.name!!)
+        getView().initProfile(profile!!)
         refreshView()
     }
 
     private fun refreshView() {
-        view.refreshView()
+        getView().refreshView()
     }
 
     fun addConstellation(constellation: Constellation) {
-        profile!!.constellations.add(constellation)
-        profileController!!.upsert(profile)
-        view.initProfile(profile)
+        profile!!.constellations!!.add(constellation)
+        profileController!!.upsert(profile!!)
+        getView().initProfile(profile!!)
     }
 }

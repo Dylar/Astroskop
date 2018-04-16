@@ -23,8 +23,7 @@ import de.bitb.astroskop.viewbuilder.DialogBuilder
 
 class IntroActivity : BaseActivity(), IInjection, IBind {
 
-    override val layoutId: Int
-        get() = R.layout.activity_intro
+    override var layoutId: Int = R.layout.activity_intro
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,8 +41,8 @@ class IntroActivity : BaseActivity(), IInjection, IBind {
         Handler().postDelayed({ navigateToMainScreen() }, (if (remainingDelay < 0) 1 else remainingDelay).toLong())
     }
 
-    override fun inject(appComponent: AppComponent) {
-        appComponent.inject(this)
+    override fun inject(appComponent: AppComponent?) {
+        appComponent?.inject(this)
     }
 
     private fun navigateToMainScreen() {

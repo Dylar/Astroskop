@@ -11,13 +11,13 @@ import de.bitb.astroskop.ui.base.BasePresenter
 
 class CreateConstellationPresenter(application: BaseApplication, view: ICreateConstellationView) : BasePresenter<ICreateConstellationView>(application, view), IInjection {
 
-    override fun inject(appComponent: AppComponent) {
-        appComponent.inject(this)
+    override fun inject(appComponent: AppComponent?) {
+        appComponent?.inject(this)
     }
 
     fun onSaveClicked(zodiac: Zodiac, house: House, ruler: Ruler) {
         val constellation = Constellation.create(zodiac, house, ruler)
-        view.finishConstellation(constellation)
+        getView().finishConstellation(constellation)
     }
 
 }

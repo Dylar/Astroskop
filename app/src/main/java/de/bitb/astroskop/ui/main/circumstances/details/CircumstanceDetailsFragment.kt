@@ -15,7 +15,7 @@ import de.bitb.astroskop.model.enums.Ruler
 import de.bitb.astroskop.model.enums.Zodiac
 import de.bitb.astroskop.ui.base.BaseFragment
 
-import de.bitb.astroskop.ui.main.circumstances.details.CircumstanceDetailsActivity.KEY_CIRCUMSTANCE_UUID
+import de.bitb.astroskop.ui.main.circumstances.details.CircumstanceDetailsActivity.Companion.KEY_CIRCUMSTANCE_UUID
 
 class CircumstanceDetailsFragment : BaseFragment(), IBind, ICircumstancesDetailView {
     @BindView(R.id.fragment_details_info_zodiac)
@@ -50,7 +50,7 @@ class CircumstanceDetailsFragment : BaseFragment(), IBind, ICircumstancesDetailV
 
     private fun initInfo(zodiac: Zodiac?, infoView: View?) {
         val zodiacs = ArrayList<Zodiac>()
-        zodiacs.add(zodiac)
+        zodiacs.add(zodiac!!)
         initInfo(zodiacs, infoView)
     }
 

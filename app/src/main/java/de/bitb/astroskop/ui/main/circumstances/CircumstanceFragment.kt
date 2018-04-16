@@ -1,5 +1,6 @@
 package de.bitb.astroskop.ui.main.circumstances
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -40,7 +41,7 @@ class CircumstanceFragment : NavigationBaseFragment(), IBind, ICircumstancesView
 
     private fun initRecyclerView() {
         recyclerView!!.layoutManager = GridLayoutManager(context, 2)
-        circumstanceAdapter = CircumstanceAdapter(context, presenter)
+        circumstanceAdapter = CircumstanceAdapter(context!!, presenter!!)
         recyclerView!!.adapter = circumstanceAdapter
     }
 
@@ -59,11 +60,11 @@ class CircumstanceFragment : NavigationBaseFragment(), IBind, ICircumstancesView
     }
 
     override fun openCircumstanceDetails(model: Circumstance) {
-        CircumstanceDetailsActivity.startActivity(context, model.uuid)
+        CircumstanceDetailsActivity.startActivity(context!!, model!!.uuid!!)
     }
 
     override fun openDeleteDialog(circumstance: Circumstance) {
-        dialogBuilder!!.showDeleteDialog(context) { dialogInterface, i -> presenter!!.deleteCircumstance(circumstance) }
+        dialogBuilder!!.showDeleteDialog(context!!, DialogInterface.OnClickListener { _, _ -> presenter!!.deleteCircumstance(circumstance) })
     }
 
     companion object {

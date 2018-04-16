@@ -10,7 +10,7 @@ import de.bitb.astroskop.ui.base.adapter.SingleRecyclerAdapter
 
 class ProfilesAdapter(context: Context, presenter: AdapterPresenter<Profile>) : SingleRecyclerAdapter<Profile, ProfilesViewHolder>(context, presenter) {
 
-    protected override val layoutId: Int
+    public override val layoutId: Int
         get() = R.layout.adapter_profile_item
 
     override fun newHolder(presenter: AdapterPresenter<Profile>, view: View): ProfilesViewHolder {

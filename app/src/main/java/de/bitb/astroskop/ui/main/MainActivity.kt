@@ -15,6 +15,9 @@ import de.bitb.astroskop.utils.HockeyAppUtils
 
 class MainActivity : NavigationBaseActivity(), IBind, IToolbarView {
 
+    override val bottomMenuLayout: Int
+        get() = R.menu.navigation_menu
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         navigateToHomeScreen()
@@ -58,12 +61,7 @@ class MainActivity : NavigationBaseActivity(), IBind, IToolbarView {
 
     public override fun onResume() {
         super.onResume()
-
         HockeyAppUtils.checkForCrashes(this)
-    }
-
-    override fun getBottomMenuLayout(): Int {
-        return R.menu.navigation_menu
     }
 
     companion object {

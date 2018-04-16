@@ -1,5 +1,6 @@
 package de.bitb.astroskop.ui.main.profiles
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -44,7 +45,7 @@ class ProfilesFragment : NavigationBaseFragment(), IBind, IProfilesView {
 
     private fun initRecyclerView() {
         recyclerView!!.layoutManager = LinearLayoutManager(context)
-        profileAdapter = ProfilesAdapter(context, presenter)
+        profileAdapter = ProfilesAdapter(context!!, presenter!!)
         recyclerView!!.adapter = profileAdapter
     }
 
@@ -63,11 +64,11 @@ class ProfilesFragment : NavigationBaseFragment(), IBind, IProfilesView {
     }
 
     override fun openProfile(profile: Profile) {
-        ProfileActivity.startActivity(context, profile.uuid)
+        ProfileActivity.startActivity(context!!, profile!!.uuid!!)
     }
 
     override fun openDeleteDialog(profile: Profile) {
-        dialogBuilder!!.showDeleteDialog(context) { dialogInterface, i -> presenter!!.deleteProfile(profile) }
+        dialogBuilder!!.showDeleteDialog(context!!, DialogInterface.OnClickListener { _, _ -> presenter!!.deleteProfile(profile) })
     }
 
     companion object {

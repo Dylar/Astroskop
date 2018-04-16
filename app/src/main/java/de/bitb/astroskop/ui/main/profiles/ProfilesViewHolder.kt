@@ -9,15 +9,15 @@ import de.bitb.astroskop.model.Profile
 import de.bitb.astroskop.ui.base.adapter.AdapterPresenter
 import de.bitb.astroskop.ui.base.adapter.BaseViewHolder
 
-internal class ProfilesViewHolder(presenter: AdapterPresenter<Profile>, view: View) : BaseViewHolder<Profile>(presenter, view) {
+class ProfilesViewHolder(presenter: AdapterPresenter<Profile>, view: View) : BaseViewHolder<Profile>(presenter, view) {
 
     @BindView(R.id.adapter_profile_name)
     var nameTV: TextView? = null
 
     override fun bindValues(profile: Profile) {
         nameTV!!.text = profile.name
-        itemView.setOnClickListener { view -> presenter.onItemClicked(profile) }
-        itemView.setOnLongClickListener { view ->
+        itemView.setOnClickListener { _ -> presenter.onItemClicked(profile) }
+        itemView.setOnLongClickListener { _ ->
             presenter.onItemLongClicked(profile)
             true
         }
