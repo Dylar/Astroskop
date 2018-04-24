@@ -1,3 +1,5 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'de.felixschulze.gradle.hockeyapp'
@@ -100,39 +102,75 @@ tasks.whenTaskAdded { task ->
 }
 
 dependencies {
-
-    compile "io.objectbox:objectbox-android:$objectboxVersion"
-    annotationProcessor "io.objectbox:objectbox-processor:$objectboxVersion"
-//    debugCompile "io.objectbox:objectbox-android-objectbrowser:$objectboxVersion"
-//    releaseCompile "io.objectbox:objectbox-android:$objectboxVersion"
-
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.8.1'
-
-    compile 'io.reactivex.rxjava2:rxjava:2.1.6'
-    compile group: 'joda-time', name: 'joda-time', version: '2.9.9'
-
-    compile 'com.google.dagger:dagger:2.11'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
-    compile 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    provided 'org.projectlombok:lombok:1.16.18'
-    annotationProcessor "org.projectlombok:lombok:1.16.18"
-
-    compile 'uk.co.chrisjenx:calligraphy:2.3.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     compile 'com.aurelhubert:ahbottomnavigation:2.1.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:appcompat-v7:27.0.2'
-    compile 'com.android.support:design:27.0.2'
-    compile 'com.android.support:cardview-v7:27.0.2'
-    compile 'com.android.support:recyclerview-v7:27.0.2'
-    compile 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 
-    compile 'net.hockeyapp.android:HockeySDK:4.1.5'
-    compile 'com.facebook.stetho:stetho:1.5.0'
-    compile 'com.facebook.stetho:stetho-okhttp3:1.5.0'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    /////TESTING/////
+
+    androidTestImplementation 'com.android.support.test:testing-support-lib:0.1'
+    testImplementation 'org.testng:testng:6.9.6'
+    testImplementation 'junit:junit:4.12'
+    testImplementation "org.mockito:mockito-inline:2.8.9"
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
+    testImplementation "org.robolectric:shadows-multidex:$robolectricVersion"
+    testImplementation "org.powermock:powermock-module-junit4:$powermockVersion"
+    testImplementation "org.powermock:powermock-module-junit4-rule:$powermockVersion"
+    testImplementation "org.powermock:powermock-api-mockito2:$powermockVersion"
+    testImplementation "org.powermock:powermock-classloading-xstream:$powermockVersion"
+
+    testAnnotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+    androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+
+    if (Os.isFamily(Os.FAMILY_MAC)) {
+        testImplementation "io.objectbox:objectbox-macos:$objectboxVersion"
+    } else if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+        testImplementation "io.objectbox:objectbox-windows:$objectboxVersion"
+    } else {
+        testImplementation "io.objectbox:objectbox-linux:$objectboxVersion"
+    }
+
+    /////UI/////
+
+    implementation "com.android.support:appcompat-v7:$supportVersion"
+    implementation "com.android.support:design:$supportVersion"
+    implementation "com.android.support:cardview-v7:$supportVersion"
+    implementation "com.android.support:recyclerview-v7:$supportVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+
+    /////SUPPORT/////
+
+    implementation 'net.hockeyapp.android:HockeySDK:5.0.4'
+    implementation "com.facebook.stetho:stetho:$stethoVersion"
+    implementation "com.facebook.stetho:stetho-okhttp3:$stethoVersion"
+
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+    testAnnotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+    androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+
+    implementation "com.jakewharton:butterknife:$butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
+
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.6'
+
+    /////DATABASE/////
+
+    implementation "io.objectbox:objectbox-android:$objectboxVersion"
+    annotationProcessor "io.objectbox:objectbox-processor:$objectboxVersion"
+    implementation "io.objectbox:objectbox-macos:$objectboxVersion"
+
+    /////API/////
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
 
 }
 repositories {

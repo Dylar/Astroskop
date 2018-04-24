@@ -28,7 +28,7 @@ abstract class BaseFragment : Fragment(), IBaseView {
     protected var dialogBuilder: DialogBuilder? = null
 
     private var toolbarView: IToolbarView? = null
-    public var actionbarHandler: ActionbarHandler? = null
+    var actionbarHandler: ActionbarHandler? = null
 
     abstract val layoutId: Int
 

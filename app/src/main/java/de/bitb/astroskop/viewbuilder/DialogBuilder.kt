@@ -45,15 +45,15 @@ class DialogBuilder {
             set(messageId) {
                 field = this.messageId
             }
-        var positivBtnId: Int = 0
+        var positivBtnId: Int = NO_BUTTON
             set(positivBtnId) {
                 field = this.positivBtnId
             }
-        var negativBtnId: Int = 0
+        var negativBtnId: Int = NO_BUTTON
             set(negativBtnId) {
                 field = this.negativBtnId
             }
-        var neutralBtnId: Int = 0
+        var neutralBtnId: Int = NO_BUTTON
             set(neutralBtnId) {
                 field = this.neutralBtnId
             }
@@ -73,7 +73,7 @@ class DialogBuilder {
 
     companion object {
 
-        val NO_BUTTON = 0
+        const val NO_BUTTON : Int = 0
     }
 
 }
