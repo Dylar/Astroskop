@@ -16,6 +16,7 @@ import javax.inject.Inject
 
 import butterknife.ButterKnife
 import de.bitb.astroskop.BaseApplication
+import de.bitb.astroskop.BaseInjection
 import de.bitb.astroskop.R
 import de.bitb.astroskop.enums.AnimationType
 import de.bitb.astroskop.injection.IBind
@@ -27,7 +28,7 @@ import de.bitb.astroskop.utils.UiUtils
 import de.bitb.astroskop.viewbuilder.ToastBuilder
 import lombok.Getter
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity(), BaseInjection{
 
     @Inject
     @Getter

@@ -11,13 +11,13 @@ abstract class ApiCallback<T> : Callback<T> {
     override fun onResponse(call: Call<T>, response: Response<T>) {
         val statusCode = response.code()
 
-        if (statusCode >= STATUS_SUCCESS && statusCode < STATUS_REDIRECT) {
+        if (statusCode in STATUS_SUCCESS..(STATUS_REDIRECT - 1)) {
             processSuccess(call, response, statusCode)
-        } else if (statusCode >= STATUS_REDIRECT && statusCode < STATUS_CLIENT_ERROR) {
+        } else if (statusCode in STATUS_REDIRECT..(STATUS_CLIENT_ERROR - 1)) {
             processRedirect(call, response, statusCode)
-        } else if (statusCode >= STATUS_CLIENT_ERROR && statusCode < STATUS_SERVER_ERROR) {
+        } else if (statusCode in STATUS_CLIENT_ERROR..(STATUS_SERVER_ERROR - 1)) {
             processClientError(call, response, statusCode)
-        } else if (statusCode >= STATUS_SERVER_ERROR && statusCode < STATUS_UNKNOWN) {
+        } else if (statusCode in STATUS_SERVER_ERROR..(STATUS_UNKNOWN - 1)) {
             processServerError(call, response, statusCode)
         } else {
             onUnknownStatusCode(call, response)
