@@ -3,20 +3,14 @@ package de.bitb.astroskop.ui.base
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
-
-import javax.inject.Inject
-
+import android.view.*
 import butterknife.ButterKnife
 import de.bitb.astroskop.enums.AnimationType
 import de.bitb.astroskop.injection.IBind
 import de.bitb.astroskop.injection.IInjection
 import de.bitb.astroskop.viewbuilder.DialogBuilder
 import de.bitb.astroskop.viewbuilder.ToastBuilder
+import javax.inject.Inject
 
 
 abstract class BaseFragment : Fragment(), IBaseView {
@@ -37,7 +31,7 @@ abstract class BaseFragment : Fragment(), IBaseView {
     protected open val actionbarCallback: ActionbarHandler.ActionbarCallback
         get() = ActionbarHandler.ActionbarCallback()
 
-    protected val animationType: AnimationType
+    val animationType: AnimationType
         get() = AnimationType.NONE
 
     override fun onCreate(savedInstanceState: Bundle?) {
